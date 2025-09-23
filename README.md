@@ -1,13 +1,11 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 23-09-2025 - 14:02
+Last Updated: 23-09-2025 - 15:12
 
 ## Sections
 
-+ [Tasks](#tasks) | [Development](#development) | [Notes] | [License](#license)
-
-[Back to Top](#jgdm_personal_dashboard_dom)
++ [Tasks](#tasks) | [Development](#development) | [Notes](#notes) | [Learning Goals](#learning-goals-of-this-project) | [License](#license)
 
 ## Tasks 
 
@@ -123,7 +121,7 @@ Last Updated: 23-09-2025 - 14:02
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
-### Learning Goal of this project
+### Learning Goals of this project
 
 
 + DOM Traversal: Accessing children, parents, and siblings to modify elements.
