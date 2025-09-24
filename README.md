@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 23-09-2025 - 15:12
+Last Updated: 24-09-2025 - 13:15
 
 ## Sections
 
@@ -9,7 +9,14 @@ Last Updated: 23-09-2025 - 15:12
 
 ## Tasks 
 
-+ Tasks `0` Completed `0`
++ Tasks `5` Completed `0`
+
++ `TODO:` - Finish Wireframe - concept for app 
++ `TODO:` - Implement Daily Quote Feature
++ `TODO:` - Implement Theme Switcher (standard plus at least 2 other modes)
++ `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app
++ `TODO:` - "Featuring" - tags to appear as tooltips
+<!-- `COMPLETED: 00-00-0000` -->
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
@@ -21,40 +28,40 @@ Last Updated: 23-09-2025 - 15:12
 
 + `Aspect 1` - Live Clock & Greeting
 
-  + DOM Features:
+  + **DOM Features**:
 
-  + DOM traversal: `getElementById`, `querySelector`
+    + DOM traversal: `getElementById`, `querySelector`
 
-  + Updating element text (`textContent` / `innerText`)
+    + Updating element text (`textContent` / `innerText`)
 
-  + Timed updates with `setInterval`.
+    + Timed updates with `setInterval`.
 
-  + Label Example: "Demonstrates: DOM Traversal, Content Updates, Timed DOM Manipulation"
+  + **Label Example:** "Demonstrates: DOM Traversal, Content Updates, Timed DOM Manipulation"
 
 + `Aspect 2` - To-do List
 
-  + Add Task
+  + **Add Task**
 
     + Node creation: `document.createElement()`
     + Appending: `appendChild()` / `append()`
 
-  + Toggle Done Status
+  + **Toggle Done Status**
 
     + Class manipulation: `classList.toggle()`
 
-  + Delete Task
+  + **Delete Task**
 
     + Node removal: `.remove()` or `removeChild()`
 
-  + Persistence
+  + **Persistence**
 
     + Storage: `localStorage.setItem()`, `getItem()`
 
-  + Label Example: "Demonstrates: Node Creation, Class Toggling, Node Removal, Local Storage"
+  + **Label Example:** "Demonstrates: Node Creation, Class Toggling, Node Removal, Local Storage"
 
 + `Aspect 3` - Theme Switcher (Dark/Light Mode)
 
-  + DOM Features:
+  + **DOM Features**:
 
     + Class manipulation: `classList.add/remove/toggle`
 
@@ -62,85 +69,84 @@ Last Updated: 23-09-2025 - 15:12
 
     + Storage persistence of theme: `localStorage`
 
-    + Label Example: “Demonstrates: Class Manipulation, Inline Styling, Local Storage”
+    + **Label Example:** “Demonstrates: Class Manipulation, Inline Styling, Local Storage”
 
 + `Aspect 4` - Notes Section
 
-  + Add Note
+  + **Add Note**
 
     + Form handling: `.value` from `input/textarea`
 
     + Dynamic creation of nodes (`createElement`, `appendChild`)
 
-  + Delete Note
+  + **Delete Note**
 
     Event delegation: `event.target` inside parent container
 
-  + Persistence
+  + **Persistence**
 
     Save and reload from `localStorage`
 
-   + Label Example: "Demonstrates: Form Handling, Event Delegation, Local Storage"
-
+   + **Label Example:** "Demonstrates: Form Handling, Event Delegation, Local Storage"
 
 + `Aspect 5` - Shortcut Links
   
   Let the user add their favourite links (e.g., “YouTube”, “GitHub”).
 
-  + Add Shortcut
+  + **Add Shortcut**
 
     + Attribute manipulation: `setAttribute('href', value)`
 
     + Create nodes dynamically: `<a>` tags inside container
 
-  + Edit/Delete
+  + **Edit/Delete**
 
     + Event listeners on dynamically generated elements
 
-  + Persistence
+  + **Persistence**
 
     + Save to `localStorage`
 
-  + Label Example: "Demonstrates: Attribute Manipulation, Node Creation, Local Storage"
+  + **Label Example:** "Demonstrates: Attribute Manipulation, Node Creation, Local Storage"
 
   + Inputs update the DOM by generating buttons/cards.
 
 + `Aspect 6` - Styling Controls
 
-  + Change Background / Fonts
+  + **Change Background / Fonts**
 
     + Inline styling via JS: `element.style.backgroundColor`
 
     + CSS variables: `document.documentElement.style.setProperty('--var', value)`
 
-  + Persistence
+  + **Persistence**
 
     + Save user’s styling preferences with `localStorage`
 
-  + Label Example: "Demonstrates: Styling via JavaScript, CSS Variables, Local Storage"
+  + **Label Example:** "Demonstrates: Styling via JavaScript, CSS Variables, Local Storage"
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
 ### Learning Goals of this project
 
++ **DOM Traversal**: Accessing children, parents, and siblings to modify elements. `to be decided`
 
-+ DOM Traversal: Accessing children, parents, and siblings to modify elements.
++ **DOM Manipulation**: Creating, appending, replacing, and removing nodes. `to be decided`
 
-+ DOM Manipulation: Creating, appending, replacing, and removing nodes.
++ **Event Handling**: Handling clicks, input changes, key events, delegation. `to be decided`
 
-+ Event Handling: Handling clicks, input changes, key events, delegation.
++ **Attributes & Classes**: Dynamically setting src, href, classList, dataset. `to be decided`
 
-+ Attributes & Classes: Dynamically setting src, href, classList, dataset.
++ **Forms & Validation**: Handling user input for notes, links, and preferences. `to be decided`
 
-+ Forms & Validation: Handling user input for notes, links, and preferences.
++ **Local Storage**: Making the dashboard persistent between sessions. `to be decided`
 
-+ Local Storage: Making the dashboard persistent between sessions.
-
-+ Styling via JS: Changing CSS directly or toggling classes.
++ **Styling via JS**: Changing CSS directly or toggling classes. `to be decided`
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
 ## License
 
+You are free to use this apo as you wish. Attribution would be welcome. A shout out on social media and a link to my website would be appreciated.  https://www.jonniegrieve.co.uk 
 
 [Back to Top](#jgdm_personal_dashboard_dom)
