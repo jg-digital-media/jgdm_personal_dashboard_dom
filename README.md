@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 24-09-2025 - 13:15
+Last Updated: 25-09-2025 - 16:39
 
 ## Sections
 
@@ -16,6 +16,9 @@ Last Updated: 24-09-2025 - 13:15
 + `TODO:` - Implement Theme Switcher (standard plus at least 2 other modes)
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app
 + `TODO:` - "Featuring" - tags to appear as tooltips
+  + `TODO:` -  `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
+  + `TODO:` - `theme---selector--container` - tooltip text - `"Attribute/class manipulation (classList.add/remove/toggle)"`
+.innerText or .textContent
 <!-- `COMPLETED: 00-00-0000` -->
 
 [Back to Top](#jgdm_personal_dashboard_dom)
