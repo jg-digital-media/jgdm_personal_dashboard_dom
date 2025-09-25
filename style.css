@@ -1,0 +1,75 @@
+/*
+
+    Last Update: 25-09-2025 - 16:41
+*/
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* main.scss */
+body {
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+  background: #000000;
+  display: flex;
+  width: 100%;
+  color: #fff;
+  /* margin: 5px 0 0 0; */
+}
+header div {
+  width: 33%;
+  border: solid 1px #989898;
+}
+header .live---clock {
+  padding: 5px;
+  text-align: left;
+  font-weight: bold;
+}
+header h1 {
+  text-align: center;
+  font-size: 20pt;
+}
+header h1 a {
+  color: #ffd53e;
+  font-size: 10px;
+  vertical-align: middle;
+  transition: color 0.3s;
+}
+header h1 a:hover {
+  color: white;
+}
+header .theme---selector--container {
+  text-align: right;
+  padding-right: 4px;
+}
+header .theme---selector--container .theme---selector {
+  display: inline-block;
+  vertical-align: top;
+  border: solid 1px #444444;
+  border-radius: 50%;
+  height: 20px;
+  width: 20px;
+  margin: 5px;
+}
+header .theme---selector--container #theme-one {
+  background: #ff3c3c;
+  border: solid red 1px;
+}
+header .theme---selector--container #theme-two {
+  background: #a6ff58;
+  border: solid green 1px;
+}
+header .theme---selector--container #theme-three {
+  background: #2a83ff;
+  border: solid blue 1px;
+}
+
+footer p {
+  text-align: center;
+}
+
+/*# sourceMappingURL=style.css.map */
