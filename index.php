@@ -13,7 +13,7 @@
 
         <div class="live---clock--container">
 
-            <div class="live---clock">00:00:00</br> GMT</div>
+            <div class="live---clock" data-tooltip="Featuring these DOM elements:">00:00:00</br> GMT</div>
 
         </div>
 
