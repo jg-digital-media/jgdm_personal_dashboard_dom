@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 25-09-2025 - 16:39
+Last Updated: 26-09-2025 - 15:22
 
 ## Sections
 
@@ -9,14 +9,15 @@ Last Updated: 25-09-2025 - 16:39
 
 ## Tasks 
 
-+ Tasks `5` Completed `0`
++ Tasks `8` Completed `1`
 
 + `TODO:` - Finish Wireframe - concept for app 
 + `TODO:` - Implement Daily Quote Feature
 + `TODO:` - Implement Theme Switcher (standard plus at least 2 other modes)
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app
 + `TODO:` - "Featuring" - tags to appear as tooltips
-  + `TODO:` -  `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
+  + `COMPLETED:` -  `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
+  + `TODO:` - extend style for multiple tooltips
   + `TODO:` - `theme---selector--container` - tooltip text - `"Attribute/class manipulation (classList.add/remove/toggle)"`
 .innerText or .textContent
 <!-- `COMPLETED: 00-00-0000` -->
@@ -24,6 +25,8 @@ Last Updated: 25-09-2025 - 16:39
 [Back to Top](#jgdm_personal_dashboard_dom)
 
 ## Development
+
++ `26-09-2025` - Added first tooltip to the live clock app `.live---clock`. We did have some hover effect on the live clock element.
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
