@@ -11,7 +11,11 @@
 
     <header>
 
-        <div class="live---clock">00:00:00 GMT</div>
+        <div class="live---clock--container">
+
+            <div class="live---clock">00:00:00</br> GMT</div>
+
+        </div>
 
         <div class="website---heading">
 
