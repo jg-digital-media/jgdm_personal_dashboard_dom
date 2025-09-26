@@ -47,5 +47,7 @@
     </footer>
 
     <a href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom" target="_blank">Github Repo</a>
+
+    <script type="text/javascript" src="app.js"></script>
 </body>
 </html>
