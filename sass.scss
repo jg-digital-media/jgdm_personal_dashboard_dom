@@ -115,8 +115,7 @@ header {
             height: 20px;
             width: 20px;
             margin: 5px;
-
-            
+                     
 
         }
 
@@ -124,18 +123,51 @@ header {
 
             background: $theme---option--one;
             border: solid $theme---option--border-one 1px;
+            
+
+            transition: transform .2s, background .4s;
+            cursor: pointer;
+
+            &:hover {
+
+                transform: scale(1.14);
+                background: lighten($theme---option--one, 10%);
+            }
+            
+
         }
 
         #theme-two {
 
             background: $theme---option--two;
             border: solid $theme---option--border-two 1px;
+
+            transition: transform .2s, background .4s;
+            cursor: pointer;
+
+            &:hover {
+
+                transform: scale(1.14);
+                background: lighten($theme---option--two, 10%);
+            }
+
         }
 
         #theme-three {
 
             background: $theme---option--three;
             border: solid $theme---option--border-three 1px;
+
+
+            transition: transform .2s, background .4s;
+            cursor: pointer;
+
+            &:hover {
+
+                transform: scale(1.14);
+                background: lighten($theme---option--three, 10%);
+            }
+                  
         }
 
     }
