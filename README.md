@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 06-10-2025 - 16:16
+Last Updated: 06-10-2025 - 16:19
 
 ## Sections
 
@@ -33,7 +33,7 @@ Last Updated: 06-10-2025 - 16:16
 
 + `26-09-2025` - Added first tooltip to the live clock app `.live---clock`. We did have some hover effect on the live clock element.
 
-+ `06-10-2025` - Learned more about the system needed to create multiiple tooltips above interactive elements and how to use them.
++ `06-10-2025` - Learned more about the system needed to create multiiple tooltips above interactive elements and how to use them. Spent a lot of time as well working on its responsiveness; mainly the task of preventing the tooltip from overflowing the screen and causing a horizontal scroll.  The top banner is now in good shape.
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
