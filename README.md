@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 26-09-2025 - 12:40
+Last Updated: 06-10-2025 - 16:16
 
 ## Sections
 
@@ -9,17 +9,21 @@ Last Updated: 26-09-2025 - 12:40
 
 ## Tasks 
 
-+ Tasks `9` Completed `2`
++ Tasks `13` Completed `3`
 
 + `TODO:` - Finish Wireframe - concept for app 
-+ `TODO:` - Implement Daily Quote Feature
-+ `TODO:` - Implement Theme Switcher (standard plus at least 2 other modes)
-+ `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app
-+ `TODO:` - "Featuring" - tags to appear as tooltips
-  + `COMPLETED:` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
-  + `COMPLETED:` - extend styles for multiple tooltips
++ `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
++ `TODO:` - Update Font Stack
++ `TODO:` - "Featuring DOM Elements" - Text to appear as hoverable tooltips.
+  + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
+  + `COMPLETED: 06-10-2025` - extend styles for use of multiple tooltips
+  + `TODO:` - Move tooltips away from CSS content property.  Need more control of posititioning. May be better if we use a JS Object to store these
   + `TODO:` - modify data-tooltip attribute text for existing tooltips
   + `TODO:` - `theme---selector--container` - tooltip text - `"Attribute/class manipulation (classList.add/remove/toggle)"`
++ `TODO:` - Implement Live Clock Feature
++ `TODO:` - Implement Theme Switcher (standard plus at least 2 other modes)
++ `TODO:` - Implement Daily Quote Feature
++ `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 <!-- .innerText or .textContent -->
 <!-- `COMPLETED: 00-00-0000` -->
 
@@ -156,6 +160,6 @@ Last Updated: 26-09-2025 - 12:40
 
 ## License
 
-You are free to use this apo as you wish. Attribution would be welcome. A shout out on social media and a link to my website would be appreciated.  https://www.jonniegrieve.co.uk 
+You are free to use this app as you wish. Attribution would be welcome. A shout out on social media and a link to my website would be appreciated.  https://www.jonniegrieve.co.uk 
 
 [Back to Top](#jgdm_personal_dashboard_dom)
