@@ -1,32 +1,13 @@
 @import "assets/sass/head";
 
+@import "assets/sass/config/config";
+
 @import "assets/sass/main";
 
 // extend sass partials
 @import "assets/sass/extends/tooltips";
 
-// config files
 
-$bg---header: #000000;
-$bg---body: #fff;
-
-$col---primary: #000;
-$col---secondary: #fff;
-
-$url---col--primary: #ffd53e;
-$url---col--primary-hover: white;
-$url---secondary: #fff;
-
-$font---main: Arial, Helvetica, sans-serif;
-
-
-// theme option selector colours
-$theme---option--one: #ff3c3c;
-$theme---option--two: #a6ff58;
-$theme---option--three: #2a83ff;
-$theme---option--border-one: red;
-$theme---option--border-two: green;
-$theme---option--border-three: blue;
 
 body {
 
@@ -45,7 +26,9 @@ header {
 
     div {
     
+        /* width: 21%; */
         width: 33%;
+        margin:  0 auto;
     }
 
     .live---clock--container {
@@ -61,7 +44,12 @@ header {
             position: relative;
 
             // live click tooltip extend
-            @extend %tooltip;            
+            @extend %tooltip;       
+            
+            &::after {
+
+                content: attr(data-tooltip);
+            }
         }
 
     }
@@ -94,11 +82,27 @@ header {
 
     .theme---selector--container {
 
-        text-align: right;
+        /* text-align: right; */
         padding-right: 4px;
        
         h3 {
 
+            text-align: center;
+
+        }
+
+        .theme---selector--inner {
+
+            width: 120px;
+
+            @extend %tooltip;
+
+            &::after {
+
+                /* position: relative; */
+                top: 60px;
+                content: attr(data-tooltip);
+            }
 
         }
 
@@ -111,6 +115,8 @@ header {
             height: 20px;
             width: 20px;
             margin: 5px;
+
+            
 
         }
 
