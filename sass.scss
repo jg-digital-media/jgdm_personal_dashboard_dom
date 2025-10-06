@@ -13,6 +13,7 @@ body {
 
     background: $bg---body;
     font-family: $font---main;
+    font-size: $font---size--medium;
 }
 
 
@@ -28,19 +29,22 @@ header {
     
         /* width: 21%; */
         width: 33%;
-        margin:  0 auto;
+        margin: 0 auto;
+        padding: 5px;
     }
 
     .live---clock--container {
 
         padding: 5px;
-        text-align: left;
+        text-align: center;
         position: relative;
 
         .live---clock {
 
             font-weight: bold;
             position: relative;
+            font-size: $font---size--large;
+            font-size: 14pt;
 
             // live click tooltip extend
             @extend %tooltip;       
@@ -48,6 +52,11 @@ header {
             &::after {
 
                 content: attr(data-tooltip);
+                position: relative;
+                top: 21px;
+                display: block;
+                width: 300px;
+                padding: 4px;
             }
         }
 
@@ -58,12 +67,18 @@ header {
         h1 {
 
             text-align: center;
-            font-size: 20pt;
+            font-size: $font---size--large;
+
+            @media (max-width: $breakpoint---md) {
+
+                font-size: 4vw;
+
+            }
 
             a {
 
                 color: $url---col--primary;
-                font-size: 10px;
+                font-size: $font---size--small;
                 vertical-align: middle;
 
                 transition: color .3s;
@@ -83,24 +98,57 @@ header {
 
         /* text-align: right; */
         padding-right: 4px;
+        padding: 5px;
        
-        h3 {
+        h2 {
 
             text-align: center;
+            font-size: $font---size--h2;
 
         }
 
         .theme---selector--inner {
 
             width: 120px;
+            margin: 0 auto;
 
             @extend %tooltip;
 
             &::after {
-
-                /* position: relative; */
-                top: 60px;
                 content: attr(data-tooltip);
+                top: 43px;
+                bottom: auto;
+                
+                // Responsive positioning to prevent overflow
+                @media (max-width: $breakpoint---lg) {
+                    max-width: 140px;
+                    width: 100%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    right: auto;
+                }
+                
+                @media (max-width: $breakpoint---md) {
+                    max-width: 100px;
+                    top: 40px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                
+                @media (max-width: $breakpoint---xs) {
+                    /* max-width: 80px; */
+                    top: 40px;
+                    font-size: 8px;
+                }
+            }
+
+            &::before {
+
+                top: 36px;
+                bottom: auto;
+                transform: translateX(-50%) rotate(180deg);
+                border-top-color: transparent;
+                border-bottom-color: rgba(0, 0, 0, 0.8);
             }
 
         }
@@ -111,9 +159,9 @@ header {
             vertical-align: top;
             /* border: solid 1px #444444; */
             border-radius: 50%;
-            height: 20px;
-            width: 20px;
-            margin: 5px;
+            height: 15px;
+            width: 15px;
+            margin: 3px;
                      
 
         }
@@ -179,6 +227,9 @@ main {
 
         text-align: center;
         margin: 15px auto;
+        display: block;
+        width: 320px;
+        font-size: 13px;
 
         .motivational---quote--heading {
 
@@ -197,6 +248,8 @@ main {
 
 
 footer {
+
+    font-size: $font---size--small;
 
     p {
 
