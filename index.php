@@ -28,7 +28,7 @@
 
             <h2>Theme Options</h2>
 
-            <div class="theme---selector--inner" data-tooltip="Select Theme Option: Featuring these DOM elements:">
+            <div class="theme---selector--inner" data-tooltip="Select Theme Option: Attribute/class manipulation (classList.add/remove/toggle">
                 <div class="theme---selector" id="theme-one">&nbsp;</div>
                 <div class="theme---selector" id="theme-two">&nbsp;</div>
                 <div class="theme---selector" id="theme-three">&nbsp;</div>
