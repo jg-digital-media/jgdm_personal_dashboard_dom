@@ -13,7 +13,7 @@
 
         <div class="live---clock--container">
 
-            <div class="live---clock" data-tooltip="Featuring these DOM elements:">00:00:00</br> GMT</div>
+            <div class="live---clock" data-tooltip="Featuring these DOM elements:">00:00:00<!-- </br> --> GMT</div>
 
         </div>
 
@@ -26,7 +26,7 @@
 
         <div class="theme---selector--container">
 
-            <h3>Theme Options</h3>
+            <h2>Theme Options</h2>
 
             <div class="theme---selector--inner" data-tooltip="Select Theme Option: Featuring these DOM elements:">
                 <div class="theme---selector" id="theme-one">&nbsp;</div>
@@ -42,7 +42,7 @@
 
         <section class="motivational---quote--container"> 
 
-            <h2 class="motivational---quote--heading">Motivational Quote</h2>
+            <h3 class="motivational---quote--heading">Motivational Quote</h3>
 
             <p class="motivational---quote">&quot;The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.&quot;</p>
 
