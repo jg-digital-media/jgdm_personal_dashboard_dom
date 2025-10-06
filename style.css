@@ -1,6 +1,6 @@
 /*
 
-    Last Update: 26-09-2025 - 14:36
+    Last Update: 06-10-2025 - 16:11
 */
 * {
   padding: 0;
@@ -8,55 +8,74 @@
 }
 
 /* main.scss */
-body {
-  background: #fff;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-header {
-  background: #000000;
-  display: flex;
-  width: 100%;
-  color: #fff;
-  /* margin: 5px 0 0 0; */
-}
-header div {
-  width: 33%;
-}
-header .live---clock--container {
-  padding: 5px;
-  text-align: left;
+/* Tooltips */
+header .theme---selector--container .theme---selector--inner, header .live---clock--container .live---clock {
   position: relative;
-}
-header .live---clock--container .live---clock {
-  font-weight: bold;
   cursor: help;
-  position: relative;
+  padding: 0;
+  /* margin: 0; */
 }
-header .live---clock--container .live---clock::after {
+header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
   content: attr(data-tooltip);
   position: absolute;
-  /* bottom: 0%; */
-  left: 80%;
+  bottom: 100%;
+  left: 45%;
   transform: translateX(-50%);
   background: rgba(0, 0, 0, 0.8);
   color: #f78d8d;
+  border: solid 1px gray;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   padding: 9px 8px;
   border-radius: 4px;
   font-size: 14px;
   font-weight: normal;
-  white-space: nowrap;
+  /* white-space: nowrap; */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s, visibility 0.2s;
   z-index: 1000;
   pointer-events: none;
+  /* max-width: 200px; */
 }
-header .live---clock--container .live---clock:hover::after {
+@media (max-width: 992px) {
+  header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+    max-width: 150px;
+    font-size: 12px;
+    padding: 6px;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+}
+@media (max-width: 768px) {
+  header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+    max-width: 120px;
+    font-size: 10px;
+    padding: 4px 6px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  header .theme---selector--container .theme---selector--inner::after[data-position=left], header .live---clock--container .live---clock::after[data-position=left] {
+    left: 0;
+    transform: translateX(0);
+  }
+  header .theme---selector--container .theme---selector--inner::after[data-position=right], header .live---clock--container .live---clock::after[data-position=right] {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+  }
+}
+@media (max-width: 480px) {
+  header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+    max-width: 100px;
+    font-size: 9px;
+    padding: 3px 4px;
+  }
+}
+header .theme---selector--container .theme---selector--inner:hover::after, header .live---clock--container .live---clock:hover::after {
   opacity: 1;
   visibility: visible;
 }
-header .live---clock--container .live---clock::before {
+header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
   content: "";
   position: absolute;
   bottom: 100%;
@@ -70,13 +89,67 @@ header .live---clock--container .live---clock::before {
   z-index: 1000;
   pointer-events: none;
 }
-header .live---clock--container .live---clock:hover::before {
+@media (max-width: 768px) {
+  header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
+    border-width: 3px;
+  }
+}
+@media (max-width: 480px) {
+  header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
+    border-width: 2px;
+  }
+}
+header .theme---selector--container .theme---selector--inner:hover::before, header .live---clock--container .live---clock:hover::before {
   opacity: 1;
   visibility: visible;
+}
+
+body {
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+header {
+  background: #000000;
+  display: flex;
+  width: 100%;
+  color: #fff;
+  /* margin: 5px 0 0 0; */
+}
+header div {
+  /* width: 21%; */
+  width: 33%;
+  margin: 0 auto;
+  padding: 5px;
+}
+header .live---clock--container {
+  padding: 5px;
+  text-align: center;
+  position: relative;
+}
+header .live---clock--container .live---clock {
+  font-weight: bold;
+  position: relative;
+  font-size: 20pt;
+  font-size: 14pt;
+}
+header .live---clock--container .live---clock::after {
+  content: attr(data-tooltip);
+  position: relative;
+  top: 21px;
+  display: block;
+  /* width: 300px; */
+  padding: 4px;
 }
 header .website---heading h1 {
   text-align: center;
   font-size: 20pt;
+}
+@media (max-width: 768px) {
+  header .website---heading h1 {
+    font-size: 4vw;
+  }
 }
 header .website---heading h1 a {
   color: #ffd53e;
@@ -88,31 +161,111 @@ header .website---heading h1 a:hover {
   color: white;
 }
 header .theme---selector--container {
-  text-align: right;
+  /* text-align: right; */
   padding-right: 4px;
+  padding: 5px;
+}
+header .theme---selector--container h2 {
+  text-align: center;
+  font-size: 20px;
+}
+header .theme---selector--container .theme---selector--inner {
+  width: 120px;
+  margin: 0 auto;
+}
+header .theme---selector--container .theme---selector--inner::after {
+  content: attr(data-tooltip);
+  top: 43px;
+  bottom: auto;
+}
+@media (max-width: 992px) {
+  header .theme---selector--container .theme---selector--inner::after {
+    max-width: 140px;
+    width: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+}
+@media (max-width: 768px) {
+  header .theme---selector--container .theme---selector--inner::after {
+    max-width: 100px;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 480px) {
+  header .theme---selector--container .theme---selector--inner::after {
+    /* max-width: 80px; */
+    top: 40px;
+    font-size: 8px;
+  }
+}
+header .theme---selector--container .theme---selector--inner::before {
+  top: 36px;
+  bottom: auto;
+  transform: translateX(-50%) rotate(180deg);
+  border-top-color: transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.8);
 }
 header .theme---selector--container .theme---selector {
   display: inline-block;
   vertical-align: top;
-  border: solid 1px #444444;
+  /* border: solid 1px #444444; */
   border-radius: 50%;
-  height: 20px;
-  width: 20px;
-  margin: 5px;
+  height: 15px;
+  width: 15px;
+  margin: 3px;
 }
 header .theme---selector--container #theme-one {
   background: #ff3c3c;
   border: solid red 1px;
+  transition: transform 0.2s, background 0.4s;
+  cursor: pointer;
+}
+header .theme---selector--container #theme-one:hover {
+  transform: scale(1.14);
+  background: #ff6f6f;
 }
 header .theme---selector--container #theme-two {
   background: #a6ff58;
   border: solid green 1px;
+  transition: transform 0.2s, background 0.4s;
+  cursor: pointer;
+}
+header .theme---selector--container #theme-two:hover {
+  transform: scale(1.14);
+  background: #c1ff8b;
 }
 header .theme---selector--container #theme-three {
   background: #2a83ff;
   border: solid blue 1px;
+  transition: transform 0.2s, background 0.4s;
+  cursor: pointer;
+}
+header .theme---selector--container #theme-three:hover {
+  transform: scale(1.14);
+  background: #5da1ff;
 }
 
+main .motivational---quote--container {
+  text-align: center;
+  margin: 15px auto;
+  display: block;
+  width: 320px;
+  font-size: 13px;
+}
+main .motivational---quote--container .motivational---quote--heading {
+  content: "Motivational Quote";
+}
+main .motivational---quote--container .motivational---quote {
+  font-style: italic;
+}
+
+footer {
+  font-size: 10px;
+}
 footer p {
   text-align: center;
 }
