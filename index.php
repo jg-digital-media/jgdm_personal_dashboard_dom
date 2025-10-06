@@ -28,9 +28,12 @@
 
             <h3>Theme Options</h3>
 
-            <div class="theme---selector" id="theme-one">&nbsp;</div>
-            <div class="theme---selector" id="theme-two">&nbsp;</div>
-            <div class="theme---selector" id="theme-three">&nbsp;</div>
+            <div class="theme---selector--inner" data-tooltip="Select Theme Option: Featuring these DOM elements:">
+                <div class="theme---selector" id="theme-one">&nbsp;</div>
+                <div class="theme---selector" id="theme-two">&nbsp;</div>
+                <div class="theme---selector" id="theme-three">&nbsp;</div>
+            </div>
+
         </div>
 
     </header>
