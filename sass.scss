@@ -2,6 +2,9 @@
 
 @import "assets/sass/main";
 
+// extend sass partials
+@import "assets/sass/extends/tooltips";
+
 // config files
 
 $bg---header: #000000;
@@ -21,6 +24,9 @@ $font---main: Arial, Helvetica, sans-serif;
 $theme---option--one: #ff3c3c;
 $theme---option--two: #a6ff58;
 $theme---option--three: #2a83ff;
+$theme---option--border-one: red;
+$theme---option--border-two: green;
+$theme---option--border-three: blue;
 
 body {
 
@@ -54,51 +60,8 @@ header {
             cursor: help;
             position: relative;
 
-            &::after {
-                content: attr(data-tooltip);
-                position: absolute;
-                /* bottom: 0%; */
-                left: 80%;
-                transform: translateX(-50%);
-                background: rgba(0, 0, 0, 0.8);
-                color: #f78d8d;
-                padding: 9px 8px;
-                border-radius: 4px;
-                font-size: 14px;
-                font-weight: normal;
-                white-space: nowrap;
-                opacity: 0;
-                visibility: hidden;
-                transition: opacity 0.2s, visibility 0.2s;
-                z-index: 1000;
-                pointer-events: none;
-            }
-
-            &:hover::after {
-                opacity: 1;
-                visibility: visible;
-            }
-
-            // Small arrow pointing down to the clock
-            &::before {
-                content: '';
-                position: absolute;
-                bottom: 100%;
-                left: 50%;
-                transform: translateX(-50%) translateY(1px);
-                border: 4px solid transparent;
-                border-top-color: rgba(0, 0, 0, 0.8);
-                opacity: 0;
-                visibility: hidden;
-                transition: opacity 0.2s, visibility 0.2s;
-                z-index: 1000;
-                pointer-events: none;
-            }
-
-            &:hover::before {
-                opacity: 1;
-                visibility: visible;
-            }
+            // live click tooltip extend
+            @extend %tooltip;            
         }
 
     }
@@ -143,7 +106,7 @@ header {
 
             display: inline-block;
             vertical-align: top;
-            border: solid 1px #444444;
+            /* border: solid 1px #444444; */
             border-radius: 50%;
             height: 20px;
             width: 20px;
@@ -154,19 +117,19 @@ header {
         #theme-one {
 
             background: $theme---option--one;
-            border: solid red 1px;
+            border: solid $theme---option--border-one 1px;
         }
 
         #theme-two {
 
             background: $theme---option--two;
-            border: solid green 1px;
+            border: solid $theme---option--border-two 1px;
         }
 
         #theme-three {
 
             background: $theme---option--three;
-            border: solid blue 1px;
+            border: solid $theme---option--border-three 1px;
         }
 
     }
