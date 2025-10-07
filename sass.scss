@@ -239,6 +239,50 @@ main {
         .motivational---quote {
 
             font-style: italic;
+            margin: 4px auto;
+            text-align: center;
+
+        }
+
+    }
+
+    .welcome---message--container {
+
+        margin: 2px auto;
+
+        div {
+
+            display: inline;
+        }
+
+
+        #morning---or--evening {
+
+            font-weight: bold;
+        }
+
+        // if content editable element
+        .welcome---message--editable {
+
+                content: "welcome---message--editable";
+        }
+
+        // if welcome message input
+        .welcome---message--input {
+
+            content: "welcome---message--editable";
+            padding: 2px;
+
+            &:focus {
+
+                outline: none;
+                border: auto;
+            }
+
+            &:hover {
+
+                border: solid 2px #c24141;
+            }
 
         }
 

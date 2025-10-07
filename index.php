@@ -48,6 +48,15 @@
 
         </section>
 
+        <section class="welcome---message--container">
+
+            <!-- Good <div id="morning---or--evening">Morning/Evening</div>, 
+            <span class="welcome---message--editable" contenteditable="true" >What do I call you?</span> -->
+            Good <div id="morning---or--evening">Morning/Evening</div>, 
+            <input class="welcome---message--input" contenteditable="true" placeholder="What do we call you?" /></span> 
+
+        </section>
+
     </main>
     
         <p>index.php</p>
