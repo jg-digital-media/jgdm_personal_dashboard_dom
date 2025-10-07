@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 07-10-2025 - 10:56
+Last Updated: 07-10-2025 - 14:10
 
 ## Sections
 
@@ -9,8 +9,16 @@ Last Updated: 07-10-2025 - 10:56
 
 ## Tasks 
 
-### Total: `21` Completed: `3`
+### Total: `29` Completed: `3`
 
++ `TODO:` - Prototype and style Live Clock Feature -
++ `TODO:` - Prototype and style the Theme Switcher (standard plus at least 2 other modes)
++ `TODO:` - Prototype and style the Daily Quote Feature
++ `TODO:` - Prototype and style the Welcome Message Feature - welcome message element
++ `TODO:` - Prototype and style the Main Dashboard TODO List Feature
++ `TODO:` - Prototype and style the Main Dashboard Note Writing Feature
++ `TODO:` - Prototype and style the Main Dashboard Shortcut Links Feature
++ `TODO:` - Prototype and style the Fetch Weather Details Feature
 + `TODO:` - Finish Wireframe - concept for app 
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
 + `TODO:` - Update Font Stack
@@ -18,15 +26,16 @@ Last Updated: 07-10-2025 - 10:56
   + `TODO:` - Move tooltips away from CSS content property.  Need more control of positioning. May be better if we use a JS Object to store these
   + `TODO:` - modify data-tooltip attribute text for existing tooltips
   + `TODO:` - `theme---selector--container` - tooltip text - `"Attribute/class manipulation (classList.add/remove/toggle)"`
+
 + `TODO:` - Implement Live Clock Feature
 + `TODO:` - Implement Theme Switcher (standard plus at least 2 other modes)
 + `TODO:` - Implement Daily Quote Feature
-+ `TODO:` - Implement Welcome Message Feature - welcome message element - 
++ `TODO:` - Implement Welcome Message Feature - welcome message element 
   + `TODO:` - "hello.. what do I call you?" make content content editable
-+ `TODO:` - Implement Main Dashboard TODO List Feature -
-+ `TODO:` - Implement Main Dashboard Note Writing Feature -
-+ `TODO:` - Implement Main Dashboard Shortcut Links Feature -
-+ `TODO:` - Implement Fetch Weather Details Feature -
++ `TODO:` - Implement Main Dashboard TODO List Feature
++ `TODO:` - Implement Main Dashboard Note Writing Feature
++ `TODO:` - Implement Main Dashboard Shortcut Links Feature
++ `TODO:` - Implement Fetch Weather Details Feature
 + `TODO:` - Implement Footer
 + `TODO:` - Implement sticky footer banner at bottom of page - for adding and closing sections - resetting defaults.
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
