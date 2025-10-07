@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 06-10-2025 - 16:19
+Last Updated: 07-10-2025 - 10:56
 
 ## Sections
 
@@ -9,23 +9,31 @@ Last Updated: 06-10-2025 - 16:19
 
 ## Tasks 
 
-+ Tasks `13` Completed `3`
+### Total: `21` Completed: `3`
 
 + `TODO:` - Finish Wireframe - concept for app 
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
 + `TODO:` - Update Font Stack
 + `TODO:` - "Featuring DOM Elements" - Text to appear as hoverable tooltips.
-  + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
-  + `COMPLETED: 06-10-2025` - extend styles for use of multiple tooltips
-  + `TODO:` - Move tooltips away from CSS content property.  Need more control of posititioning. May be better if we use a JS Object to store these
+  + `TODO:` - Move tooltips away from CSS content property.  Need more control of positioning. May be better if we use a JS Object to store these
   + `TODO:` - modify data-tooltip attribute text for existing tooltips
   + `TODO:` - `theme---selector--container` - tooltip text - `"Attribute/class manipulation (classList.add/remove/toggle)"`
 + `TODO:` - Implement Live Clock Feature
 + `TODO:` - Implement Theme Switcher (standard plus at least 2 other modes)
 + `TODO:` - Implement Daily Quote Feature
++ `TODO:` - Implement Welcome Message Feature - welcome message element - 
+  + `TODO:` - "hello.. what do I call you?" make content content editable
++ `TODO:` - Implement Main Dashboard TODO List Feature -
++ `TODO:` - Implement Main Dashboard Note Writing Feature -
++ `TODO:` - Implement Main Dashboard Shortcut Links Feature -
++ `TODO:` - Implement Fetch Weather Details Feature -
++ `TODO:` - Implement Footer
++ `TODO:` - Implement sticky footer banner at bottom of page - for adding and closing sections - resetting defaults.
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
++ `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
++ `COMPLETED: 06-10-2025` - extend styles for use of multiple tooltips
+
 <!-- .innerText or .textContent -->
-<!-- `COMPLETED: 00-00-0000` -->
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
