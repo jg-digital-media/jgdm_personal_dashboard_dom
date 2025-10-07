@@ -57,6 +57,79 @@
 
         </section>
 
+        <section class="main---dashboard--container">
+
+            <article class="main---dashboard--todo">
+
+                <div class="dashboard---section">
+
+                    <div class="dashboard---section--buttons">
+                    
+                        <h3 class="dashboard---section--todo">To Do</h3>          
+
+                        <span class="section---button--collapse" id="collapse">&lowbar;</span>
+                        <span class="section---button--close" id="close">&times;</span>
+
+                    </div>
+                
+                <div>
+
+                <div class="dashboard---section--content">
+
+                    <div> <p>Content goes here</p> </div>
+
+                </div>
+
+            </article>
+
+            <article class="main---dashboard--notes">
+
+                <div class="dashboard---section">
+
+                    <div class="dashboard---section--buttons">
+                    
+                        <h3 class="dashboard---section--todo">Notes</h3>          
+
+                        <span class="section---button--collapse" id="collapse">&lowbar;</span>
+                        <span class="section---button--close" id="close">&times;</span>
+
+                    </div>
+                
+                </div>    
+
+                <div class="dashboard---section--content">
+
+                    <div> <p>Content goes here</p> </div>
+
+                </div>
+              
+            </article>
+
+            <article class="main---dashboard--shortcuts">          
+
+                <div class="dashboard---section">
+
+                    <div class="dashboard---section--buttons">
+
+                        <h3 class="dashboard---section--todo">Shortcut Links</h3>          
+
+                        <span class="section---button--collapse" id="collapse">&lowbar;</span>
+                        <span class="section---button--close" id="close">&times;</span>
+
+                    </div>
+
+                </div>  
+
+                <div class="dashboard---section--content">
+
+                    <div> <p>Content goes here</p> </div>
+
+                </div>
+              
+            </article>
+
+        </section>
+
     </main>
     
         <p>index.php</p>

@@ -288,6 +288,122 @@ main {
 
     }
 
+    .main---dashboard--container {
+
+        text-align: center;
+        
+        article {
+
+            display: inline-block;
+            vertical-align: top;
+            width: 32%;
+            margin: 0 auto;
+            min-height: 65px;
+            text-align: left;
+            background: #ffe79d;
+            border-radius: 3px;
+
+            transition: background .4s;
+
+            &:hover {
+
+                background: lighten(#ffe79d, 4%);
+            }
+
+            @media (max-width: $breakpoint---md) {
+
+                width: 65%;
+                margin: 12px auto;
+            }
+
+            .dashboard---section {
+
+                .dashboard---section--buttons {
+
+                    display: flex;
+                    text-align: right;
+                    align-items: flex-end;
+                    justify-content: flex-end;
+                    padding: 0 12px;
+
+                    h3.dashboard---section--todo {
+
+                        margin: 0 12px;
+                        font-size: 17pt;
+                    }
+
+                    .section---button--collapse {
+
+                        font-weight: bold;
+                        margin: 0 8pt;
+                        display: block;
+                    }
+
+                    .section---button--close {
+
+                        font-weight: bold;
+                        margin:  0 5pt;
+                        display: block;
+                    }
+
+                    h3 {
+
+                        margin: 0 12px;
+                        font-size: 17pt;
+
+                    }
+
+                    .section---button--collapse,
+                    .section---button--close {
+
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+
+        // dashboard sections - unique content
+        
+
+        .main---dashboard--todo {
+
+            border: solid 1px red;
+
+            div.dashboard---section--buttons {
+
+            }
+
+            .dashboard---section--content {
+
+                /* color: #57d007; */
+            }
+            
+        }
+
+        .main---dashboard--notes {
+
+            border: solid 1px yellow;
+
+            .dashboard---section--content {
+
+                /* color: red; */
+            }
+            
+        }
+
+        .main---dashboard--shortcuts {
+
+            border: solid 1px blue;
+
+            .dashboard---section--content {
+
+                /* color: orange; */
+            }
+            
+        }
+
+    }
+
 }
 
 
