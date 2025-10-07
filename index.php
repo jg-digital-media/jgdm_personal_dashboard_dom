@@ -126,7 +126,55 @@
 
                 </div>
               
-            </article>
+            </article> 
+
+        </section>
+
+        <section class="section---fetch--weather">
+
+            <h3>Fetch Weather Details</h3>
+
+            <div class="section---fetch--weather-container">
+
+                <div class="section---fetch--weather-input">
+                    <input class="section---fetch--weather-input" type="text" placeholder="Enter City Name" />
+                    <button class="section---fetch--weather-button">Fetch</button>
+                </div>
+
+                <div class="section---fetch--weather--output">
+                    
+                    <p class="section---fetch--weather--output--heading">Weather Details</p>
+
+                    <div class="section---fetch--weather--output-content">
+                        
+                        <div class="day---forecast">
+                            <h4>Mon</h4>
+                            <img src="#" alt="title"/>Content goes here</p>
+                            <div>Sunny</div><div>26</div><div>°C</div>
+                        </div>
+                        <div class="day---forecast">
+                            <h4>Tuesday</h4>
+                            <img src="#" alt="title"/>Content goes here</p>
+                            <div>Sunny</div><div>26</div><div>°C</div>
+                        </div>
+                        <div class="day---forecast">
+                            <h4>Wed</h4>
+                            <img src="#" alt="title"/>Content goes here</p>
+                            <div>Sunny</div><div>26</div><div>°C</div>
+                        </div>
+                        <div class="day---forecast">
+                            <h4>Thu</h4>
+                            <img src="#" alt="title"/>Content goes here</p>
+                            <div>Sunny</div><div>26</div><div>°C</div>
+                        </div>
+                        <div class="day---forecast">
+                            <h4>Fri</h4>
+                            <img src="#" alt="title"/>Content goes here</p>
+                            <div>Sunny</div><div>26</div><div>°C</div>
+                        </div>
+
+                    </div>
+                </div>  
 
         </section>
 
