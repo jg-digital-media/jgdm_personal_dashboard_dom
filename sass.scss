@@ -254,6 +254,7 @@ main {
         margin: 25px 18px;
         height: 15px;
 
+
         @media (max-width: $breakpoint---md) {
 
             text-align: center;
@@ -306,7 +307,9 @@ main {
             }
 
         }
-
+       
+        
+        @extend %tooltip;
     }
 
     .main---dashboard--container {
