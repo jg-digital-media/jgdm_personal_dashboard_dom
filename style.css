@@ -1,6 +1,6 @@
 /*
 
-    Last Update: 07-10-2025 - 14:09
+    Last Update: 08-10-2025 - 17:12
 */
 * {
   padding: 0;
@@ -9,13 +9,13 @@
 
 /* main.scss */
 /* Tooltips */
-header .theme---selector--container .theme---selector--inner, header .live---clock--container .live---clock {
+main .welcome---message--container, header .theme---selector--container .theme---selector--inner, header .live---clock--container .live---clock {
   position: relative;
   cursor: help;
   padding: 0;
   /* margin: 0; */
 }
-header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
   content: attr(data-tooltip);
   position: absolute;
   bottom: 100%;
@@ -38,7 +38,7 @@ header .theme---selector--container .theme---selector--inner::after, header .liv
   /* max-width: 200px; */
 }
 @media (max-width: 992px) {
-  header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+  main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
     max-width: 150px;
     font-size: 12px;
     padding: 6px;
@@ -47,40 +47,40 @@ header .theme---selector--container .theme---selector--inner::after, header .liv
   }
 }
 @media (max-width: 768px) {
-  header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+  main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
     max-width: 120px;
     font-size: 10px;
     padding: 4px 6px;
     left: 50%;
     transform: translateX(-50%);
   }
-  header .theme---selector--container .theme---selector--inner::after[data-position=left], header .live---clock--container .live---clock::after[data-position=left] {
+  main .welcome---message--container::after[data-position=left], header .theme---selector--container .theme---selector--inner::after[data-position=left], header .live---clock--container .live---clock::after[data-position=left] {
     left: 0;
     transform: translateX(0);
   }
-  header .theme---selector--container .theme---selector--inner::after[data-position=right], header .live---clock--container .live---clock::after[data-position=right] {
+  main .welcome---message--container::after[data-position=right], header .theme---selector--container .theme---selector--inner::after[data-position=right], header .live---clock--container .live---clock::after[data-position=right] {
     left: auto;
     right: 0;
     transform: translateX(0);
   }
 }
 @media (max-width: 480px) {
-  header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+  main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
     max-width: 100px;
     font-size: 9px;
     padding: 3px 4px;
   }
 }
-header .theme---selector--container .theme---selector--inner:hover::after, header .live---clock--container .live---clock:hover::after {
+main .welcome---message--container:hover::after, header .theme---selector--container .theme---selector--inner:hover::after, header .live---clock--container .live---clock:hover::after {
   opacity: 1;
   visibility: visible;
 }
-header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
+main .welcome---message--container::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
   content: "";
   position: absolute;
   bottom: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(1px);
+  /* transform: translateX(-50%) translateY(1px); */
   border: 4px solid transparent;
   border-top-color: rgba(0, 0, 0, 0.8);
   opacity: 0;
@@ -88,30 +88,36 @@ header .theme---selector--container .theme---selector--inner::before, header .li
   transition: opacity 0.2s, visibility 0.2s;
   z-index: 1000;
   pointer-events: none;
+  top: 34px;
+  bottom: auto;
+  transform: translateX(-50%) rotate(180deg);
+  border-top-color: transparent;
+  /* border-bottom-color: rgba(0, 0, 0, 0.8); */
+  border-bottom-color: #f78d8d;
 }
 @media (max-width: 768px) {
-  header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
+  main .welcome---message--container::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
     border-width: 3px;
   }
 }
 @media (max-width: 480px) {
-  header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
+  main .welcome---message--container::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
     border-width: 2px;
   }
 }
-header .theme---selector--container .theme---selector--inner:hover::before, header .live---clock--container .live---clock:hover::before {
+main .welcome---message--container:hover::before, header .theme---selector--container .theme---selector--inner:hover::before, header .live---clock--container .live---clock:hover::before {
   opacity: 1;
   visibility: visible;
 }
 
 body {
-  background: #fff;
+  background: #cdcccc;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
 }
 
 header {
-  background: #000000;
+  background: #212121;
   display: flex;
   width: 100%;
   color: #fff;
@@ -172,6 +178,16 @@ header .theme---selector--container h2 {
 header .theme---selector--container .theme---selector--inner {
   width: 120px;
   margin: 0 auto;
+  /* 
+              &::before {
+
+                  top: 36px;
+                  bottom: auto;
+                  transform: translateX(-50%) rotate(180deg);
+                  border-top-color: transparent;
+                  border-bottom-color: rgba(0, 0, 0, 0.8);
+                  border-bottom-color: $tooltip---colour;
+              } */
 }
 header .theme---selector--container .theme---selector--inner::after {
   content: attr(data-tooltip);
@@ -201,13 +217,6 @@ header .theme---selector--container .theme---selector--inner::after {
     top: 40px;
     font-size: 8px;
   }
-}
-header .theme---selector--container .theme---selector--inner::before {
-  top: 36px;
-  bottom: auto;
-  transform: translateX(-50%) rotate(180deg);
-  border-top-color: transparent;
-  border-bottom-color: rgba(0, 0, 0, 0.8);
 }
 header .theme---selector--container .theme---selector {
   display: inline-block;
@@ -261,11 +270,20 @@ main .motivational---quote--container .motivational---quote--heading {
 }
 main .motivational---quote--container .motivational---quote {
   font-style: italic;
-  margin: 4px auto;
+  margin: 10px auto;
   text-align: center;
+  line-height: 1.7;
 }
 main .welcome---message--container {
-  margin: 2px auto;
+  display: block;
+  margin: 25px 18px;
+  height: 15px;
+}
+@media (max-width: 768px) {
+  main .welcome---message--container {
+    text-align: center;
+    margin: 0 auto;
+  }
 }
 main .welcome---message--container div {
   display: inline;
@@ -277,15 +295,26 @@ main .welcome---message--container .welcome---message--editable {
   content: "welcome---message--editable";
 }
 main .welcome---message--container .welcome---message--input {
-  content: "welcome---message--editable";
+  /* content: "welcome---message--editable"; */
   padding: 2px;
+  background: none;
+  /* border-bottom: #c24141 solid 2px; */
+  border: none;
+  outline: none;
+  transition: border-bottom 0.3s;
+  font-size: 16px;
+  color: #cb4f08;
 }
 main .welcome---message--container .welcome---message--input:focus {
   outline: none;
   border: auto;
+  background: #c24141;
+  background: #cdcccc;
+  border-bottom: #c24141 solid 2px;
 }
 main .welcome---message--container .welcome---message--input:hover {
-  border: solid 2px #c24141;
+  /* border: solid 2px #c24141; */
+  border-bottom: #ed5959 solid 2px;
 }
 main .main---dashboard--container {
   text-align: center;
@@ -295,7 +324,7 @@ main .main---dashboard--container article {
   vertical-align: top;
   width: 32%;
   margin: 0 auto;
-  min-height: 65px;
+  min-height: 140px;
   text-align: left;
   background: #ffe79d;
   border-radius: 3px;
