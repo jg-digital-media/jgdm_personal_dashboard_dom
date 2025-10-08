@@ -48,9 +48,9 @@
 
         </section>
 
-        <section class="welcome---message--container">
+        <section class="welcome---message--container" data-tooltip="Welcome message container text">
 
-            <!-- Good <div id="morning---or--evening">Morning/Evening</div>, 
+            <!-- Good <div id="morning---or--evening" data-tooltip="Welcome message container text">Morning/Evening</div>, 
             <span class="welcome---message--editable" contenteditable="true" >What do I call you?</span> -->
             <div id="morning---or--evening">Good Morning/Evening</div>, 
             <input class="welcome---message--input" contenteditable="true" placeholder="What do we call you?" /></span> 
