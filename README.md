@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 07-10-2025 - 14:10
+Last Updated: 08-10-2025 - 17:16
 
 ## Sections
 
@@ -9,9 +9,9 @@ Last Updated: 07-10-2025 - 14:10
 
 ## Tasks 
 
-### Total: `29` Completed: `3`
+### Total: `33` Completed: `4`
 
-+ `TODO:` - Prototype and style Live Clock Feature -
++ `COMPLETED: 08-10-2025` - Prototype and style Live Clock Feature -
 + `TODO:` - Prototype and style the Theme Switcher (standard plus at least 2 other modes)
 + `TODO:` - Prototype and style the Daily Quote Feature
 + `TODO:` - Prototype and style the Welcome Message Feature - welcome message element
@@ -31,13 +31,17 @@ Last Updated: 07-10-2025 - 14:10
 + `TODO:` - Implement Theme Switcher (standard plus at least 2 other modes)
 + `TODO:` - Implement Daily Quote Feature
 + `TODO:` - Implement Welcome Message Feature - welcome message element 
+  + `TODO:` - Finalise input element colour.
+  + `TODO:` - Mouseout event of `` will save the element value to local storage.
   + `TODO:` - "hello.. what do I call you?" make content content editable
+  + `TODO:` - Salutation change based on time of day `.morning---or--evening` (Morning/Afternoon/Evening)
 + `TODO:` - Implement Main Dashboard TODO List Feature
 + `TODO:` - Implement Main Dashboard Note Writing Feature
 + `TODO:` - Implement Main Dashboard Shortcut Links Feature
 + `TODO:` - Implement Fetch Weather Details Feature
 + `TODO:` - Implement Footer
 + `TODO:` - Implement sticky footer banner at bottom of page - for adding and closing sections - resetting defaults.
++ `TODO:` - Add custom vertical scrolling styles for dashboard sections
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
 + `COMPLETED: 06-10-2025` - extend styles for use of multiple tooltips
