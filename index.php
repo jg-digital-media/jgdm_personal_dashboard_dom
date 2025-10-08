@@ -52,7 +52,7 @@
 
             <!-- Good <div id="morning---or--evening">Morning/Evening</div>, 
             <span class="welcome---message--editable" contenteditable="true" >What do I call you?</span> -->
-            Good <div id="morning---or--evening">Morning/Evening</div>, 
+            <div id="morning---or--evening">Good Morning/Evening</div>, 
             <input class="welcome---message--input" contenteditable="true" placeholder="What do we call you?" /></span> 
 
         </section>
@@ -172,6 +172,13 @@
                             <img src="#" alt="title"/>Content goes here</p>
                             <div>Sunny</div><div>26</div><div>°C</div>
                         </div>
+                        <div class="day---forecast">
+                            <h4>Saturday</h4>
+                            <img src="#" alt="title"/>Content goes here</p>
+                            <div>Sunny</div><div>26</div><div>°C</div>
+                        </div>
+
+                        <!-- More days go here -->
 
                     </div>
                 </div>  
