@@ -1,4 +1,4 @@
-console.log('app.js connected - 06-10-2025 - 15:54');
+console.log('app.js connected - 08-10-2025 - 13:35');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -46,12 +46,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (clockElement) {
         // Add subtle hover effect
         clockElement.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.02)';
-            this.style.transition = 'transform 0.2s ease';
+            //this.style.transform = 'scale(1.02)';
+            //this.style.transition = 'transform 0.2s ease';
         });
         
         clockElement.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
+            //this.style.transform = 'scale(1)';
         });
         
         // Optional: Update tooltip text dynamically if needed
