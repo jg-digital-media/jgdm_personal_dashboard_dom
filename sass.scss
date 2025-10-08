@@ -141,7 +141,7 @@ header {
                     font-size: 8px;
                 }
             }
-
+/* 
             &::before {
 
                 top: 36px;
@@ -149,7 +149,8 @@ header {
                 transform: translateX(-50%) rotate(180deg);
                 border-top-color: transparent;
                 border-bottom-color: rgba(0, 0, 0, 0.8);
-            }
+                border-bottom-color: $tooltip---colour;
+            } */
 
         }
 
@@ -239,8 +240,9 @@ main {
         .motivational---quote {
 
             font-style: italic;
-            margin: 4px auto;
+            margin: 10px auto;
             text-align: center;
+            line-height: 1.7;
 
         }
 
@@ -248,7 +250,15 @@ main {
 
     .welcome---message--container {
 
-        margin: 2px auto;
+        display: block;
+        margin: 25px 18px;
+        height: 15px;
+
+        @media (max-width: $breakpoint---md) {
+
+            text-align: center;
+            margin: 0 auto;
+        }
 
         div {
 
@@ -270,18 +280,29 @@ main {
         // if welcome message input
         .welcome---message--input {
 
-            content: "welcome---message--editable";
+            /* content: "welcome---message--editable"; */
             padding: 2px;
+            background: none;
+            /* border-bottom: #c24141 solid 2px; */
+            border: none;
+            outline: none;
+            transition: border-bottom .3s;
+            font-size: 16px;
+            color: #cb4f08;
 
             &:focus {
 
                 outline: none;
                 border: auto;
+                background: #c24141;
+                background: $bg---body;
+                border-bottom: #c24141 solid 2px;
             }
 
             &:hover {
 
-                border: solid 2px #c24141;
+                /* border: solid 2px #c24141; */
+                border-bottom: #ed5959 solid 2px;
             }
 
         }
@@ -298,9 +319,9 @@ main {
             vertical-align: top;
             width: 32%;
             margin: 0 auto;
-            min-height: 65px;
+            min-height: 140px;
             text-align: left;
-            background: #ffe79d;
+            background: $bg---dashboards;
             border-radius: 3px;
 
             transition: background .4s;

@@ -81,7 +81,7 @@
         position: absolute;
         bottom: 100%;
         left: 50%;
-        transform: translateX(-50%) translateY(1px);
+        /* transform: translateX(-50%) translateY(1px); */
         border: 4px solid transparent;
         border-top-color: rgba(0, 0, 0, 0.8);
         opacity: 0;
@@ -89,6 +89,14 @@
         transition: opacity 0.2s, visibility 0.2s;
         z-index: 1000;
         pointer-events: none;
+
+        top: 34px;
+        bottom: auto;
+        transform: translateX(-50%) rotate(180deg);
+        border-top-color: transparent;
+        /* border-bottom-color: rgba(0, 0, 0, 0.8); */
+        border-bottom-color: $tooltip---colour;
+        
         
         @media (max-width: $breakpoint---md) {
 
