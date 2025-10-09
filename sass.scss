@@ -30,7 +30,7 @@ header {
     div {
     
         /* width: 21%; */
-        width: 33%;
+        /* width: 33%; */
         margin: 0 auto;
         padding: 5px;
     }
@@ -161,12 +161,10 @@ header {
             display: inline-block;
             vertical-align: top;
             /* border: solid 1px #444444; */
-            border-radius: 50%;
-            height: 15px;
-            width: 15px;
-            margin: 3px;
-                     
-
+            border-radius: 4px;
+            height: 4px;
+            width: 4px;
+            margin: 3px;   
         }
 
         #theme-one {
@@ -218,6 +216,23 @@ header {
                 background: lighten($theme---option--three, 10%);
             }
                   
+        }
+
+        
+        #theme-four {
+            background: $theme---option--four;
+            border: solid $theme---option--border-four 1px;
+
+
+            transition: transform .2s, background .4s;
+            cursor: pointer;
+
+            &:hover {
+
+                transform: scale(1.14);
+                background: lighten($theme---option--four, 10%);
+            }
+
         }
 
     }

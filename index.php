@@ -32,6 +32,7 @@
                 <div class="theme---selector" id="theme-one">&nbsp;</div>
                 <div class="theme---selector" id="theme-two">&nbsp;</div>
                 <div class="theme---selector" id="theme-three">&nbsp;</div>
+                <div class="theme---selector" id="theme-four">&nbsp;</div>
             </div>
 
         </div>
