@@ -83,9 +83,11 @@
                             <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 1</span></li>
                             <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text text---edit--state">Item 2</span></li>
                             <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 3</span></li>
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text text---edit--state"">Item 4</span></li>
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text text---edit--state"">Item 5</span></li>
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 6</span></li> <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 6</span></li> <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 6</span></li>
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text text---edit--state">Item 4</span></li>
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text text---edit--state">Item 5</span></li>
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 6</span></li> 
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 7</span></li> 
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 8</span></li>
                         </ul>
 
                         <!-- <p>Content goes here</p> -->
@@ -116,9 +118,17 @@
 
                     <div class="notes---dashboard--container"> 
                         
-                        <div>
+                        <div class="note---dashboard--item">
 
-                            <div><span class="icon---close">&times;</span>
+                            <span class="icon---close">&times;</span>
+                            
+                            <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+
+                        </div>
+                        
+                        <div class="note---dashboard--item">
+
+                            <span class="icon---close">&times;</span>
                             
                             <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
 
@@ -126,7 +136,8 @@
 
                     </div>
 
-                    <div> <p>Content goes here</p> </div>
+                    <!-- <div> <p>Content goes here</p> </div> -->
+                    <a href="#" class="dashboard---btn" id="add---todo--item">Add Note ></a>
 
                 </div>
               
@@ -149,9 +160,73 @@
 
                 <div class="dashboard---section--content">
 
-                    <div> <p>Content goes here</p> </div>
+                    
+                  <div class="links---dashboard--container"> 
+                        
+                        <div class="links---dashboard--item">
+
+                            <span class="icon---close">&times;</span>
+                            <span class="icon---edit">&nbsp;</span>
+                            <span class="dashboard---link"><a href="">Link 1</a></span>
+
+                        </div>
+
+                        <div class="links---dashboard--item">
+
+                            <span class="icon---close">&times;</span>
+                            <span class="icon---edit">&nbsp;</span>
+                            <span class="dashboard---link"><a href="">Link 2</a></span>
+
+                        </div>
+
+                        <div class="links---dashboard--item">
+
+                            <span class="icon---close">&times;</span>
+                            <span class="icon---edit">&nbsp;</span>
+                            <span class="dashboard---link"><a href="">Link 3</a></span>
+
+                        </div>
+
+                        <div class="links---dashboard--item">
+
+                            <span class="icon---close">&times;</span>
+                            <span class="icon---edit">&nbsp;</span>
+                            <span class="dashboard---link"><a href="">Link 4</a></span>
+
+                        </div>
+
+                        <div class="links---dashboard--item">
+
+                            <span class="icon---close">&times;</span>
+                            <span class="icon---edit">&nbsp;</span>
+                            <span class="dashboard---link"><a href="">Link 5</a></span>
+
+                        </div>
+
+
+                        <div class="links---dashboard--item">
+
+                            <span class="icon---close">&times;</span>
+                            <span class="icon---edit">&nbsp;</span>
+                            <span class="dashboard---link"><a href="">Link 6</a></span>
+
+                        </div>
+
+
+                        <div class="links---dashboard--item">
+
+                            <span class="icon---close">&times;</span>
+                            <span class="icon---edit">&nbsp;</span>
+                            <span class="dashboard---link"><a href="">Link 7</a></span>
+
+                        </div>
+
+                    <!-- <div> <p>Content goes here</p> </div> -->
+                    </div>  
 
                 </div>
+
+                <a href="#" class="dashboard---btn" id="add---todo--item">Add Link ></a>
               
             </article> 
 

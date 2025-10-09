@@ -321,19 +321,19 @@ main {
 
             display: inline-block;
             vertical-align: top;
-            width: 32%;
+            width: 36%;
             margin: 0 auto;
             height: 270px;
             min-height: 270px;
             text-align: left;
-            background: $bg---dashboards;
+            /* background: $bg---dashboards; */
             border-radius: 3px;
 
             transition: background .4s;
 
             &:hover {
 
-                background: lighten(#ffe79d, 4%);
+                /* background: lighten(#ffe79d, 4%); */
             }
 
             @media (max-width: $breakpoint---md) {
@@ -351,6 +351,7 @@ main {
                     align-items: flex-end;
                     justify-content: flex-end;
                     padding: 0 12px;
+                    background: none;
 
                     h3.dashboard---section--todo {
 
@@ -388,12 +389,10 @@ main {
             }
         }
 
-        // dashboard sections - unique content
-        
-
+        // dashboard sections - unique content        
         .main---dashboard--todo {
 
-            border: solid 1px red;
+            border: solid 1px #626262;
 
             .dashboard---section--content {
 
@@ -407,6 +406,7 @@ main {
 
                         height: 180px;
                         overflow-y: scroll;
+                        overflow-y: auto;
 
                         li {
 
@@ -430,8 +430,8 @@ main {
                             span.icon---edit {
 
                                 background: red;
-                                width: 20px;
-                                height: 20px;
+                                width: 17px;
+                                height: 17px;
                                 /* display: block; */
                                 border-radius: 50%;
                             }
@@ -462,7 +462,7 @@ main {
 
         .main---dashboard--notes {
 
-            border: solid 1px yellow;
+            border: solid 1px #626262;
 
             .dashboard---section--content {
 
@@ -470,26 +470,89 @@ main {
 
                 .notes---dashboard--container {
 
+                    overflow-y: scroll;
+                    overflow-y: auto;
+                    height: 180px;
 
-                    article {
+                    .note---dashboard--item {
 
-                        text-align: center;
+                        display: block;
+                        margin: 7px auto;
+                        text-align: left;
+                        /* background: #ffe79d; */
                         line-height: 1.6;
-                        color: gray
+                        color: gray;
+                        padding: 3px;
+                        width: 80%;
                     }
+
                 }
+            }
+
+            
+            .dashboard---btn {
+
+                @extend %btn---dashboard--actions;
             }
             
         }
 
         .main---dashboard--shortcuts {
 
-            border: solid 1px blue;
+            border: solid 1px #626262;
+            width: 200px;
 
             .dashboard---section--content {
 
                 /* color: orange; */
+                height: 180px;
+                overflow: auto;
+
+                .links---dashboard--container {
+                
+                    margin-top: 30px;
+                }
+
+                .links---dashboard--item {
+
+                    display: flex;
+                    margin: 10px 5px;
+
+                    .icon---close {
+
+                        padding: 0 2px;
+                    }
+                    
+                    .dashboard---link {
+
+                        padding: 0 2px;
+                    }
+
+                    span.icon---edit {
+
+                        background: red;
+                        width: 17px;
+                        height: 17px;
+                        /* display: block; */
+                        border-radius: 50%;
+                        margin: 0 7px
+                    }
+
+                    .dashboard---link {
+
+                        a {
+
+                            color: gray;
+                        }
+                    }
+                }
             }
+
+            .dashboard---btn {
+
+                @extend %btn---dashboard--actions;
+            }
+
             
         }
 
