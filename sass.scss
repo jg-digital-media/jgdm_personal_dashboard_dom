@@ -7,6 +7,7 @@
 // extend sass partials
 @import "assets/sass/extends/tooltips";
 @import "assets/sass/extends/buttons/button---dashboard/button---dashboards";
+@import "assets/sass/extends/buttons/button---footer--toggles/btn---section--toggles";
 
 
 
@@ -658,10 +659,8 @@ main {
 
             .button---toggle {
 
-                border: solid 1px white;
-                border-radius: 6px;
-                padding: 2px;
-                color: yellow;
+                // extend button toggle partial
+                @extend %btn---section--toggles;
             }
 
         }
