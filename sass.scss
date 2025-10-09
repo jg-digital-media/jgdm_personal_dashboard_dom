@@ -610,6 +610,39 @@ main {
 }
 
 
+.sticky---footer--container {
+
+    display: block;
+    position: sticky;
+    bottom: 0;
+    background: $bg---footer;
+
+    ul {
+
+        display: inline-block;
+        /* vertical-align: top; */
+        color: white;
+        margin: 6px 6px;
+
+        li {
+
+            display: inline-block;
+            vertical-align: top;
+            color: white;
+
+            a {
+
+                color: white;
+              
+            }
+
+        }
+
+    }
+
+}
+
+
 footer {
 
     font-size: $font---size--small;

@@ -291,10 +291,25 @@
     
         <p>index.php</p>
 
+
+    <section class="sticky---footer--container">
+
+        <ul>
+            <li><a href="#">List item 1</a></li>
+            <li>Todos</li>
+            <li>Notes</li>
+            <li>Links</li>
+            <li>Weather</li>
+            <li><a href="#">How to</a></li>
+            <li><a href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom" target="_blank">Repository</a></li>
+        </ul>
+
+    </section>
+
     <footer>
 
         <p>footer</p>  
-        <a href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom" target="_blank">Github Repo</a>
+        
 
     </footer> 
 
