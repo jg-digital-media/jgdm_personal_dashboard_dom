@@ -295,23 +295,25 @@
     <section class="sticky---footer--container">
 
         <ul>
-            <li><a href="#">List item 1</a></li>
-            <li>Todos</li>
-            <li>Notes</li>
-            <li>Links</li>
-            <li>Weather</li>
-            <li><a href="#">How to</a></li>
+            <li id="toggle---dashboard--title">Toggle Dashboard Panels</li>
+            <li><a href="#" class="link">List item 1</a></li>
+            <li><a href="#" class="link buttton button---toggle" id="js---btn_todos">Todos</a></li>
+            <li><a href="#" class="link buttton button---toggle" id="js---btn_notes">Notes</a></li>
+            <li><a href="#" class="link buttton button---toggle" id="js---btn_links">Links</a></li>
+            <li><a href="#" class="link buttton button---toggle" id="js---btn_weather">Weather</a></li>
+            <li><a href="#" class="link">How to</a></li>
             <li><a href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom" target="_blank">Repository</a></li>
+            <li><a href="#">&copy; Jonnie Grieve Digital Media</a></li>
         </ul>
 
     </section>
 
-    <footer>
+    <!-- <footer>
 
         <p>footer</p>  
         
 
-    </footer> 
+    </footer>  -->
 
 
     <script type="text/javascript" src="app.js"></script>
