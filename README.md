@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 08-10-2025 - 17:18
+Last Updated: 09-10-2025 - 16:28
 
 ## Sections
 
@@ -9,10 +9,8 @@ Last Updated: 08-10-2025 - 17:18
 
 ## Tasks 
 
-### Total: `33` Completed: `4`
+### Total: `33` Completed: `5`
 
-+ `COMPLETED: 08-10-2025` - Prototype and style Live Clock Feature -
-+ `TODO:` - Prototype and style the Theme Switcher (standard plus at least 2 other modes)
 + `TODO:` - Prototype and style the Daily Quote Feature
 + `TODO:` - Prototype and style the Welcome Message Feature - welcome message element
 + `TODO:` - Prototype and style the Main Dashboard TODO List Feature
@@ -26,7 +24,6 @@ Last Updated: 08-10-2025 - 17:18
   + `TODO:` - Move tooltips away from CSS content property.  Need more control of positioning. May be better if we use a JS Object to store these
   + `TODO:` - modify data-tooltip attribute text for existing tooltips
   + `TODO:` - `theme---selector--container` - tooltip text - `"Attribute/class manipulation (classList.add/remove/toggle)"`
-
 + `TODO:` - Implement Live Clock Feature
 + `TODO:` - Implement Theme Switcher (standard plus at least 2 other modes)
 + `TODO:` - Implement Daily Quote Feature
@@ -45,6 +42,8 @@ Last Updated: 08-10-2025 - 17:18
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
 + `COMPLETED: 06-10-2025` - extend styles for use of multiple tooltips
++ `COMPLETED: 08-10-2025` - Prototype and style Live Clock Feature -
++ `COMPLETED: 09-10-2025` - Prototype and style the Theme Switcher (standard plus at least 2 other modes)
 
 <!-- .innerText or .textContent -->
 
@@ -57,6 +56,14 @@ Last Updated: 08-10-2025 - 17:18
 + `06-10-2025` - Learned more about the system needed to create multiiple tooltips above interactive elements and how to use them. Spent a lot of time as well working on its responsiveness; mainly the task of preventing the tooltip from overflowing the screen and causing a horizontal scroll.  The top banner is now in good shape.
 
 + `08-10-2025` - Finalised the live clock prototyping at least for this draft stage. I had a challenge today though to get the tooltip arrows correctly positioned for each tooltip.  Marking this as a future issue to be resolved.
+
++ `09-10-2025` -  Drafted most of the markup; attributes, classes and ID's needed for the interface. What's missing is the Weather API fetching and that's trickier because the fetching is dynamic and could return its own elements and attributes. So when I prototype the visual design, I'll save that for last.  
+
+  + Specifically, I added a 4th icon for a 4th theme switcher option; reduced the size of the icon and made them more of a square with rounded corners.
+
+  + I've added vertical scrolling in each dashboard panel so the content will never exceed its container. Plus, there's no visible scroll bar until it is needed.
+
+  + Finally, I added a sticky footer will eventually allow the user easy access to visibility toggle buttons for the Dashboard panels.
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
