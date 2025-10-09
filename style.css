@@ -1,6 +1,6 @@
 /*
 
-    Last Update: 09-10-2025 - 15:24
+    Last Update: 09-10-2025 - 15:45
 */
 * {
   padding: 0;
@@ -121,6 +121,14 @@ main .main---dashboard--container .main---dashboard--shortcuts .dashboard---btn,
   font-size: 13px;
 }
 
+/* btn---section--collapse.scss */
+.sticky---footer--container ul li .button---toggle {
+  border: solid 1px white;
+  border-radius: 6px;
+  padding: 2px;
+  color: yellow;
+}
+
 body {
   background: #cdcccc;
   font-family: Arial, Helvetica, sans-serif;
@@ -136,7 +144,7 @@ header {
 }
 header div {
   /* width: 21%; */
-  width: 33%;
+  /* width: 33%; */
   margin: 0 auto;
   padding: 5px;
 }
@@ -233,9 +241,9 @@ header .theme---selector--container .theme---selector {
   display: inline-block;
   vertical-align: top;
   /* border: solid 1px #444444; */
-  border-radius: 50%;
-  height: 15px;
-  width: 15px;
+  border-radius: 4px;
+  height: 4px;
+  width: 4px;
   margin: 3px;
 }
 header .theme---selector--container #theme-one {
@@ -267,6 +275,16 @@ header .theme---selector--container #theme-three {
 header .theme---selector--container #theme-three:hover {
   transform: scale(1.14);
   background: #5da1ff;
+}
+header .theme---selector--container #theme-four {
+  background: #c3c3c3;
+  border: solid #757575 1px;
+  transition: transform 0.2s, background 0.4s;
+  cursor: pointer;
+}
+header .theme---selector--container #theme-four:hover {
+  transform: scale(1.14);
+  background: #dddddd;
 }
 
 main .motivational---quote--container {
@@ -526,13 +544,6 @@ main .section---fetch--weather .section---fetch--weather-container .section---fe
 .sticky---footer--container ul li a:hover {
   color: yellow;
 }
-.sticky---footer--container ul li .button---toggle {
-  border: solid 1px white;
-  border-radius: 6px;
-  padding: 2px;
-  color: yellow;
-}
-
 footer {
   font-size: 10px;
 }
