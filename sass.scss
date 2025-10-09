@@ -6,6 +6,7 @@
 
 // extend sass partials
 @import "assets/sass/extends/tooltips";
+@import "assets/sass/extends/buttons/button---dashboard/button---dashboards";
 
 
 
@@ -322,7 +323,8 @@ main {
             vertical-align: top;
             width: 32%;
             margin: 0 auto;
-            min-height: 140px;
+            height: 270px;
+            min-height: 270px;
             text-align: left;
             background: $bg---dashboards;
             border-radius: 3px;
@@ -393,13 +395,67 @@ main {
 
             border: solid 1px red;
 
-            div.dashboard---section--buttons {
-
-            }
-
             .dashboard---section--content {
 
                 /* color: #57d007; */
+
+                .todo---dashboard--container {
+
+                    margin-top: 30px;
+
+                    ul {
+
+                        height: 180px;
+                        overflow-y: scroll;
+
+                        li {
+
+                            list-style: none;
+
+                            span {
+
+                                display: flex;
+                                flex-direction: column;
+                                margin: 5px 5px;
+                                /* width: 40px; */
+                                display: inline-block;
+                            }
+
+                            span.icon---close {
+
+                                color: red;
+                                content: "X close button";                                
+                            }
+
+                            span.icon---edit {
+
+                                background: red;
+                                width: 20px;
+                                height: 20px;
+                                /* display: block; */
+                                border-radius: 50%;
+                            }
+
+                            span.todo---item--text {
+
+                                &.text---edit--state {
+                                    
+                                    color: gray;
+                                    text-decoration: line-through;
+
+                                }
+                            }
+                        }
+                    }
+
+                    #add---todo--item {
+                        
+                        // Extend button styles
+                        @extend %btn---dashboard--actions;
+                    }
+
+                }
+
             }
             
         }
@@ -411,6 +467,17 @@ main {
             .dashboard---section--content {
 
                 /* color: red; */
+
+                .notes---dashboard--container {
+
+
+                    article {
+
+                        text-align: center;
+                        line-height: 1.6;
+                        color: gray
+                    }
+                }
             }
             
         }

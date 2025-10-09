@@ -53,7 +53,7 @@
             <!-- Good <div id="morning---or--evening" data-tooltip="Welcome message container text">Morning/Evening</div>, 
             <span class="welcome---message--editable" contenteditable="true" >What do I call you?</span> -->
             <div id="morning---or--evening">Good Morning/Evening</div>, 
-            <input class="welcome---message--input" contenteditable="true" placeholder="What do we call you?" /></span> 
+            <input class="welcome---message--input" id="js--name_input" contenteditable="true" placeholder="What do we call you?" /></span> 
 
         </section>
 
@@ -72,11 +72,26 @@
 
                     </div>
                 
-                <div>
+                </div>
 
                 <div class="dashboard---section--content">
 
-                    <div> <p>Content goes here</p> </div>
+                    <div class="todo---dashboard--container"> 
+                        
+                        <ul>
+
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 1</span></li>
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text text---edit--state">Item 2</span></li>
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 3</span></li>
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text text---edit--state"">Item 4</span></li>
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text text---edit--state"">Item 5</span></li>
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 6</span></li> <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 6</span></li> <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 6</span></li>
+                        </ul>
+
+                        <!-- <p>Content goes here</p> -->
+                        <a href="#" class="dashboard---btn" id="add---todo--item">Add Item</a>
+
+                    </div>
 
                 </div>
 
@@ -98,6 +113,18 @@
                 </div>    
 
                 <div class="dashboard---section--content">
+
+                    <div class="notes---dashboard--container"> 
+                        
+                        <div>
+
+                            <div><span class="icon---close">&times;</span>
+                            
+                            <p>lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>
+
+                        </div>
+
+                    </div>
 
                     <div> <p>Content goes here</p> </div>
 
