@@ -1,6 +1,6 @@
 /*
 
-    Last Update: 08-10-2025 - 17:12
+    Last Update: 09-10-2025 - 15:24
 */
 * {
   padding: 0;
@@ -108,6 +108,17 @@ main .welcome---message--container::before, header .theme---selector--container 
 main .welcome---message--container:hover::before, header .theme---selector--container .theme---selector--inner:hover::before, header .live---clock--container .live---clock:hover::before {
   opacity: 1;
   visibility: visible;
+}
+
+/* btn---button---dashboards.scss */
+main .main---dashboard--container .main---dashboard--shortcuts .dashboard---btn, main .main---dashboard--container .main---dashboard--notes .dashboard---btn, main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container #add---todo--item {
+  border: solid 1px red;
+  padding: 3px;
+  margin: 7px;
+  position: relative;
+  top: 6px;
+  border-radius: 5px;
+  font-size: 13px;
 }
 
 body {
@@ -278,6 +289,9 @@ main .welcome---message--container {
   display: block;
   margin: 25px 18px;
   height: 15px;
+  height: 15px;
+  width: 88%;
+  margin: 25px auto;
 }
 @media (max-width: 768px) {
   main .welcome---message--container {
@@ -322,16 +336,17 @@ main .main---dashboard--container {
 main .main---dashboard--container article {
   display: inline-block;
   vertical-align: top;
-  width: 32%;
+  width: 36%;
   margin: 0 auto;
-  min-height: 140px;
+  height: 270px;
+  min-height: 270px;
   text-align: left;
-  background: #ffe79d;
+  /* background: $bg---dashboards; */
   border-radius: 3px;
   transition: background 0.4s;
 }
 main .main---dashboard--container article:hover {
-  background: #ffecb1;
+  /* background: lighten(#ffe79d, 4%); */
 }
 @media (max-width: 768px) {
   main .main---dashboard--container article {
@@ -345,10 +360,12 @@ main .main---dashboard--container article .dashboard---section .dashboard---sect
   align-items: flex-end;
   justify-content: flex-end;
   padding: 0 12px;
+  background: none;
 }
 main .main---dashboard--container article .dashboard---section .dashboard---section--buttons h3.dashboard---section--todo {
   margin: 0 12px;
-  font-size: 17pt;
+  /* font-size: 17pt; */
+  font-size: 14pt;
 }
 main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--collapse {
   font-weight: bold;
@@ -369,25 +386,101 @@ main .main---dashboard--container article .dashboard---section .dashboard---sect
   font-weight: bold;
 }
 main .main---dashboard--container .main---dashboard--todo {
-  border: solid 1px red;
+  border: solid 1px #626262;
 }
 main .main---dashboard--container .main---dashboard--todo .dashboard---section--content {
   /* color: #57d007; */
 }
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container {
+  margin-top: 30px;
+}
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul {
+  height: 180px;
+  overflow-y: scroll;
+  overflow-y: auto;
+}
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li {
+  list-style: none;
+}
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 5px;
+  /* width: 40px; */
+  display: inline-block;
+}
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span.icon---close {
+  color: red;
+  content: "X close button";
+}
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span.icon---edit {
+  background: red;
+  width: 17px;
+  height: 17px;
+  /* display: block; */
+  border-radius: 50%;
+}
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span.todo---item--text.text---edit--state {
+  color: gray;
+  text-decoration: line-through;
+}
 main .main---dashboard--container .main---dashboard--notes {
-  border: solid 1px yellow;
+  border: solid 1px #626262;
 }
 main .main---dashboard--container .main---dashboard--notes .dashboard---section--content {
   /* color: red; */
 }
+main .main---dashboard--container .main---dashboard--notes .dashboard---section--content .notes---dashboard--container {
+  overflow-y: scroll;
+  overflow-y: auto;
+  height: 180px;
+}
+main .main---dashboard--container .main---dashboard--notes .dashboard---section--content .notes---dashboard--container .note---dashboard--item {
+  display: block;
+  margin: 7px auto;
+  text-align: left;
+  /* background: #ffe79d; */
+  line-height: 1.6;
+  color: gray;
+  padding: 3px;
+  width: 80%;
+}
 main .main---dashboard--container .main---dashboard--shortcuts {
-  border: solid 1px blue;
+  border: solid 1px #626262;
+  width: 200px;
 }
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content {
   /* color: orange; */
+  height: 180px;
+  overflow: auto;
+}
+main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--container {
+  margin-top: 30px;
+}
+main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item {
+  display: flex;
+  margin: 10px 5px;
+}
+main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .icon---close {
+  padding: 0 2px;
+}
+main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .dashboard---link {
+  padding: 0 2px;
+}
+main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item span.icon---edit {
+  background: red;
+  width: 17px;
+  height: 17px;
+  /* display: block; */
+  border-radius: 50%;
+  margin: 0 7px;
+}
+main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .dashboard---link a {
+  color: gray;
 }
 main .section---fetch--weather {
   display: block;
+  display: none;
   margin: 10px auto;
   width: 80%;
   /* display: none; */
@@ -399,6 +492,45 @@ main .section---fetch--weather h3 {
 }
 main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather--output .section---fetch--weather--output-content .day---forecast {
   display: inline-block;
+}
+
+.sticky---footer--container {
+  display: block;
+  position: sticky;
+  bottom: 0;
+  background: #212121;
+  text-align: center;
+  box-shadow: black 0px 0px 4px 0px;
+}
+.sticky---footer--container ul {
+  display: inline-block;
+  /* vertical-align: top; */
+  color: white;
+  margin: 8px 6px;
+}
+.sticky---footer--container ul li {
+  display: inline-block;
+  vertical-align: top;
+  color: white;
+  margin: 0 5px;
+  font-size: 12px;
+}
+.sticky---footer--container ul li#toggle---dashboard--title {
+  font-weight: bold;
+}
+.sticky---footer--container ul li a {
+  color: white;
+  transition: color 0.4s;
+  font-size: 12px;
+}
+.sticky---footer--container ul li a:hover {
+  color: yellow;
+}
+.sticky---footer--container ul li .button---toggle {
+  border: solid 1px white;
+  border-radius: 6px;
+  padding: 2px;
+  color: yellow;
 }
 
 footer {
