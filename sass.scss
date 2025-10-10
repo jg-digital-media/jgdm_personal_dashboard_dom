@@ -560,13 +560,16 @@ main {
                     .note---dashboard--item {
 
                         display: block;
-                        margin: 7px auto;
+                        margin: 10px auto;
                         text-align: left;
-                        /* background: #ffe79d; */
+                        background: #d5d4d3;
+                        border: #bdbdbd 1px solid;
                         line-height: 1.6;
                         color: gray;
                         padding: 3px;
                         width: 80%;
+                        padding: 4px;
+                        border-radius: 5px;
                     }
 
                 }
