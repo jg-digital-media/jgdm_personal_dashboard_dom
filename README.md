@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 09-10-2025 - 16:28
+Last Updated: 10-10-2025 - 10:54
 
 ## Sections
 
@@ -9,7 +9,7 @@ Last Updated: 09-10-2025 - 16:28
 
 ## Tasks 
 
-### Total: `33` Completed: `5`
+### Total: `34` Completed: `5`
 
 + `TODO:` - Prototype and style the Daily Quote Feature
 + `TODO:` - Prototype and style the Welcome Message Feature - welcome message element
@@ -33,6 +33,7 @@ Last Updated: 09-10-2025 - 16:28
   + `TODO:` - "hello.. what do I call you?" make content content editable
   + `TODO:` - Salutation change based on time of day `.morning---or--evening` (Morning/Afternoon/Evening)
 + `TODO:` - Implement Main Dashboard TODO List Feature
+  + `TODO:` - When TODO list items are clicked they should be disabled with no ability to focus on edit them.
 + `TODO:` - Implement Main Dashboard Note Writing Feature
 + `TODO:` - Implement Main Dashboard Shortcut Links Feature
 + `TODO:` - Implement Fetch Weather Details Feature
