@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 10-10-2025 - 10:54
+Last Updated: 10-10-2025 - 17:28
 
 ## Sections
 
@@ -65,6 +65,8 @@ Last Updated: 10-10-2025 - 10:54
   + I've added vertical scrolling in each dashboard panel so the content will never exceed its container. Plus, there's no visible scroll bar until it is needed.
 
   + Finally, I added a sticky footer will eventually allow the user easy access to visibility toggle buttons for the Dashboard panels.
+
++ `10-10-2025` - Added styling for the Todolist section - mimicking states for editable and eedited states.
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
