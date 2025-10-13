@@ -7,6 +7,8 @@
 // extend sass partials
 @import "assets/sass/extends/tooltips";
 @import "assets/sass/extends/buttons/button---dashboard/button---dashboards";
+@import "assets/sass/extends/buttons/button---dashboard/btn---section--close";
+@import "assets/sass/extends/buttons/button---dashboard/btn---section--collapse";
 @import "assets/sass/extends/buttons/button---footer--toggles/btn---section--toggles";
 @import "assets/sass/extends/buttons/button---item--close/button---close";
 @import "assets/sass/extends/buttons/button---item--edit/button---edit";
@@ -343,8 +345,8 @@ main {
             vertical-align: top;
             width: 36%;
             margin: 0 auto;
-            height: 270px;
-            min-height: 270px;
+            height: 275px;
+            min-height: 275px;
             text-align: left;
             /* background: $bg---dashboards; */
             border-radius: 3px;
@@ -407,6 +409,18 @@ main {
                         font-weight: bold;
                         vertical-align: top;
                         font-size: 20pt;
+
+                    }
+
+                    .section---button--collapse {
+
+                        
+                        @extend %btn---dashboard--collapse;
+                    }
+
+                    .section---button--close {
+
+                        @extend %btn---dashboard--close;
                     }
 
                     #collapse-todo {
@@ -485,30 +499,10 @@ main {
                         }
                     }
 
-                    #add---todo--item {
-                        
-                        // Extend button styles
-                        //@extend %btn---dashboard--actions;
+                    #add---todo--item {                        
 
-                        // custom styles - tmp
-                        background: wheat;
-                        border: solid 1px #929292;
-                        padding: 5px;
-                        margin: 7px;
-                        position: relative;
-                        top: 6px;
-                        border-radius: 5px;
-                        font-size: 12px;
-                        text-decoration: none;
-                        text-align: center;
-                        color: black;
+                        @extend %btn---dashboard--actions;
 
-                        transition: background .3s;
-
-                        &:hover {
-
-                            background: lighten($bg---dashboards, 10%);
-                        }
                     }
 
                 }
@@ -540,12 +534,37 @@ main {
                         text-align: left;
                         background: #d5d4d3;
                         border: #bdbdbd 1px solid;
+                        font-size: 12px;
                         line-height: 1.6;
                         color: gray;
                         padding: 3px;
-                        width: 80%;
+                        width: 75%;
                         padding: 4px;
                         border-radius: 5px;
+
+                        .icon---close {
+
+                            position: relative;
+                            right: 0px;
+                            width: 100%;
+                            position: relative;
+                            display: block;
+                            /* right: 0px; */
+                            width: auto;
+                            text-align: center;
+                            font-size: 17px;
+                            font-weight: bold;
+                            border: solid 1px black;
+                            margin: 0px 0% 0px 90%;
+
+                            &:hover {
+
+                                color: black;
+                            }
+                            
+                            //@extend %btn---item--close;
+                        }
+
                     }
 
                 }
@@ -562,7 +581,7 @@ main {
         .main---dashboard--shortcuts {
 
             border: solid 1px #626262;
-            width: 200px;
+            width: 260px;
 
             .dashboard---section--content {
 
