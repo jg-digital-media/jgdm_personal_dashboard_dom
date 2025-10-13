@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 10-10-2025 - 17:28
+Last Updated: 13-10-2025 - 16:53
 
 ## Sections
 
@@ -9,8 +9,9 @@ Last Updated: 10-10-2025 - 17:28
 
 ## Tasks 
 
-### Total: `34` Completed: `5`
+### Total: `35` Completed: `5`
 
++ `TODO:` - Implement hoverable toolip on TODO list feature
 + `TODO:` - Prototype and style the Daily Quote Feature
 + `TODO:` - Prototype and style the Welcome Message Feature - welcome message element
 + `TODO:` - Prototype and style the Main Dashboard TODO List Feature
@@ -66,7 +67,9 @@ Last Updated: 10-10-2025 - 17:28
 
   + Finally, I added a sticky footer will eventually allow the user easy access to visibility toggle buttons for the Dashboard panels.
 
-+ `10-10-2025` - Added styling for the Todolist section - mimicking states for editable and eedited states.
++ `10-10-2025` - Added styling for the Todolist section - mimicking states for editable and edited states.
+
++ `13-10-2025` - Groundwork done for the rest of the dashboard panels. Created more extend directives for more common elements like buttons and icons.
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
