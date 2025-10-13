@@ -304,10 +304,7 @@
 
         </section>
 
-    </main>
-    
-        <p>index.php</p>
-
+    </main>   
 
     <section class="sticky---footer--container">
 
