@@ -8,6 +8,8 @@
 @import "assets/sass/extends/tooltips";
 @import "assets/sass/extends/buttons/button---dashboard/button---dashboards";
 @import "assets/sass/extends/buttons/button---footer--toggles/btn---section--toggles";
+@import "assets/sass/extends/buttons/button---item--close/button---close";
+@import "assets/sass/extends/buttons/button---item--edit/button---edit";
 
 
 
@@ -462,37 +464,12 @@ main {
 
                             span.icon---close {
 
-                                color: white;
-                                background: #f46666;
-                                border: solid 1px #f46666;
-                                height: 25px;
-                                width: 25px;
-                                border-radius: 50%;
-                                text-align: center;
-                                padding: 0;
-                                margin: 0;
-                                font-size: 24px;
-                                content: "X close button";
-                                vertical-align: middle;                                  
+                                @extend %btn---item--close;
                             }
 
                             span.icon---edit {
 
-                                background: red;
-                                border: solid 1px red;
-                                width: 18px;
-                                height: 18px;
-                                margin: 0 10px;
-                                /* display: block; */
-                                border-radius: 50%;
-                                vertical-align: middle;
-                                cursor: pointer;
-
-                                &.edit---state--icon {
-
-                                    background: #16ff16;
-                                    border: solid 1px #06a706
-                                }
+                                @extend %btn---item--edit;
                             }
 
                             span.todo---item--text {
@@ -501,8 +478,7 @@ main {
                                     
                                     color: gray;
                                     text-decoration: line-through;
-                                    /* display: disabled; */
-                                    
+                                    /* display: disabled */                                   
 
                                 }
                             }
@@ -602,27 +578,28 @@ main {
 
                 .links---dashboard--item {
 
-                    display: flex;
+                    display: block;
                     margin: 10px 5px;
 
                     .icon---close {
 
-                        padding: 0 2px;
+                        /* padding: 0 2px; */
+
+                        @extend %btn---item--close;
+
+                        vertical-align: middle;
                     }
                     
                     .dashboard---link {
 
                         padding: 0 2px;
-                    }
+                        margin: auto 0;
+                        vertical-align: top;
+                    }                   
 
-                    span.icon---edit {
+                    span.icon---edit {                       
 
-                        background: red;
-                        width: 17px;
-                        height: 17px;
-                        /* display: block; */
-                        border-radius: 50%;
-                        margin: 0 7px
+                        @extend %btn---item--edit;
                     }
 
                     .dashboard---link {
@@ -630,6 +607,9 @@ main {
                         a {
 
                             color: gray;
+                            font-size: 14px;
+                            vertical-align: bottom;
+
                         }
                     }
                 }

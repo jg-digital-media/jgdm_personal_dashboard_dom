@@ -1,0 +1,24 @@
+%btn---item--close {
+
+    display: inline-block;
+    color: white;
+    background: #f46666;
+    border: solid 1px #f46666;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
+    content: "X close button";
+    vertical-align: middle;      
+    cursor: pointer;
+
+    transition: background .3s;
+    
+    &:hover {
+
+        background: #820303;
+    }
+}

@@ -1,0 +1,20 @@
+%btn---item--edit {
+
+    background: red;
+    border: solid 1px red;
+    width: 18px;
+    height: 18px;
+    margin: 0 10px;
+    display: inline-block;
+    border-radius: 50%;
+    vertical-align: middle;
+    cursor: pointer;
+    cursor: pointer;
+
+    &.edit---state--icon {
+
+        background: #16ff16;
+        border: solid 1px #06a706
+    }
+
+}
