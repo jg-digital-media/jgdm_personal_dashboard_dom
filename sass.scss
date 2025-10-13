@@ -640,6 +640,11 @@ main {
                             font-size: 14px;
                             vertical-align: bottom;
 
+                            &:hover {
+
+                                color: #990202;
+                            }
+
                         }
                     }
                 }
@@ -739,13 +744,13 @@ main {
 
             a {
 
-                color: white;
+                color: $url---col---footer;
                 transition: color .4s;
                 font-size: 12px;
 
                 &:hover {
 
-                    color: yellow;
+                    color: $url---col---footer-hover;
                 }
               
             }
@@ -753,7 +758,7 @@ main {
             .button---toggle {
 
                 // extend button toggle partial
-                @extend %btn---section--toggles;
+                @extend %btn---dashboard--toggles;
             }
 
         }

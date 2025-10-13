@@ -2,10 +2,21 @@
 
 // TODO: style toggle buttons in footer
 
-%btn---section--toggles {
+%btn---dashboard--toggles {
 
     border: solid 1px white;
     border-radius: 6px;
-    padding: 2px;
+    padding: 5px;
     color: yellow;
+    background: none;
+    text-decoration: none;
+    position: relative;
+    top: 2px;
+
+    transition: background .3s;
+
+    &:hover {
+
+        background: #676363;
+    }
 }

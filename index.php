@@ -92,7 +92,7 @@
                         </ul>
 
                         <!-- <p>Content goes here</p> -->
-                        <a href="#" class="dashboard---btn" id="add---todo--item">Add Item</a>
+                        <a href="#" class="dashboard---btn" id="add---todo--item">Add Task</a>
 
                     </div>
 
