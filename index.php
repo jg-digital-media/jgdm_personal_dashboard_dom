@@ -60,7 +60,7 @@
 
         <section class="main---dashboard--container">
 
-            <article class="main---dashboard--todo">
+            <article class="main---dashboard--todo" data-tooltip="ToDo: section details">
 
                 <div class="dashboard---section">
 

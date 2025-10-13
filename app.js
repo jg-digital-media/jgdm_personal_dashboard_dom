@@ -1,4 +1,4 @@
-console.log('app.js connected - 08-10-2025 - 17:10');
+console.log('app.js connected - 13-10-2025 - 16:33');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const clockElement = document.querySelector('.live---clock');
     const themeOptionsElement = document.querySelector('.theme---selector--inner');
     const welcomeMessageElement = document.querySelector('.welcome---message--container');
+    const toDoDashboardElement = document.querySelector('.main---dashboard--todo');
+
+    
     
     // Function to prevent tooltip overflow
     function adjustTooltipPosition(element) {
@@ -65,10 +68,18 @@ document.addEventListener('DOMContentLoaded', function() {
             adjustTooltipPosition(this);
         });
     }
+
     if (welcomeMessageElement) {
         // Ensure theme options tooltip doesn't overflow
         welcomeMessageElement.addEventListener('mouseenter', function() {
             adjustTooltipPosition(this);
+        });
+    }
+
+    if (toDoDashboardElement) {
+        // Ensure theme options tooltip doesn't overflow
+        toDoDashboardElement.addEventListener('mouseenter', function() {
+            //adjustTooltipPosition(this);
         });
     }
     
