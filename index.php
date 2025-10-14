@@ -60,7 +60,7 @@
 
         <section class="main---dashboard--container">
 
-            <article class="main---dashboard--todo" id="js---dashboard--todo" data-tooltip="ToDo: section details">
+            <article class="main---dashboard--todo" id="js---dashboard--todo" data-tooltip="ToDo: section details to go here!">
 
                 <div class="dashboard---section">
 
@@ -75,7 +75,7 @@
                 
                 </div>
 
-                <div class="dashboard---section--content">
+                <div class="dashboard---section--content" id="js---dashboard--notes" data-tooltip="Notes: section details">
 
                     <div class="todo---dashboard--container"> 
                         
@@ -100,7 +100,7 @@
 
             </article>
 
-            <article class="main---dashboard--notes">
+            <article class="main---dashboard--notes" id="js---dashboard--notes" data-tooltip="Notes: section details to go here!">
 
                 <div class="dashboard---section">
 
@@ -160,7 +160,7 @@
               
             </article>
 
-            <article class="main---dashboard--shortcuts">          
+            <article class="main---dashboard--shortcuts" id="js---dashboard--shortcuts"  data-tooltip="Shortcut Links: section details to go here!">
 
                 <div class="dashboard---section">
 

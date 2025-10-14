@@ -1,4 +1,4 @@
-console.log('app.js connected - 14-10-2025 - 08:40');
+console.log('app.js connected - 14-10-2025 - 09:09');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const themeOptionsElement = document.querySelector('.theme---selector--inner');
     const welcomeMessageElement = document.querySelector('.welcome---message--container');
     const toDoDashboardElement = document.querySelector('#js---dashboard--todo');
+    const notesDashboardElement = document.querySelector('#js---dashboard--notes');
+    const linksDashboardElement = document.querySelector('#js---dashboard--shortcuts');
 
     
     
@@ -76,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+
     if (toDoDashboardElement) {
         console.log('ToDo dashboard element found:', toDoDashboardElement);
         console.log('Tooltip text:', toDoDashboardElement.getAttribute('data-tooltip'));
@@ -87,6 +90,33 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     } else {
         console.log('ToDo dashboard element not found');
+    }
+
+
+    if (notesDashboardElement) {
+        console.log('ToDo dashboard element found:', notesDashboardElement);
+        console.log('Tooltip text:', notesDashboardElement.getAttribute('data-tooltip'));
+        
+        // Ensure tooltip doesn't overflow
+        notesDashboardElement.addEventListener('mouseenter', function() {
+            console.log('notes dashboard hovered');
+            adjustTooltipPosition(this);
+        });
+    } else {
+        console.log('notes dashboard element not found');
+    }
+
+    if (linksDashboardElement) {
+        console.log('ToDo dashboard element found:', linksDashboardElement);
+        console.log('Tooltip text:', linksDashboardElement.getAttribute('data-tooltip'));
+        
+        // Ensure tooltip doesn't overflow
+        linksDashboardElement.addEventListener('mouseenter', function() {
+            console.log('links dashboard hovered');
+            adjustTooltipPosition(this);
+        });
+    } else {
+        console.log('links dashboard element not found');
     }
     
     // Initialize responsive tooltip handling
