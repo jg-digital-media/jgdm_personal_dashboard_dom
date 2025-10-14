@@ -1,6 +1,6 @@
 /*
 
-    Last Update: 13-10-2025 - 16:34
+    Last Update: 14-10-2025 - 09:11
 */
 * {
   padding: 0;
@@ -9,13 +9,13 @@
 
 /* main.scss */
 /* Tooltips */
-main .welcome---message--container, header .theme---selector--container .theme---selector--inner, header .live---clock--container .live---clock {
+main .main---dashboard--container .main---dashboard--shortcuts, main .main---dashboard--container .main---dashboard--notes, main .main---dashboard--container .main---dashboard--todo, main .welcome---message--container, header .theme---selector--container .theme---selector--inner, header .live---clock--container .live---clock {
   position: relative;
   cursor: help;
   padding: 0;
   /* margin: 0; */
 }
-main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
   content: attr(data-tooltip);
   position: absolute;
   bottom: 100%;
@@ -38,7 +38,7 @@ main .welcome---message--container::after, header .theme---selector--container .
   /* max-width: 200px; */
 }
 @media (max-width: 992px) {
-  main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+  main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
     max-width: 150px;
     font-size: 12px;
     padding: 6px;
@@ -47,35 +47,35 @@ main .welcome---message--container::after, header .theme---selector--container .
   }
 }
 @media (max-width: 768px) {
-  main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+  main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
     max-width: 120px;
     font-size: 10px;
     padding: 4px 6px;
     left: 50%;
     transform: translateX(-50%);
   }
-  main .welcome---message--container::after[data-position=left], header .theme---selector--container .theme---selector--inner::after[data-position=left], header .live---clock--container .live---clock::after[data-position=left] {
+  main .main---dashboard--container .main---dashboard--shortcuts::after[data-position=left], main .main---dashboard--container .main---dashboard--notes::after[data-position=left], main .main---dashboard--container .main---dashboard--todo::after[data-position=left], main .welcome---message--container::after[data-position=left], header .theme---selector--container .theme---selector--inner::after[data-position=left], header .live---clock--container .live---clock::after[data-position=left] {
     left: 0;
     transform: translateX(0);
   }
-  main .welcome---message--container::after[data-position=right], header .theme---selector--container .theme---selector--inner::after[data-position=right], header .live---clock--container .live---clock::after[data-position=right] {
+  main .main---dashboard--container .main---dashboard--shortcuts::after[data-position=right], main .main---dashboard--container .main---dashboard--notes::after[data-position=right], main .main---dashboard--container .main---dashboard--todo::after[data-position=right], main .welcome---message--container::after[data-position=right], header .theme---selector--container .theme---selector--inner::after[data-position=right], header .live---clock--container .live---clock::after[data-position=right] {
     left: auto;
     right: 0;
     transform: translateX(0);
   }
 }
 @media (max-width: 480px) {
-  main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+  main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
     max-width: 100px;
     font-size: 9px;
     padding: 3px 4px;
   }
 }
-main .welcome---message--container:hover::after, header .theme---selector--container .theme---selector--inner:hover::after, header .live---clock--container .live---clock:hover::after {
+main .main---dashboard--container .main---dashboard--shortcuts:hover::after, main .main---dashboard--container .main---dashboard--notes:hover::after, main .main---dashboard--container .main---dashboard--todo:hover::after, main .welcome---message--container:hover::after, header .theme---selector--container .theme---selector--inner:hover::after, header .live---clock--container .live---clock:hover::after {
   opacity: 1;
   visibility: visible;
 }
-main .welcome---message--container::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
+main .main---dashboard--container .main---dashboard--shortcuts::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--todo::before, main .welcome---message--container::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
   content: "";
   position: absolute;
   bottom: 100%;
@@ -96,16 +96,16 @@ main .welcome---message--container::before, header .theme---selector--container 
   border-bottom-color: #f78d8d;
 }
 @media (max-width: 768px) {
-  main .welcome---message--container::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
+  main .main---dashboard--container .main---dashboard--shortcuts::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--todo::before, main .welcome---message--container::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
     border-width: 3px;
   }
 }
 @media (max-width: 480px) {
-  main .welcome---message--container::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
+  main .main---dashboard--container .main---dashboard--shortcuts::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--todo::before, main .welcome---message--container::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
     border-width: 2px;
   }
 }
-main .welcome---message--container:hover::before, header .theme---selector--container .theme---selector--inner:hover::before, header .live---clock--container .live---clock:hover::before {
+main .main---dashboard--container .main---dashboard--shortcuts:hover::before, main .main---dashboard--container .main---dashboard--notes:hover::before, main .main---dashboard--container .main---dashboard--todo:hover::before, main .welcome---message--container:hover::before, header .theme---selector--container .theme---selector--inner:hover::before, header .live---clock--container .live---clock:hover::before {
   opacity: 1;
   visibility: visible;
 }
