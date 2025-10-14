@@ -672,11 +672,10 @@ main {
     .section---fetch--weather {
 
         display: block;
-        display: none;
         margin: 10px auto;
         width: 80%;
         /* display: none; */
-        border: solid 1px red;
+        border: solid 1px #626262;
 
         h3 {
 
@@ -688,19 +687,38 @@ main {
 
             .section---fetch--weather-input {
 
-                .section---fetch--weather--input {
+                .section---fetch--weather-input {
 
+                    display: inline-block;
+                    border: solid 1px #626262;
+                    padding: 4px;
+                    border-radius: 5px;
 
+                    transition: background .3s;
+
+                    &:hover {
+
+                        background: lightblue;
+                    }
                 }
 
                 .section---fetch--weather-button {
 
+                    font-weight: bold;
+                    padding: 4px;
+                    border-radius: 5px;                 
+                    text-align: center;
+                    border: solid black 1px;
+                    background: #ffec88;
+                    
+                    cursor: pointer; // button element
                 }
-
 
             }
 
-            .section---fetch--weather--output {
+            .section---fetch--weather-output {
+
+                margin: 10pt auto;
 
                 .section---fetch--weather--output-heading {
 
@@ -710,9 +728,38 @@ main {
 
                     .day---forecast {
 
+                        
                         display: inline-block;
+                        vertical-align: top;
+                        padding: 5px;
+                        border-radius: 5px;
+                        margin: 2px;
+                        width: 90px;
+                        height: 90px;
+                        background: lightblue;
+                        border: solid 1px #9a9a9a;
 
+                        .forecast---icon {
 
+                            display: block;
+                            margin: 0 auto;
+                        }
+
+                        .forecast---details {
+
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-around;
+                            align-items: center;
+
+                            .forecast---temperature {
+
+                                font-size: 12px;
+                                text-align: center;
+                                margin: 2px;
+                            }
+
+                        }
                     }
                 }                
             }
