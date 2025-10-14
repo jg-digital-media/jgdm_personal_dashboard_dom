@@ -348,8 +348,7 @@
     <section class="sticky---footer--container">
 
         <ul>
-            <li id="toggle---dashboard--title">Toggle Dashboard Panels</li>
-            <li><a href="#" class="link">List item 1</a></li>
+            <li id="toggle---dashboard--title">Toggle Dashboard Panels:</li>
             <li><a href="#" class="link buttton button---toggle" id="js---btn_todos">Todos</a></li>
             <li><a href="#" class="link buttton button---toggle" id="js---btn_notes">Notes</a></li>
             <li><a href="#" class="link buttton button---toggle" id="js---btn_links">Links</a></li>
