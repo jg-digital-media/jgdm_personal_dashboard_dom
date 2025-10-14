@@ -13,6 +13,8 @@
 @import "assets/sass/extends/buttons/button---item--close/button---close";
 @import "assets/sass/extends/buttons/button---item--edit/button---edit";
 
+@import "assets/sass/extends/inputs/input---fetch--weather/input---fetch--weather";
+
 
 
 body {
@@ -265,7 +267,10 @@ main {
             margin: 10px auto;
             text-align: center;
             line-height: 1.7;
-            
+            font-weight: bold;
+            font-size: 10pt;
+            width: 300px;
+                    
 
             @extend %tooltip;
 
@@ -736,22 +741,9 @@ main {
 
             .section---fetch--weather-input {
 
-                .section---fetch--weather-input {
+                .section---fetch--weather-input {                   
 
-                    display: inline-block;
-                    border: solid 1px #626262;
-                    margin: 0 12px;
-                    padding: 4px;
-                    border-radius: 5px;
-
-                    transition: background .3s;
-
-                    &:hover {
-
-                        background: lightblue;
-                    }
-
-                    // @extend %input---fetch--weather;
+                    @extend %input---fetch--weather;
                 }
 
                 .section---fetch--weather-button {
