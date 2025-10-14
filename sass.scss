@@ -439,6 +439,9 @@ main {
         .main---dashboard--todo {
 
             border: solid 1px #626262;
+            
+            // Add tooltip functionality
+            @extend %tooltip;
 
             .dashboard---section--content {
 

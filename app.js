@@ -1,4 +1,4 @@
-console.log('app.js connected - 13-10-2025 - 16:33');
+console.log('app.js connected - 14-10-2025 - 08:40');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const clockElement = document.querySelector('.live---clock');
     const themeOptionsElement = document.querySelector('.theme---selector--inner');
     const welcomeMessageElement = document.querySelector('.welcome---message--container');
-    const toDoDashboardElement = document.querySelector('.main---dashboard--todo');
+    const toDoDashboardElement = document.querySelector('#js---dashboard--todo');
 
     
     
@@ -77,10 +77,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (toDoDashboardElement) {
-        // Ensure theme options tooltip doesn't overflow
+        console.log('ToDo dashboard element found:', toDoDashboardElement);
+        console.log('Tooltip text:', toDoDashboardElement.getAttribute('data-tooltip'));
+        
+        // Ensure tooltip doesn't overflow
         toDoDashboardElement.addEventListener('mouseenter', function() {
-            //adjustTooltipPosition(this);
+            console.log('ToDo dashboard hovered');
+            adjustTooltipPosition(this);
         });
+    } else {
+        console.log('ToDo dashboard element not found');
     }
     
     // Initialize responsive tooltip handling
