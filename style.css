@@ -1,6 +1,6 @@
 /*
 
-    Last Update: 14-10-2025 - 09:11
+    Last Update: 14-10-2025 - 16:05
 */
 * {
   padding: 0;
@@ -9,13 +9,13 @@
 
 /* main.scss */
 /* Tooltips */
-main .main---dashboard--container .main---dashboard--shortcuts, main .main---dashboard--container .main---dashboard--notes, main .main---dashboard--container .main---dashboard--todo, main .welcome---message--container, header .theme---selector--container .theme---selector--inner, header .live---clock--container .live---clock {
+main .section---fetch--weather, main .main---dashboard--container .main---dashboard--shortcuts, main .main---dashboard--container .main---dashboard--notes, main .main---dashboard--container .main---dashboard--todo, main .welcome---message--container, main .motivational---quote--container .motivational---quote, header .theme---selector--container .theme---selector--inner, header .live---clock--container .live---clock {
   position: relative;
   cursor: help;
   padding: 0;
   /* margin: 0; */
 }
-main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+main .section---fetch--weather::after, main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, main .motivational---quote--container .motivational---quote::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
   content: attr(data-tooltip);
   position: absolute;
   bottom: 100%;
@@ -38,7 +38,7 @@ main .main---dashboard--container .main---dashboard--shortcuts::after, main .mai
   /* max-width: 200px; */
 }
 @media (max-width: 992px) {
-  main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+  main .section---fetch--weather::after, main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, main .motivational---quote--container .motivational---quote::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
     max-width: 150px;
     font-size: 12px;
     padding: 6px;
@@ -47,35 +47,35 @@ main .main---dashboard--container .main---dashboard--shortcuts::after, main .mai
   }
 }
 @media (max-width: 768px) {
-  main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+  main .section---fetch--weather::after, main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, main .motivational---quote--container .motivational---quote::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
     max-width: 120px;
     font-size: 10px;
     padding: 4px 6px;
     left: 50%;
     transform: translateX(-50%);
   }
-  main .main---dashboard--container .main---dashboard--shortcuts::after[data-position=left], main .main---dashboard--container .main---dashboard--notes::after[data-position=left], main .main---dashboard--container .main---dashboard--todo::after[data-position=left], main .welcome---message--container::after[data-position=left], header .theme---selector--container .theme---selector--inner::after[data-position=left], header .live---clock--container .live---clock::after[data-position=left] {
+  main .section---fetch--weather::after[data-position=left], main .main---dashboard--container .main---dashboard--shortcuts::after[data-position=left], main .main---dashboard--container .main---dashboard--notes::after[data-position=left], main .main---dashboard--container .main---dashboard--todo::after[data-position=left], main .welcome---message--container::after[data-position=left], main .motivational---quote--container .motivational---quote::after[data-position=left], header .theme---selector--container .theme---selector--inner::after[data-position=left], header .live---clock--container .live---clock::after[data-position=left] {
     left: 0;
     transform: translateX(0);
   }
-  main .main---dashboard--container .main---dashboard--shortcuts::after[data-position=right], main .main---dashboard--container .main---dashboard--notes::after[data-position=right], main .main---dashboard--container .main---dashboard--todo::after[data-position=right], main .welcome---message--container::after[data-position=right], header .theme---selector--container .theme---selector--inner::after[data-position=right], header .live---clock--container .live---clock::after[data-position=right] {
+  main .section---fetch--weather::after[data-position=right], main .main---dashboard--container .main---dashboard--shortcuts::after[data-position=right], main .main---dashboard--container .main---dashboard--notes::after[data-position=right], main .main---dashboard--container .main---dashboard--todo::after[data-position=right], main .welcome---message--container::after[data-position=right], main .motivational---quote--container .motivational---quote::after[data-position=right], header .theme---selector--container .theme---selector--inner::after[data-position=right], header .live---clock--container .live---clock::after[data-position=right] {
     left: auto;
     right: 0;
     transform: translateX(0);
   }
 }
 @media (max-width: 480px) {
-  main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
+  main .section---fetch--weather::after, main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, main .motivational---quote--container .motivational---quote::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
     max-width: 100px;
     font-size: 9px;
     padding: 3px 4px;
   }
 }
-main .main---dashboard--container .main---dashboard--shortcuts:hover::after, main .main---dashboard--container .main---dashboard--notes:hover::after, main .main---dashboard--container .main---dashboard--todo:hover::after, main .welcome---message--container:hover::after, header .theme---selector--container .theme---selector--inner:hover::after, header .live---clock--container .live---clock:hover::after {
+main .section---fetch--weather:hover::after, main .main---dashboard--container .main---dashboard--shortcuts:hover::after, main .main---dashboard--container .main---dashboard--notes:hover::after, main .main---dashboard--container .main---dashboard--todo:hover::after, main .welcome---message--container:hover::after, main .motivational---quote--container .motivational---quote:hover::after, header .theme---selector--container .theme---selector--inner:hover::after, header .live---clock--container .live---clock:hover::after {
   opacity: 1;
   visibility: visible;
 }
-main .main---dashboard--container .main---dashboard--shortcuts::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--todo::before, main .welcome---message--container::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
+main .section---fetch--weather::before, main .main---dashboard--container .main---dashboard--shortcuts::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--todo::before, main .welcome---message--container::before, main .motivational---quote--container .motivational---quote::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
   content: "";
   position: absolute;
   bottom: 100%;
@@ -96,16 +96,16 @@ main .main---dashboard--container .main---dashboard--shortcuts::before, main .ma
   border-bottom-color: #f78d8d;
 }
 @media (max-width: 768px) {
-  main .main---dashboard--container .main---dashboard--shortcuts::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--todo::before, main .welcome---message--container::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
+  main .section---fetch--weather::before, main .main---dashboard--container .main---dashboard--shortcuts::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--todo::before, main .welcome---message--container::before, main .motivational---quote--container .motivational---quote::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
     border-width: 3px;
   }
 }
 @media (max-width: 480px) {
-  main .main---dashboard--container .main---dashboard--shortcuts::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--todo::before, main .welcome---message--container::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
+  main .section---fetch--weather::before, main .main---dashboard--container .main---dashboard--shortcuts::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--todo::before, main .welcome---message--container::before, main .motivational---quote--container .motivational---quote::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
     border-width: 2px;
   }
 }
-main .main---dashboard--container .main---dashboard--shortcuts:hover::before, main .main---dashboard--container .main---dashboard--notes:hover::before, main .main---dashboard--container .main---dashboard--todo:hover::before, main .welcome---message--container:hover::before, header .theme---selector--container .theme---selector--inner:hover::before, header .live---clock--container .live---clock:hover::before {
+main .section---fetch--weather:hover::before, main .main---dashboard--container .main---dashboard--shortcuts:hover::before, main .main---dashboard--container .main---dashboard--notes:hover::before, main .main---dashboard--container .main---dashboard--todo:hover::before, main .welcome---message--container:hover::before, main .motivational---quote--container .motivational---quote:hover::before, header .theme---selector--container .theme---selector--inner:hover::before, header .live---clock--container .live---clock:hover::before {
   opacity: 1;
   visibility: visible;
 }
@@ -204,6 +204,18 @@ main .main---dashboard--container .main---dashboard--shortcuts .dashboard---sect
   border: solid 1px #06a706;
 }
 
+main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-input .section---fetch--weather-input {
+  display: inline-block;
+  border: solid 1px #626262;
+  margin: 0 12px;
+  padding: 4px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-input .section---fetch--weather-input:hover {
+  background: lightblue;
+}
+
 body {
   background: #cdcccc;
   font-family: Arial, Helvetica, sans-serif;
@@ -272,16 +284,6 @@ header .theme---selector--container h2 {
 header .theme---selector--container .theme---selector--inner {
   width: 120px;
   margin: 0 auto;
-  /* 
-              &::before {
-
-                  top: 36px;
-                  bottom: auto;
-                  transform: translateX(-50%) rotate(180deg);
-                  border-top-color: transparent;
-                  border-bottom-color: rgba(0, 0, 0, 0.8);
-                  border-bottom-color: $tooltip---colour;
-              } */
 }
 header .theme---selector--container .theme---selector--inner::after {
   content: attr(data-tooltip);
@@ -311,6 +313,14 @@ header .theme---selector--container .theme---selector--inner::after {
     top: 40px;
     font-size: 8px;
   }
+}
+header .theme---selector--container .theme---selector--inner::before {
+  top: 36px;
+  bottom: auto;
+  transform: translateX(-50%) rotate(180deg);
+  border-top-color: transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.8);
+  border-bottom-color: #f78d8d;
 }
 header .theme---selector--container .theme---selector {
   display: inline-block;
@@ -377,6 +387,12 @@ main .motivational---quote--container .motivational---quote {
   margin: 10px auto;
   text-align: center;
   line-height: 1.7;
+  font-weight: bold;
+  font-size: 10pt;
+  width: 300px;
+}
+main .motivational---quote--container .motivational---quote::before {
+  top: 2px;
 }
 main .welcome---message--container {
   display: block;
@@ -386,6 +402,9 @@ main .welcome---message--container {
   width: 88%;
   /* margin: 25px auto; */
   margin: 25px 0px 11px 49px;
+}
+main .welcome---message--container::before {
+  top: 3px;
 }
 @media (max-width: 768px) {
   main .welcome---message--container {
@@ -484,6 +503,9 @@ main .main---dashboard--container article .dashboard---section .dashboard---sect
 main .main---dashboard--container .main---dashboard--todo {
   border: solid 1px #626262;
 }
+main .main---dashboard--container .main---dashboard--todo::before {
+  top: 1px;
+}
 main .main---dashboard--container .main---dashboard--todo .dashboard---section--content {
   /* color: #57d007; */
 }
@@ -519,6 +541,9 @@ main .main---dashboard--container .main---dashboard--todo .dashboard---section--
 }
 main .main---dashboard--container .main---dashboard--notes {
   border: solid 1px #626262;
+}
+main .main---dashboard--container .main---dashboard--notes::before {
+  top: 1px;
 }
 main .main---dashboard--container .main---dashboard--notes .dashboard---section--content {
   /* color: red; */
@@ -571,6 +596,9 @@ main .main---dashboard--container .main---dashboard--shortcuts {
   border: solid 1px #626262;
   width: 260px;
 }
+main .main---dashboard--container .main---dashboard--shortcuts::before {
+  top: 1px;
+}
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content {
   /* color: orange; */
   width: 95%;
@@ -603,18 +631,62 @@ main .main---dashboard--container .main---dashboard--shortcuts .dashboard---sect
 }
 main .section---fetch--weather {
   display: block;
-  display: none;
   margin: 10px auto;
   width: 80%;
   /* display: none; */
-  border: solid 1px red;
+  border: solid 1px #626262;
+}
+main .section---fetch--weather::before {
+  top: 0px;
+}
+main .section---fetch--weather::after {
+  top: 0px;
+  /* top: 4px; */
+  /* min-height: 20px; */
+  height: 20px;
+  width: auto;
 }
 main .section---fetch--weather h3 {
   text-align: center;
   font-size: 24px;
 }
-main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather--output .section---fetch--weather--output-content .day---forecast {
+main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-input .section---fetch--weather-button {
+  font-weight: bold;
+  padding: 4px;
+  border-radius: 5px;
+  text-align: center;
+  border: solid black 1px;
+  background: #ffec88;
+  cursor: pointer;
+}
+main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-output {
+  margin: 10pt auto;
+}
+main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-output .section---fetch--weather--output-content .day---forecast {
   display: inline-block;
+  vertical-align: top;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 0px 12px;
+  width: 90px;
+  height: 90px;
+  background: lightblue;
+  border: solid 1px #9a9a9a;
+}
+main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-output .section---fetch--weather--output-content .day---forecast .forecast---icon {
+  display: block;
+  margin: 0 auto;
+}
+main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-output .section---fetch--weather--output-content .day---forecast .forecast---details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-output .section---fetch--weather--output-content .day---forecast .forecast---details .forecast---temperature {
+  font-size: 12px;
+  text-align: center;
+  margin: 2px;
 }
 
 .sticky---footer--container {
