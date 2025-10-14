@@ -1,4 +1,4 @@
-console.log('app.js connected - 14-10-2025 - 09:09');
+console.log('app.js connected - 14-10-2025 - 16:00');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -10,7 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const toDoDashboardElement = document.querySelector('#js---dashboard--todo');
     const notesDashboardElement = document.querySelector('#js---dashboard--notes');
     const linksDashboardElement = document.querySelector('#js---dashboard--shortcuts');
-
+    const weatherDashboardElement = document.querySelector('#js----dashboard--weather');
+    const dailyQuoteElement = document.querySelector('.welcome---message--container');
     
     
     // Function to prevent tooltip overflow
@@ -106,6 +107,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('notes dashboard element not found');
     }
 
+
     if (linksDashboardElement) {
         console.log('ToDo dashboard element found:', linksDashboardElement);
         console.log('Tooltip text:', linksDashboardElement.getAttribute('data-tooltip'));
@@ -117,6 +119,34 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     } else {
         console.log('links dashboard element not found');
+    }
+
+
+    if (weatherDashboardElement) {
+        console.log('weather dashboard element found:', weatherDashboardElement);
+        console.log('Tooltip text:', weatherDashboardElement.getAttribute('data-tooltip'));
+        
+        // Ensure tooltip doesn't overflow
+        weatherDashboardElement.addEventListener('mouseenter', function() {
+            console.log('links dashboard hovered');
+            adjustTooltipPosition(this);
+        });
+    } else {
+        console.log('weather dashboard element not found');
+    }
+
+
+    if (dailyQuoteElement) {
+        console.log('daily quote dashboard element found:', dailyQuoteElement);
+        console.log('Tooltip text:', dailyQuoteElement.getAttribute('data-tooltip'));
+        
+        // Ensure tooltip doesn't overflow
+        dailyQuoteElement.addEventListener('mouseenter', function() {
+            console.log('links dashboard hovered');
+            adjustTooltipPosition(this);
+        });
+    } else {
+        console.log('daily quote dashboard element not found');
     }
     
     // Initialize responsive tooltip handling
