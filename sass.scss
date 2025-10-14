@@ -147,7 +147,8 @@ header {
                     font-size: 8px;
                 }
             }
-/* 
+
+            
             &::before {
 
                 top: 36px;
@@ -156,7 +157,7 @@ header {
                 border-top-color: transparent;
                 border-bottom-color: rgba(0, 0, 0, 0.8);
                 border-bottom-color: $tooltip---colour;
-            } */
+            }
 
         }
 
@@ -264,6 +265,14 @@ main {
             margin: 10px auto;
             text-align: center;
             line-height: 1.7;
+            
+
+            @extend %tooltip;
+
+            &::before {
+
+                top: 2px;
+            }
 
         }
 
@@ -278,6 +287,15 @@ main {
         width: 88%;
         /* margin: 25px auto; */
         margin: 25px 0px 11px 49px;
+
+
+
+        &::before {
+
+            top: 3px;
+        }          
+        
+        @extend %tooltip;
 
         @media (max-width: $breakpoint---md) {
 
@@ -330,10 +348,7 @@ main {
                 border-bottom: #ed5959 solid 2px;
             }
 
-        }
-       
-        
-        @extend %tooltip;
+        }     
     }
 
     .main---dashboard--container {
@@ -443,6 +458,12 @@ main {
             // Add tooltip functionality
             @extend %tooltip;
 
+            &::before {
+
+                top: 1px;
+            }
+
+
             .dashboard---section--content {
 
                 /* color: #57d007; */
@@ -521,6 +542,11 @@ main {
 
             // Add tooltip functionality
             @extend %tooltip;
+
+            &::before {
+
+                top: 1px;
+            }
 
             .dashboard---section--content {
 
@@ -603,6 +629,11 @@ main {
             // Add tooltip functionality
             @extend %tooltip;
 
+            &::before {
+
+                top: 1px;
+            }
+
             .dashboard---section--content {
 
                 /* color: orange; */
@@ -677,6 +708,24 @@ main {
         /* display: none; */
         border: solid 1px #626262;
 
+        // Add tooltip functionality
+        @extend %tooltip;
+
+        &::before {
+
+            top: 0px;
+        }      
+
+
+        &::after {
+
+            top: 0px;
+            /* top: 4px; */
+            /* min-height: 20px; */
+            height: 20px;
+            width: auto;
+        }
+
         h3 {
 
             text-align: center;
@@ -701,6 +750,8 @@ main {
 
                         background: lightblue;
                     }
+
+                    // @extend %input---fetch--weather;
                 }
 
                 .section---fetch--weather-button {

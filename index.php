@@ -45,7 +45,7 @@
 
             <h3 class="motivational---quote--heading">Quote of the Day!</h3>
 
-            <p class="motivational---quote">&quot;The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.&quot;</p>
+            <p class="motivational---quote" data-tooltip="Quote of the day">&quot;The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.&quot;</p>
 
         </section>
 
@@ -249,7 +249,7 @@
 
         </section>
 
-        <section class="section---fetch--weather">
+        <section class="section---fetch--weather" id="js----dashboard--weather" data-tooltip="Fetch your latest weather forecast">
 
             <h3 class="section---fetch--weather--output--heading">Fetch Your latest Weather Forecast</h3>
 
