@@ -1,0 +1,16 @@
+%input---fetch--weather {
+
+    display: inline-block;
+    border: solid 1px #626262;
+    margin: 0 12px;
+    padding: 4px;
+    border-radius: 5px;
+
+    transition: background .3s;
+
+    &:hover {
+
+        background: lightblue;
+    }
+
+}
