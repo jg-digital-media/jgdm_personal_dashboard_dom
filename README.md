@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 13-10-2025 - 16:53
+Last Updated: 15-10-2025 - 16:25
 
 ## Sections
 
@@ -9,15 +9,16 @@ Last Updated: 13-10-2025 - 16:53
 
 ## Tasks 
 
-### Total: `35` Completed: `5`
+### Total: `37` Completed: `6`
 
-+ `TODO:` - Implement hoverable toolip on TODO list feature
++ `COMPLETED: 15-10-2025` - Implement hoverable toolip on TODO list feature
 + `TODO:` - Prototype and style the Daily Quote Feature
 + `TODO:` - Prototype and style the Welcome Message Feature - welcome message element
 + `TODO:` - Prototype and style the Main Dashboard TODO List Feature
 + `TODO:` - Prototype and style the Main Dashboard Note Writing Feature
 + `TODO:` - Prototype and style the Main Dashboard Shortcut Links Feature
 + `TODO:` - Prototype and style the Fetch Weather Details Feature
++ `TODO:` - Sass variables for all background colours - buttons, inputs, tooltips
 + `TODO:` - Finish Wireframe - concept for app 
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
 + `TODO:` - Update Font Stack
@@ -34,6 +35,7 @@ Last Updated: 13-10-2025 - 16:53
   + `TODO:` - "hello.. what do I call you?" make content content editable
   + `TODO:` - Salutation change based on time of day `.morning---or--evening` (Morning/Afternoon/Evening)
 + `TODO:` - Implement Main Dashboard TODO List Feature
+  + `TODO:` - add remaining conteneditable attributes to `todo---item--text` elements.
   + `TODO:` - When TODO list items are clicked they should be disabled with no ability to focus on edit them.
 + `TODO:` - Implement Main Dashboard Note Writing Feature
 + `TODO:` - Implement Main Dashboard Shortcut Links Feature
@@ -70,6 +72,10 @@ Last Updated: 13-10-2025 - 16:53
 + `10-10-2025` - Added styling for the Todolist section - mimicking states for editable and edited states.
 
 + `13-10-2025` - Groundwork done for the rest of the dashboard panels. Created more extend directives for more common elements like buttons and icons.
+
++ `15-10-2025` - At this point, Every element has at least some styling applied and a functioning tooltip where appropriate. Now it's the time to do a top to bottom review and development of the UI of the app, looking to improve the readability and maintinability of the code as I go. 
+  + At the end of this day, the UI looks a little more polished and more ready to be implemented with DOM Scripting. I think it needs one more day of configuring with SASS variables and then I'll be ready to start implementing the DOM Scripting and working out different visual themes with localstorage.
+
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
