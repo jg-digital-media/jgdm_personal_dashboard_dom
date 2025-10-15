@@ -341,28 +341,37 @@ main {
         .welcome---message--input {
 
             /* content: "welcome---message--editable"; */
-            padding: 2px;
+            /* padding: 2px; */
+            padding: 2px 9px;
             background: none;
             /* border-bottom: #c24141 solid 2px; */
             border: none;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
             outline: none;
             transition: border-bottom .3s;
             font-size: 16px;
             color: #cb4f08;
 
+            cursor: pointer;            
+            transition: background .3s;
+            
+
             &:focus {
 
                 outline: none;
-                border: auto;
                 background: #c24141;
                 background: $bg---body;
                 border-bottom: #c24141 solid 2px;
+
             }
 
             &:hover {
 
                 /* border: solid 2px #c24141; */
                 border-bottom: #ed5959 solid 2px;
+                background: lightyellow;
+                background: lighten($bg---body, 10%);
             }
 
         }     
@@ -371,6 +380,17 @@ main {
     .main---dashboard--container {
 
         text-align: center;
+
+        article.main---dashboard {
+
+            background: wheat;  // common background style to containers
+
+            div {
+
+                background: wheat;
+                
+            }
+        }
         
         article {
 
@@ -405,7 +425,8 @@ main {
                     text-align: right;
                     align-items: flex-end;
                     justify-content: flex-end;
-                    padding: 0 12px;
+                    padding: 5px 12px;
+                    /* background: wheat; */
                     background: none;
 
                     h3.dashboard---section--todo {
@@ -471,6 +492,7 @@ main {
         .main---dashboard--todo {
 
             border: solid 1px #626262;
+            background: wheat;
             
             // Add tooltip functionality
             @extend %tooltip;
@@ -484,17 +506,26 @@ main {
             .dashboard---section--content {
 
                 /* color: #57d007; */
+                background: wheat;
+                padding-bottom: 18px;
+
+                div {
+
+                   /*  margin-top: 10px; */
+                }
 
                 .todo---dashboard--container {
 
-                    margin-top: 30px;
+                    /* margin-top: 15px; */
+                    /* background: wheat; */
 
                     ul {
 
-                        height: 180px;
+                        height: 195px;
                         /* overflow-y: scroll; */
                         overflow-y: auto;
-                        width: 95%;
+                        width: 100%;
+                        border-top: solid 1px #d3bebe;
 
                         li {
 
@@ -568,14 +599,15 @@ main {
             .dashboard---section--content {
 
                 /* color: red; */
-                width: 95%;
+                width: 100%;
 
                 .notes---dashboard--container {
 
-                    overflow-y: scroll;
+                    /* overflow-y: scroll; */
                     overflow-y: auto;
-                    height: 180px;
-                    margin-top: 30px;
+                    height: 195px;
+                    /* margin-top: 15px; */
+                    border-top: solid 1px #d3bebe;
 
                     .note---dashboard--item {
 
@@ -654,13 +686,14 @@ main {
             .dashboard---section--content {
 
                 /* color: orange; */
-                width: 95%;
+                width: 100%;
 
                 .links---dashboard--container {
                 
                     height: 180px;
-                    margin-top: 30px;
+                    /* margin-top: 15px; */
                     overflow: auto;
+                    border-top: solid 1px #d3bebe;
                 }
 
                 .links---dashboard--item {
