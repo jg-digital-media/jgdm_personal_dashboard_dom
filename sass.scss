@@ -272,14 +272,14 @@ main {
             text-align: center;
             line-height: 1.7;
             font-weight: bold;
-            font-size: 10pt;
-            width: 300px;
+            font-size: 8pt;
+            /* width: 300px; */
             /* background: #626262; */
             /* background: none; */
-            background: #caff99;
+            /* background: #caff99; */
             background: $bg---qotd;
             /* background: none; */
-            padding: 5px;
+            padding: 7px;
             border-radius: 8px;
             border: solid darken($bg---qotd, 10%) 1px;
                     
@@ -303,7 +303,7 @@ main {
         height: 15px;
         width: 88%;
         /* margin: 25px auto; */
-        margin: 25px 0px 11px 49px;
+        margin: 0px 0px 11px 49px;
 
 
 
@@ -542,7 +542,7 @@ main {
 
                             list-style: none;
                             /* margin: 10px 5px; */
-                            padding: 10px 0;
+                            padding: 6px 0;
                             background: none;
 
                             transition: background .3s;
@@ -709,9 +709,18 @@ main {
                 }
 
                 .links---dashboard--item {
+                   
+                    /* margin: 10px 0px; */
+                    padding: 4px 0;
+                    display: flex;
+                    align-items: center;
 
-                    display: block;
-                    margin: 10px 5px;
+                    transition: background .3s;
+
+                    &:hover {
+
+                        background: yellow;
+                    }
 
                     .icon---close {
 
@@ -738,13 +747,13 @@ main {
 
                         a {
 
-                            color: gray;
+                            color: $url---col--secondary;
                             font-size: 14px;
                             vertical-align: bottom;
 
                             &:hover {
 
-                                color: #990202;
+                                color: $url---col--secondary-hover;
                             }
 
                         }
