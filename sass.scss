@@ -383,12 +383,20 @@ main {
 
         article.main---dashboard {
 
-            background: wheat;  // common background style to containers
+            background: $bg---dashboards;  // common background style to containers
 
             div {
 
-                background: wheat;
+                // background: $bg---dashboards;
                 
+            }
+
+            .dashboard---section--content {
+
+                div {
+
+                    /* height: 195px; */ // defunct
+                }
             }
         }
         
@@ -423,10 +431,10 @@ main {
 
                     display: flex;
                     text-align: right;
-                    align-items: flex-end;
+                    align-items: center;
                     justify-content: flex-end;
                     padding: 5px 12px;
-                    /* background: wheat; */
+                    /* background: $bg---dashboards; */
                     background: none;
 
                     h3.dashboard---section--todo {
@@ -434,6 +442,7 @@ main {
                         margin: 0 12px;
                         /* font-size: 17pt; */
                         font-size: 10pt;
+                        color: red;
                     }
 
                     .section---button--collapse {
@@ -454,6 +463,8 @@ main {
 
                         margin: 0 12px;
                         font-size: 17pt;
+                        width: 100%;
+                        text-align: left;
 
                     }
 
@@ -492,7 +503,7 @@ main {
         .main---dashboard--todo {
 
             border: solid 1px #626262;
-            background: wheat;
+            background: bg---dashboards;
             
             // Add tooltip functionality
             @extend %tooltip;
@@ -506,7 +517,7 @@ main {
             .dashboard---section--content {
 
                 /* color: #57d007; */
-                background: wheat;
+                //background: $bg---dashboards;
                 padding-bottom: 18px;
 
                 div {
@@ -517,7 +528,7 @@ main {
                 .todo---dashboard--container {
 
                     /* margin-top: 15px; */
-                    /* background: wheat; */
+                    /* background: $bg---dashboards; */
 
                     ul {
 
@@ -530,14 +541,15 @@ main {
                         li {
 
                             list-style: none;
-                            margin: 10px 5px;
+                            /* margin: 10px 5px; */
+                            padding: 10px 0;
                             background: none;
 
                             transition: background .3s;
 
                             &:hover {
 
-                                background: none;
+                                background: lightblue;
                             }
 
                             span {
@@ -690,7 +702,7 @@ main {
 
                 .links---dashboard--container {
                 
-                    height: 180px;
+                    height: 195px;
                     /* margin-top: 15px; */
                     overflow: auto;
                     border-top: solid 1px #d3bebe;
@@ -757,6 +769,7 @@ main {
         width: 80%;
         /* display: none; */
         border: solid 1px #626262;
+        background: $bg---weather--fetch;
 
         // Add tooltip functionality
         @extend %tooltip;
