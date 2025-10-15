@@ -1,6 +1,6 @@
 /*
 
-    Last Update: 14-10-2025 - 16:05
+    Last Update: 14-10-2025 - 10:26
 */
 * {
   padding: 0;
@@ -133,21 +133,33 @@ main .main---dashboard--container .main---dashboard--shortcuts .dashboard---btn,
   transition: background 0.3s;
 }
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---btn:hover, main .main---dashboard--container .main---dashboard--notes .dashboard---btn:hover, main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container #add---todo--item:hover {
-  background: #fff3d0;
+  background: #fbf2e0;
 }
 
 /* btn---section---close */
 main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--close {
   font-weight: bold;
   vertical-align: top;
-  font-size: 20pt;
+  font-size: 16pt;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--close:hover {
+  color: #8f0202;
 }
 
 /* btn---section--collapse.scss */
 main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--collapse {
   font-weight: bold;
   vertical-align: top;
-  font-size: 20pt;
+  font-size: 16pt;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--collapse:hover {
+  color: #8f0202;
 }
 
 /* btn---section--collapse.scss */
@@ -176,7 +188,8 @@ main .main---dashboard--container .main---dashboard--shortcuts .dashboard---sect
   border-radius: 50%;
   text-align: center;
   padding: 0;
-  margin: 0;
+  /* margin: 0; */
+  margin: 3px 9px;
   font-size: 24px;
   content: "X close button";
   vertical-align: middle;
@@ -228,6 +241,7 @@ header {
   width: 100%;
   color: #fff;
   /* margin: 5px 0 0 0; */
+  box-shadow: #212121 0px 0px 2px 1px;
 }
 header div {
   /* width: 21%; */
@@ -373,23 +387,32 @@ header .theme---selector--container #theme-four:hover {
 }
 
 main .motivational---quote--container {
+  display: block;
   text-align: center;
   margin: 15px auto;
-  display: block;
   width: 320px;
   font-size: 13px;
+  padding: 2px;
 }
 main .motivational---quote--container .motivational---quote--heading {
   content: "Motivational Quote";
 }
 main .motivational---quote--container .motivational---quote {
   font-style: italic;
-  margin: 10px auto;
+  margin: 15px auto;
   text-align: center;
   line-height: 1.7;
   font-weight: bold;
-  font-size: 10pt;
-  width: 300px;
+  font-size: 8pt;
+  /* width: 300px; */
+  /* background: #626262; */
+  /* background: none; */
+  /* background: #caff99; */
+  background: #ffe79d;
+  /* background: none; */
+  padding: 7px;
+  border-radius: 8px;
+  border: solid #ffdb6a 1px;
 }
 main .motivational---quote--container .motivational---quote::before {
   top: 2px;
@@ -401,7 +424,7 @@ main .welcome---message--container {
   height: 15px;
   width: 88%;
   /* margin: 25px auto; */
-  margin: 25px 0px 11px 49px;
+  margin: 0px 0px 11px 49px;
 }
 main .welcome---message--container::before {
   top: 3px;
@@ -423,18 +446,22 @@ main .welcome---message--container .welcome---message--editable {
 }
 main .welcome---message--container .welcome---message--input {
   /* content: "welcome---message--editable"; */
-  padding: 2px;
+  /* padding: 2px; */
+  padding: 2px 9px;
   background: none;
   /* border-bottom: #c24141 solid 2px; */
   border: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   outline: none;
   transition: border-bottom 0.3s;
   font-size: 16px;
   color: #cb4f08;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 main .welcome---message--container .welcome---message--input:focus {
   outline: none;
-  border: auto;
   background: #c24141;
   background: #cdcccc;
   border-bottom: #c24141 solid 2px;
@@ -442,9 +469,17 @@ main .welcome---message--container .welcome---message--input:focus {
 main .welcome---message--container .welcome---message--input:hover {
   /* border: solid 2px #c24141; */
   border-bottom: #ed5959 solid 2px;
+  background: lightyellow;
+  background: #e6e6e6;
 }
 main .main---dashboard--container {
   text-align: center;
+}
+main .main---dashboard--container article.main---dashboard {
+  background: wheat;
+}
+main .main---dashboard--container article.main---dashboard .dashboard---section--content div {
+  /* height: 195px; */
 }
 main .main---dashboard--container article {
   display: inline-block;
@@ -470,15 +505,17 @@ main .main---dashboard--container article:hover {
 main .main---dashboard--container article .dashboard---section .dashboard---section--buttons {
   display: flex;
   text-align: right;
-  align-items: flex-end;
+  align-items: center;
   justify-content: flex-end;
-  padding: 0 12px;
+  padding: 5px 12px;
+  /* background: $bg---dashboards; */
   background: none;
 }
-main .main---dashboard--container article .dashboard---section .dashboard---section--buttons h3.dashboard---section--todo {
+main .main---dashboard--container article .dashboard---section .dashboard---section--buttons h3.dashboard---section--heading {
   margin: 0 12px;
   /* font-size: 17pt; */
   font-size: 10pt;
+  color: red;
 }
 main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--collapse {
   font-weight: bold;
@@ -493,6 +530,8 @@ main .main---dashboard--container article .dashboard---section .dashboard---sect
 main .main---dashboard--container article .dashboard---section .dashboard---section--buttons h3 {
   margin: 0 12px;
   font-size: 17pt;
+  width: 100%;
+  text-align: left;
 }
 main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--collapse,
 main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--close {
@@ -502,30 +541,38 @@ main .main---dashboard--container article .dashboard---section .dashboard---sect
 }
 main .main---dashboard--container .main---dashboard--todo {
   border: solid 1px #626262;
+  /* background: bg---dashboards; */
 }
 main .main---dashboard--container .main---dashboard--todo::before {
   top: 1px;
 }
 main .main---dashboard--container .main---dashboard--todo .dashboard---section--content {
   /* color: #57d007; */
+  padding-bottom: 18px;
+}
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content div {
+  /*  margin-top: 10px; */
 }
 main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container {
-  margin-top: 30px;
+  /* margin-top: 15px; */
+  /* background: $bg---dashboards; */
 }
 main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul {
-  height: 180px;
+  height: 195px;
   /* overflow-y: scroll; */
   overflow-y: auto;
-  width: 95%;
+  width: 100%;
+  border-top: solid 1px #d3bebe;
 }
 main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li {
   list-style: none;
-  margin: 10px 5px;
+  /* margin: 10px 5px; */
+  padding: 6px 0;
   background: none;
   transition: background 0.3s;
 }
 main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li:hover {
-  background: none;
+  background: lightblue;
 }
 main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span {
   display: flex;
@@ -547,13 +594,14 @@ main .main---dashboard--container .main---dashboard--notes::before {
 }
 main .main---dashboard--container .main---dashboard--notes .dashboard---section--content {
   /* color: red; */
-  width: 95%;
+  width: 100%;
 }
 main .main---dashboard--container .main---dashboard--notes .dashboard---section--content .notes---dashboard--container {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
   overflow-y: auto;
-  height: 180px;
-  margin-top: 30px;
+  height: 195px;
+  /* margin-top: 15px; */
+  border-top: solid 1px #d3bebe;
 }
 main .main---dashboard--container .main---dashboard--notes .dashboard---section--content .notes---dashboard--container .note---dashboard--item {
   display: block;
@@ -568,6 +616,7 @@ main .main---dashboard--container .main---dashboard--notes .dashboard---section-
   width: 75%;
   padding: 4px;
   border-radius: 5px;
+  box-shadow: #1b956c 0 0 3px;
   transition: background 0.3s;
 }
 main .main---dashboard--container .main---dashboard--notes .dashboard---section--content .notes---dashboard--container .note---dashboard--item:hover {
@@ -588,9 +637,16 @@ main .main---dashboard--container .main---dashboard--notes .dashboard---section-
   margin: 0px 0% 0px 90%;
   cursor: pointer;
   transition: color 0.3s;
+  height: 20px;
+  width: 20px;
 }
 main .main---dashboard--container .main---dashboard--notes .dashboard---section--content .notes---dashboard--container .note---dashboard--item .icon---close:hover {
   color: #890505;
+}
+main .main---dashboard--container .main---dashboard--notes .dashboard---section--content .notes---dashboard--container .note---dashboard--item .note---dashboard--content {
+  font-size: 12px;
+  min-height: 60px;
+  height: auto;
 }
 main .main---dashboard--container .main---dashboard--shortcuts {
   border: solid 1px #626262;
@@ -601,16 +657,23 @@ main .main---dashboard--container .main---dashboard--shortcuts::before {
 }
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content {
   /* color: orange; */
-  width: 95%;
+  width: 100%;
 }
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--container {
-  height: 180px;
-  margin-top: 30px;
+  height: 195px;
+  /* margin-top: 15px; */
   overflow: auto;
+  border-top: solid 1px #d3bebe;
 }
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item {
-  display: block;
-  margin: 10px 5px;
+  /* margin: 10px 0px; */
+  padding: 4px 0;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s;
+}
+main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item:hover {
+  background: yellow;
 }
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .icon---close {
   /* padding: 0 2px; */
@@ -635,6 +698,7 @@ main .section---fetch--weather {
   width: 80%;
   /* display: none; */
   border: solid 1px #626262;
+  background: #ffe79d;
 }
 main .section---fetch--weather::before {
   top: 0px;
@@ -657,7 +721,11 @@ main .section---fetch--weather .section---fetch--weather-container .section---fe
   text-align: center;
   border: solid black 1px;
   background: #ffec88;
+  transition: background 0.3s;
   cursor: pointer;
+}
+main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-input .section---fetch--weather-button:hover {
+  background: lightblue;
 }
 main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-output {
   margin: 10pt auto;
