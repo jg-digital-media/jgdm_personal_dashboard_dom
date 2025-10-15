@@ -1,0 +1,34 @@
+/* btn---button---dashboards.scss */
+
+// TODO: style toggle buttons in footer
+
+%btn---dashboard--actions {
+
+    border: solid 1px red;
+   /*  padding: 3px; */
+    /* margin: 7px; */
+    /* position: relative; */
+    /* top: 6px; */
+    /* border-radius: 5px; */
+    /* font-size: 13px; */
+
+    background: wheat;
+    border: solid 1px #929292;
+    padding: 5px;
+    margin: 6px;
+    position: relative;
+    top: 7px;
+    border-radius: 5px;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+
+    transition: background .3s;
+
+    &:hover {
+
+        background: lighten($bg---dashboards, 10%);
+    }
+}
+ 
