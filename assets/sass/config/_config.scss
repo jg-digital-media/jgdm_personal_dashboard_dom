@@ -4,6 +4,7 @@ $bg---header: #212121;
 $bg---footer: $bg---header;
 $bg---body: #cdcccc;
 $bg---dashboards: #ffe79d;
+$bg---qotd: #ffe79d;
 
 $col---primary: #000;
 $col---secondary: #fff;
@@ -18,19 +19,6 @@ $url---col---footer: white;
 $url---col---footer-hover: yellow;
 
 $url---secondary: #fff;
-
-// Font stack
-$font---main: Arial, Helvetica, sans-serif;
-
-// Font config variables
-
-$font---size--large: 20pt;
-$font---size--medium: 16px;
-$font---size--small: 10px;
-
-$font---size--h1: 20pt;
-$font---size--h2: 16px;
-
 // theme option selector colours
 $theme---option--one: #ff3c3c;
 $theme---option--two: #a6ff58;
@@ -44,6 +32,19 @@ $theme---option--border-four: #757575;
 $tooltip---colour: #f78d8d;
 $tooltip---background: rgba(0, 0, 0, 0.8);
 $tooltip---border: solid 1px gray;
+
+// Font stack
+$font---main: Arial, Helvetica, sans-serif;
+
+// Font config variables
+
+$font---size--large: 20pt;
+$font---size--medium: 16px;
+$font---size--small: 10px;
+
+$font---size--h1: 20pt;
+$font---size--h2: 16px;
+
 
 // Breakpoint variables
 $breakpoint---xs: 480px;

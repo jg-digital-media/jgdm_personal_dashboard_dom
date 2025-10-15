@@ -1,5 +1,7 @@
 @import "assets/sass/head";
 
+
+// colours background colours, font stack and breakpoints
 @import "assets/sass/config/config";
 
 @import "assets/sass/main";
@@ -251,11 +253,12 @@ main {
 
     .motivational---quote--container {
 
+        display: block;
         text-align: center;
         margin: 15px auto;
-        display: block;
         width: 320px;
         font-size: 13px;
+        padding: 2px;
 
         .motivational---quote--heading {
 
@@ -265,12 +268,20 @@ main {
         .motivational---quote {
 
             font-style: italic;
-            margin: 10px auto;
+            margin: 15px auto;
             text-align: center;
             line-height: 1.7;
             font-weight: bold;
             font-size: 10pt;
             width: 300px;
+            /* background: #626262; */
+            /* background: none; */
+            background: #caff99;
+            background: $bg---qotd;
+            /* background: none; */
+            padding: 5px;
+            border-radius: 8px;
+            border: solid darken($bg---qotd, 10%) 1px;
                     
 
             @extend %tooltip;
