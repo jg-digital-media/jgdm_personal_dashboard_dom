@@ -635,6 +635,7 @@ main {
                         width: 75%;
                         padding: 4px;
                         border-radius: 5px;
+                        box-shadow: #1b956c 0 0 3px;
 
                         transition: background .3s;
 
@@ -667,6 +668,16 @@ main {
                             }
                             
                             //@extend %btn---item--close;
+
+                            height: 20px;
+                            width: 20px;
+                        }
+
+                        .note---dashboard--content {
+
+                            font-size: 12px;
+                            min-height: 60px;
+                            height: auto;
                         }
 
                     }
