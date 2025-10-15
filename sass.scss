@@ -8,7 +8,7 @@
 
 // extend sass partials
 @import "assets/sass/extends/tooltips";
-@import "assets/sass/extends/buttons/button---dashboard/button---dashboards";
+@import "assets/sass/extends/buttons/button---dashboard/button---dashboard--actions";
 @import "assets/sass/extends/buttons/button---dashboard/btn---section--close";
 @import "assets/sass/extends/buttons/button---dashboard/btn---section--collapse";
 @import "assets/sass/extends/buttons/button---footer--toggles/btn---section--toggles";
@@ -437,7 +437,7 @@ main {
                     /* background: $bg---dashboards; */
                     background: none;
 
-                    h3.dashboard---section--todo {
+                    h3.dashboard---section--heading {
 
                         margin: 0 12px;
                         /* font-size: 17pt; */
@@ -503,7 +503,7 @@ main {
         .main---dashboard--todo {
 
             border: solid 1px #626262;
-            background: bg---dashboards;
+            /* background: bg---dashboards; */
             
             // Add tooltip functionality
             @extend %tooltip;
@@ -832,8 +832,14 @@ main {
                     text-align: center;
                     border: solid black 1px;
                     background: #ffec88;
+                    transition: background .3s;
                     
                     cursor: pointer; // button element
+
+                    &:hover {
+
+                        background: lightblue;
+                    }
                 }
 
             }

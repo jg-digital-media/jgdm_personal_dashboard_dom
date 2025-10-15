@@ -66,7 +66,7 @@
 
                     <div class="dashboard---section--buttons">
                     
-                        <h3 class="dashboard---section--todo">To Do</h3>          
+                        <h3 class="dashboard---section--heading">To Do</h3>          
 
                         <span class="section---button--collapse" id="collapse">&lowbar;</span>
                         <span class="section---button--close" id="close">&times;</span>
@@ -106,7 +106,7 @@
 
                     <div class="dashboard---section--buttons">
                     
-                        <h3 class="dashboard---section--todo">Notes</h3>          
+                        <h3 class="dashboard---section--heading">Notes</h3>          
 
                         <span class="section---button--collapse" id="collapse">&lowbar;</span>
                         <span class="section---button--close" id="close">&times;</span>
@@ -166,7 +166,7 @@
 
                     <div class="dashboard---section--buttons">
 
-                        <h3 class="dashboard---section--todo">Shortcut Links</h3>          
+                        <h3 class="dashboard---section--heading">Shortcut Links</h3>          
 
                         <span class="section---button--collapse" id="collapse">&lowbar;</span>
                         <span class="section---button--close" id="close">&times;</span>
