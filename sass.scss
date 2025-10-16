@@ -34,7 +34,7 @@ header {
     width: 100%;
     color: $col---secondary;
     /* margin: 5px 0 0 0; */
-    box-shadow: #212121 0px 0px 2px 1px;
+    box-shadow: $bg---header 0px 0px 2px 1px;
 
     div {
     
@@ -54,7 +54,7 @@ header {
 
             font-weight: bold;
             position: relative;
-            font-size: $font---size--large;
+            /* font-size: $font---size--large; */
             font-size: $font---size--medium;
 
             // live click tooltip extend
