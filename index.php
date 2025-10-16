@@ -251,11 +251,11 @@
 
         <section class="section---fetch--weather" id="js----dashboard--weather" data-tooltip="Fetch your latest weather forecast">
 
-            <h3 class="section---fetch--weather--output--heading">Fetch Your latest Weather Forecast</h3>
+            <h3 class="section---fetch--weather--output__heading">Fetch Your latest Weather Forecast</h3>
 
-            <div class="section---fetch--weather-container">
+            <div class="section---fetch--weather-output">
 
-                <div class="section---fetch--weather-input">
+                <div class="section---fetch--weather-container">
                     <input class="section---fetch--weather-input" id="js---weather--input" type="text" placeholder="Enter City Name" />
                     <button class="section---fetch--weather-button" id="js---weather--button">Fetch</button>
                 </div>
