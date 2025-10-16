@@ -16,6 +16,7 @@
 @import "assets/sass/extends/buttons/button---item--edit/button---edit";
 
 @import "assets/sass/extends/inputs/input---fetch--weather/input---fetch--weather";
+@import "assets/sass/extends/inputs/input---welcome--message/input---welcome--message";
 
 
 
@@ -24,6 +25,7 @@ body {
     background: $bg---body;
     font-family: $font---main;
     font-size: $font---size--medium;
+    color: #323232;
 }
 
 
@@ -126,12 +128,14 @@ header {
             @extend %tooltip;
 
             &::after {
+
                 content: attr(data-tooltip);
                 top: 43px;
                 bottom: auto;
                 
                 // Responsive positioning to prevent overflow
                 @media (max-width: $breakpoint---lg) {
+                    
                     max-width: 140px;
                     width: 100%;
                     left: 50%;
@@ -140,6 +144,7 @@ header {
                 }
                 
                 @media (max-width: $breakpoint---md) {
+                    
                     max-width: 100px;
                     top: 40px;
                     left: 50%;
@@ -147,13 +152,13 @@ header {
                 }
                 
                 @media (max-width: $breakpoint---xs) {
+                    
                     /* max-width: 80px; */
                     top: 40px;
                     font-size: 8px;
                 }
             }
 
-            
             &::before {
 
                 top: 36px;
@@ -180,8 +185,7 @@ header {
         #theme-one {
 
             background: $theme---option--one;
-            border: solid $theme---option--border-one 1px;
-            
+            border: solid $theme---option--border-one 1px;            
 
             transition: transform .2s, background .4s;
             cursor: pointer;
@@ -190,8 +194,7 @@ header {
 
                 transform: scale(1.14);
                 background: lighten($theme---option--one, 10%);
-            }
-            
+            }            
 
         }
 
@@ -233,7 +236,6 @@ header {
             background: $theme---option--four;
             border: solid $theme---option--border-four 1px;
 
-
             transition: transform .2s, background .4s;
             cursor: pointer;
 
@@ -257,8 +259,8 @@ main {
         text-align: center;
         margin: 15px auto;
         width: 320px;
-        font-size: 13px;
-        padding: 2px;
+        font-size: 12px;
+        padding: 4px;
 
         .motivational---quote--heading {
 
@@ -281,8 +283,7 @@ main {
             /* background: none; */
             padding: 7px;
             border-radius: 8px;
-            border: solid darken($bg---section--qotd, 10%) 1px;
-                    
+            border: solid darken($bg---section--qotd, 10%) 1px;                    
 
             @extend %tooltip;
 
@@ -299,13 +300,11 @@ main {
 
         display: block;
         margin: 25px 18px;
-        height: 15px;
-        height: 15px;
+        /* height: 15px; */
+        height: 22px;
         width: 88%;
         /* margin: 25px auto; */
         margin: 0px 0px 11px 49px;
-
-
 
         &::before {
 
@@ -340,39 +339,7 @@ main {
         // if welcome message input
         .welcome---message--input {
 
-            /* content: "welcome---message--editable"; */
-            /* padding: 2px; */
-            padding: 2px 9px;
-            background: none;
-            /* border-bottom: #c24141 solid 2px; */
-            border: none;
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-            outline: none;
-            transition: border-bottom .3s;
-            font-size: 16px;
-            color: #cb4f08;
-
-            cursor: pointer;            
-            transition: background .3s;
-            
-
-            &:focus {
-
-                outline: none;
-                background: #c24141;
-                background: $bg---body;
-                border-bottom: #c24141 solid 2px;
-
-            }
-
-            &:hover {
-
-                /* border: solid 2px #c24141; */
-                border-bottom: #ed5959 solid 2px;
-                background: lightyellow;
-                background: lighten($bg---body, 10%);
-            }
+            @extend %input---user--welcome;
 
         }     
     }
@@ -384,6 +351,15 @@ main {
         article.main---dashboard {
 
             background: $bg---section--dashboards;  // common background style to containers
+            border: solid 1px #bdb5b5;
+
+            transition: border .3s;
+
+            &:hover {
+
+                border: solid 1px #626262;
+                
+            }
 
             div {
 
@@ -427,6 +403,8 @@ main {
 
             .dashboard---section {
 
+                /* border: solid 1px #bdb5b5; */
+
                 .dashboard---section--buttons {
 
                     display: flex;
@@ -436,13 +414,15 @@ main {
                     padding: 5px 12px;
                     /* background: $bg---dashboards; */
                     background: none;
+                    background: linear-gradient(0deg, #3a3939 -25%, wheat 4%);
 
                     h3.dashboard---section--heading {
 
                         margin: 0 12px;
                         /* font-size: 17pt; */
-                        font-size: 10pt;
-                        color: red;
+                        font-size: 12pt;
+                        /* color: red; */
+                        color: #5c5656;
                     }
 
                     .section---button--collapse {
@@ -544,6 +524,9 @@ main {
                             /* margin: 10px 5px; */
                             padding: 6px 0;
                             background: none;
+                            /* color: #5c5656; */
+                            color: $col---primary;
+                            /* color: black; */
 
                             transition: background .3s;
 
@@ -641,7 +624,8 @@ main {
 
                         &:hover {
 
-                            background: #25f700;
+                            /* background: #25f700; */
+                            background: #8dff79
                         }
 
                         .icon---close {
@@ -684,7 +668,6 @@ main {
 
                 }
             }
-
             
             .dashboard---btn {
 
@@ -786,11 +769,19 @@ main {
     .section---fetch--weather {
 
         display: block;
+        /* display: none; */
+        background: $bg---section--weather-fetch;
+        border: solid 1px #bdb5b5;
+        border-radius: 6px;
         margin: 10px auto;
         width: 80%;
-        /* display: none; */
-        border: solid 1px #626262;
-        background: $bg---section--weather-fetch;
+
+        transition: border .3s;
+
+        &:hover {
+
+            border: #626262 solid 1px;
+        }
 
         // Add tooltip functionality
         @extend %tooltip;
@@ -810,15 +801,16 @@ main {
             width: auto;
         }
 
-        h3 {
+        h3.section---fetch--weather--output__heading {
 
             text-align: center;
             font-size: 24px;
+            padding: 5px 0;
         }
 
-        .section---fetch--weather-container {
+        .section---fetch--weather-output {
 
-            .section---fetch--weather-input {
+            .section---fetch--weather-container {
 
                 .section---fetch--weather-input {                   
 
