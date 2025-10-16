@@ -83,12 +83,12 @@
 
                             <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text" contenteditable="true">Item 1</span></li>
                             <li><span class="icon---close">&times;</span>  <span class="icon---edit edit---state--icon">&nbsp;</span>  <span class="todo---item--text text---edit--state" contenteditable="true">Item 2</span></li>
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit edit---state--icon">&nbsp;</span>  <span class="todo---item--text text---edit--state">Item 3</span></li>
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit edit---state--icon">&nbsp;</span>  <span class="todo---item--text text---edit--state">Item 4</span></li>
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit edit---state--icon">&nbsp;</span>  <span class="todo---item--text text---edit--state">Item 5</span></li>
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 6</span></li> 
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 7</span></li> 
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text">Item 8</span></li>
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit edit---state--icon">&nbsp;</span>  <span class="todo---item--text text---edit--state" contenteditable="true">Item 3</span></li>
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit edit---state--icon">&nbsp;</span>  <span class="todo---item--text text---edit--state" contenteditable="true">Item 4</span></li>
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit edit---state--icon">&nbsp;</span>  <span class="todo---item--text text---edit--state" contenteditable="true">Item 5</span></li>
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text" contenteditable="true">Item 6</span></li> 
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text" contenteditable="true">Item 7</span></li> 
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text" contenteditable="true">Item 8</span></li>
                         </ul>
 
                         <!-- <p>Content goes here</p> -->
@@ -123,7 +123,7 @@
 
                             <span class="icon---close">&times;</span>
                             
-                            <div class="note---dashboard--content">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+                            <div class="note---dashboard--content" contenteditable="true">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
 
                         </div>
                         
@@ -131,7 +131,7 @@
 
                             <span class="icon---close">&times;</span>
                             
-                            <div class="note---dashboard--content">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+                            <div class="note---dashboard--content" contenteditable="true">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
 
                         </div>
                         
@@ -139,7 +139,7 @@
 
                             <span class="icon---close">&times;</span>
                             
-                            <div class="note---dashboard--content">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+                            <div class="note---dashboard--content" contenteditable="true">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
 
                         </div>
                         
@@ -147,7 +147,7 @@
 
                             <span class="icon---close">&times;</span>
                             
-                            <div class="note---dashboard--content">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+                            <div class="note---dashboard--content" contenteditable="true">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
 
                         </div>
 
