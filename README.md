@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 15-10-2025 - 16:25
+Last Updated: 16-10-2025 - 15:29
 
 ## Sections
 
@@ -9,21 +9,21 @@ Last Updated: 15-10-2025 - 16:25
 
 ## Tasks 
 
-### Total: `37` Completed: `6`
+### Total: `37` Completed: `14`
 
 + `COMPLETED: 15-10-2025` - Implement hoverable toolip on TODO list feature
-+ `TODO:` - Prototype and style the Daily Quote Feature
-+ `TODO:` - Prototype and style the Welcome Message Feature - welcome message element
-+ `TODO:` - Prototype and style the Main Dashboard TODO List Feature
-+ `TODO:` - Prototype and style the Main Dashboard Note Writing Feature
-+ `TODO:` - Prototype and style the Main Dashboard Shortcut Links Feature
-+ `TODO:` - Prototype and style the Fetch Weather Details Feature
-+ `TODO:` - Sass variables for all background colours - buttons, inputs, tooltips
-+ `TODO:` - Finish Wireframe - concept for app 
++ `COMPLETED: 16-10-2025` - Prototype and style the Daily Quote Feature
++ `COMPLETED: 16-10-2025` - Prototype and style the Welcome Message Feature - welcome message element
++ `COMPLETED: 16-10-2025` - Prototype and style the Main Dashboard TODO List Feature
++ `COMPLETED: 16-10-2025` - Prototype and style the Main Dashboard Note Writing Feature
++ `COMPLETED: 16-10-2025` - Prototype and style the Main Dashboard Shortcut Links Feature
++ `COMPLETED: 16-10-2025` - Prototype and style the Fetch Weather Details Feature
++ `COMPLETED: 16-10-2025:` - Sass variables for all background colours - buttons, inputs, tooltips
++ `COMPLETED: 16-10-2025:` - Finish Wireframe - concept for app 
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
 + `TODO:` - Update Font Stack
 + `TODO:` - "Featuring DOM Elements" - Text to appear as hoverable tooltips.
-  + `TODO:` - Move tooltips away from CSS content property.  Need more control of positioning. May be better if we use a JS Object to store these
+  + `TODO:` - Move tooltips away from CSS content property.  Need more control of positioning. May be better if we use a JS Object to store these tooltip texts.
   + `TODO:` - modify data-tooltip attribute text for existing tooltips
   + `TODO:` - `theme---selector--container` - tooltip text - `"Attribute/class manipulation (classList.add/remove/toggle)"`
 + `TODO:` - Implement Live Clock Feature
@@ -43,6 +43,7 @@ Last Updated: 15-10-2025 - 16:25
 + `TODO:` - Implement Footer
 + `TODO:` - Implement sticky footer banner at bottom of page - for adding and closing sections - resetting defaults.
 + `TODO:` - Add custom vertical scrolling styles for dashboard sections
++ `TODO:` - Add meta tags for SEO and social media sharing
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
 + `COMPLETED: 06-10-2025` - extend styles for use of multiple tooltips
@@ -76,6 +77,9 @@ Last Updated: 15-10-2025 - 16:25
 + `15-10-2025` - At this point, Every element has at least some styling applied and a functioning tooltip where appropriate. Now it's the time to do a top to bottom review and development of the UI of the app, looking to improve the readability and maintinability of the code as I go. 
   + At the end of this day, the UI looks a little more polished and more ready to be implemented with DOM Scripting. I think it needs one more day of configuring with SASS variables and then I'll be ready to start implementing the DOM Scripting and working out different visual themes with localstorage.
 
++ `16-10-2025` - On this day, I think I can say I've passed the point now of full focus on the UI and styling and will start focusing on implementation soon.  Any improvements to the visuals will now be made as and when needed.
+
+  + There are some aspects that haven't yet been prototyped. In some cases, where I'll be adding new elements dynamically with JavaScript, I'll probably need modals to add information such as link text and link addresses before they can be added to the panel. So that's to come.  
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
