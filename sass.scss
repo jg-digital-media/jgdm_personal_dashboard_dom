@@ -277,11 +277,11 @@ main {
             /* background: #626262; */
             /* background: none; */
             /* background: #caff99; */
-            background: $bg---qotd;
+            background: $bg---section--qotd;
             /* background: none; */
             padding: 7px;
             border-radius: 8px;
-            border: solid darken($bg---qotd, 10%) 1px;
+            border: solid darken($bg---section--qotd, 10%) 1px;
                     
 
             @extend %tooltip;
@@ -383,7 +383,7 @@ main {
 
         article.main---dashboard {
 
-            background: $bg---dashboards;  // common background style to containers
+            background: $bg---section--dashboards;  // common background style to containers
 
             div {
 
@@ -730,7 +730,8 @@ main {
 
                     &:hover {
 
-                        background: yellow;
+                        /* background: yellow; */
+                        background: lightblue;
                     }
 
                     .icon---close {
@@ -789,7 +790,7 @@ main {
         width: 80%;
         /* display: none; */
         border: solid 1px #626262;
-        background: $bg---weather--fetch;
+        background: $bg---section--weather-fetch;
 
         // Add tooltip functionality
         @extend %tooltip;
