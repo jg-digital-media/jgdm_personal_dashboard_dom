@@ -1,6 +1,6 @@
 /*
 
-    Last Update: 16-10-2025 - 15:26
+    Last Update: 19-11-2025 - 15:53
 */
 * {
   padding: 0;
@@ -278,6 +278,7 @@ header {
   color: #fff;
   /* margin: 5px 0 0 0; */
   box-shadow: #212121 0px 0px 2px 1px;
+  height: 50px;
 }
 header div {
   /* width: 21%; */
@@ -303,6 +304,7 @@ header .live---clock--container .live---clock::after {
   display: block;
   /* width: 300px; */
   padding: 4px;
+  width: 165px;
 }
 header .website---heading h1 {
   text-align: center;
