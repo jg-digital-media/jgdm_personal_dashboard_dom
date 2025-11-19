@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 19-11-2025 - 16:05
+Last Updated: 19-11-2025 - 16:07
 
 ## Sections
 
@@ -83,7 +83,8 @@ Last Updated: 19-11-2025 - 16:05
 
   + There are some aspects that haven't yet been prototyped. In some cases, where I'll be adding new elements dynamically with JavaScript, I'll probably need modals to add information such as link text and link addresses before they can be added to the panel. So that's to come.  
 
-  + `19-11-2025` - `v1` - Implemented the Live Clock feature. As far as I can tell, it's only working as far as GMT is concerned, which is local to the United Kingdom.  I am noting for the future to extend this, if possible to all other time zones. 
++ ### v1
+`19-11-2025` - Implemented the Live Clock feature. As far as I can tell, it's only working as far as GMT is concerned, which is local to the United Kingdom. I am noting for the future to extend this, if possible to all other time zones. 
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
