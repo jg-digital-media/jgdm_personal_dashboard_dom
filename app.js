@@ -1,4 +1,4 @@
-console.log('app.js connected - 14-10-2025 - 16:00');
+console.log('app.js connected - 19-11-2025 - 15:00');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -49,20 +49,32 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // if live clock element exists
+    // Live Clock Functionality - Updates GMT time in real-time
+    function updateLiveClock() {
+
+        if (clockElement) {
+
+            // Get current GMT time
+            const now = new Date();
+            const gmtTime = now.toUTCString();
+            
+            // Extract time portion (HH:MM:SS) from GMT string
+            // Format: "Day, DD MMM YYYY HH:MM:SS GMT"
+            const timeMatch = gmtTime.match(/(\d{2}:\d{2}:\d{2})/);
+            const timeString = timeMatch ? timeMatch[1] : now.toUTCString().split(' ')[4];
+            
+            // Update the clock element text content
+            clockElement.textContent = timeString + ' GMT';
+        }
+    }
+    
+    // Initialize and update live clock
     if (clockElement) {
-        // Add subtle hover effect
-        clockElement.addEventListener('mouseenter', function() {
-            //this.style.transform = 'scale(1.02)';
-            //this.style.transition = 'transform 0.2s ease';
-        });
+        // Update immediately on page load
+        updateLiveClock();
         
-        clockElement.addEventListener('mouseleave', function() {
-            //this.style.transform = 'scale(1)';
-        });
-        
-        // Optional: Update tooltip text dynamically if needed
-        // clockElement.setAttribute('data-tooltip', 'Current GMT time: ' + new Date().toUTCString().split(' ')[4]);
+        // Update every second (1000ms)
+        setInterval(updateLiveClock, 1000);
     }
 
     if (themeOptionsElement) {
