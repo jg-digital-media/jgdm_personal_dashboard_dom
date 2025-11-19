@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 16-10-2025 - 15:29
+Last Updated: 19-11-2025 - 15:57
 
 ## Sections
 
@@ -9,7 +9,7 @@ Last Updated: 16-10-2025 - 15:29
 
 ## Tasks 
 
-### Total: `37` Completed: `14`
+### Total: `39` Completed: `15`
 
 + `COMPLETED: 15-10-2025` - Implement hoverable toolip on TODO list feature
 + `COMPLETED: 16-10-2025` - Prototype and style the Daily Quote Feature
@@ -19,14 +19,15 @@ Last Updated: 16-10-2025 - 15:29
 + `COMPLETED: 16-10-2025` - Prototype and style the Main Dashboard Shortcut Links Feature
 + `COMPLETED: 16-10-2025` - Prototype and style the Fetch Weather Details Feature
 + `COMPLETED: 16-10-2025:` - Sass variables for all background colours - buttons, inputs, tooltips
-+ `COMPLETED: 16-10-2025:` - Finish Wireframe - concept for app 
++ `COMPLETED: 16-10-2025:` - Finish Wireframe - concept for app
+
++ `COMPLETED: 19-11-2025:` - Implement Live Clock Feature 
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
 + `TODO:` - Update Font Stack
 + `TODO:` - "Featuring DOM Elements" - Text to appear as hoverable tooltips.
   + `TODO:` - Move tooltips away from CSS content property.  Need more control of positioning. May be better if we use a JS Object to store these tooltip texts.
   + `TODO:` - modify data-tooltip attribute text for existing tooltips
   + `TODO:` - `theme---selector--container` - tooltip text - `"Attribute/class manipulation (classList.add/remove/toggle)"`
-+ `TODO:` - Implement Live Clock Feature
 + `TODO:` - Implement Theme Switcher (standard plus at least 2 other modes)
 + `TODO:` - Implement Daily Quote Feature
 + `TODO:` - Implement Welcome Message Feature - welcome message element 
@@ -44,6 +45,7 @@ Last Updated: 16-10-2025 - 15:29
 + `TODO:` - Implement sticky footer banner at bottom of page - for adding and closing sections - resetting defaults.
 + `TODO:` - Add custom vertical scrolling styles for dashboard sections
 + `TODO:` - Add meta tags for SEO and social media sharing
++ `TODO:` - Set Dynamic Live Clock to local Time Zone
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
 + `COMPLETED: 06-10-2025` - extend styles for use of multiple tooltips
@@ -95,7 +97,7 @@ Last Updated: 16-10-2025 - 15:29
 
     + Timed updates with `setInterval`.
 
-  + **Label Example:** "Demonstrates: DOM Traversal, Content Updates, Timed DOM Manipulation"
+  + **Label Example:** "Demonstrates: Content Updates with .textContent, Timed DOM Manipulation with setInterval()"
 
 + `Aspect 2` - To-do List
 
