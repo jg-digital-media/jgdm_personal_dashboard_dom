@@ -1,4 +1,4 @@
-console.log('app.js connected - 21-11-2025 - 09:08');
+console.log('app.js connected - 21-11-2025 - 11:20');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -160,14 +160,101 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         console.log('daily quote dashboard element not found');
     }
+
+    // Function Calls - initialise dashboard features
     
-    // Initialize responsive tooltip handling
+    // Initialise responsive tooltip handling
     handleResponsiveTooltips();
     
     // Load random quote
     getRandomQuote();
+    
+    // Initialise Welcome Message Feature
+    initializeWelcomeMessage();
 
 });
+
+// Welcome Message Functionality - Time-based salutation and name persistence
+function initializeWelcomeMessage() {
+
+    const salutationElement = document.querySelector('#morning---or--evening');
+    const nameInputElement = document.querySelector('#js--name_input');
+    const localStorageKey = 'dashboard_user_name';
+    
+    // Function to get time-based salutation
+    function getTimeBasedSalutation() {
+        const now = new Date();
+        const hour = now.getHours();
+        
+        // Morning: 5:00 AM - 11:59 AM
+        if (hour >= 5 && hour < 12) {
+            return 'Good Morning';
+        }
+        // Afternoon: 12:00 PM - 4:59 PM
+        else if (hour >= 12 && hour < 17) {
+            return 'Good Afternoon';
+        }
+        // Evening: 5:00 PM - 4:59 AM
+        else {
+            return 'Good Evening';
+        }
+    }
+    
+    // Update salutation based on time of day
+    function updateSalutation() {
+        if (salutationElement) {
+            salutationElement.textContent = getTimeBasedSalutation();
+        }
+    }
+    
+    // Load saved name from localStorage
+    function loadSavedName() {
+        if (nameInputElement) {
+            const savedName = localStorage.getItem(localStorageKey);
+            if (savedName) {
+                nameInputElement.value = savedName;
+            }
+        }
+    }
+    
+    // Save name to localStorage or remove if empty
+    function saveNameToLocalStorage() {
+        if (nameInputElement) {
+            const nameValue = nameInputElement.value.trim();
+            
+            if (nameValue === '') {
+                // Remove from localStorage if input is empty
+                localStorage.removeItem(localStorageKey);
+            } else {
+                // Save to localStorage
+                localStorage.setItem(localStorageKey, nameValue);
+            }
+        }
+    }
+    
+    // Initialize on page load
+    if (salutationElement) {
+        updateSalutation();
+    }
+    
+    if (nameInputElement) {
+        // Load saved name on page load
+        loadSavedName();
+        
+        // Save name on blur (when input loses focus)
+        nameInputElement.addEventListener('blur', saveNameToLocalStorage);
+        
+        // Also save on mouseout (as specified in requirements)
+        nameInputElement.addEventListener('mouseout', saveNameToLocalStorage);
+        
+        // Optional: Also handle Enter key to save
+        nameInputElement.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                nameInputElement.blur(); // This will trigger the blur event
+            }
+        });
+    }
+}
 
 // Get Random Quote Functionality - Fetches and displays a random quote
 async function getRandomQuote() {
