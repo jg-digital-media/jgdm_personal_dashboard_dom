@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 21-11-2025 - 11:21
+Last Updated: 21-11-2025 - 15:12
 
 ## Sections
 
@@ -9,7 +9,7 @@ Last Updated: 21-11-2025 - 11:21
 
 ## Tasks 
 
-### Total: `44` Completed: `17`
+### Total: `45` Completed: `22`
 
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
@@ -35,12 +35,15 @@ Last Updated: 21-11-2025 - 11:21
   + `COMPLETED: 21-11-2025:` - "hello.. what do I call you?" make content content editable `#morning---or--evening`
 
 + `TODO:` - "Featuring DOM Elements" - Text to appear as hoverable tooltips.
-  + `TODO:` - Move tooltips away from CSS content property. Need more control of positioning. May be better if we use a JS Object to store these tooltip texts.
+  + `TODO:` - `dashboard---section--buttons` element - customise linear gradient on these elements.
+  + `TODO:` - Move tooltips away from using the CSS content property. Need more control of positioning. May be better if we use a JS Object to store these tooltip texts.
   + `TODO:` - modify data-tooltip attribute text for existing tooltips
   + `TODO:` - `theme---selector--container` - tooltip text - `"Attribute/class manipulation (classList.add/remove/toggle)"`
 + `TODO:` - Implement Daily Quote Feature
     `TODO: ` - Random quote retrieved every 24 hours. From midnight GMT
 + `TODO:` - Implement Theme Options Switcher (standard plus at least 2 other modes)
+
++ `TODO:` Fix Welcome message tooltip text to include DOM elements used.
 
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
 + `TODO:` - Update Font Stack - Currently `Arial, Helvetica, sans-serif;`
@@ -92,7 +95,13 @@ Last Updated: 21-11-2025 - 11:21
 `19-11-2025` - Implemented the Live Clock feature. As far as I can tell, it's only working as far as GMT is concerned, which is local to the United Kingdom. I am noting for the future to extend this, if possible to all other time zones. 
 
 + ### v2
-`21-11-2025` - Implemented the random quote feature.
+`21-11-2025` - Implemented the random quote feature. At the moment, this loads a new quote on each page load.  The second, major feature is the a personalisation feature. Users can input their own name and persist this across multiple visits using localStorage.
+
+
+On page load: Updates salutation and loads saved name
+When user types name: Name is stored in the input
+On blur/mouseout: Saves to localStorage (or removes if empty)
+On next visit: Name is automatically restored
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
