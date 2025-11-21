@@ -1,6 +1,6 @@
 /*
 
-    Last Update: 19-11-2025 - 15:53
+    Last Update: 21-11-2025 - 14:57
 */
 * {
   padding: 0;
@@ -233,8 +233,7 @@ main .section---fetch--weather .section---fetch--weather-output .section---fetch
 
 /* content: "welcome---message--editable"; */
 main .welcome---message--container .welcome---message--input {
-  /* padding: 2px; */
-  padding: 2px 9px;
+  padding: 2px 0px;
   background: none;
   border: none;
   outline: none;
@@ -243,7 +242,7 @@ main .welcome---message--container .welcome---message--input {
   transition: border-bottom 0.3s;
   font-size: 16px;
   font-weight: bold;
-  color: #3d3c3c;
+  color: #810202;
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -260,7 +259,7 @@ main .welcome---message--container .welcome---message--input:hover {
   background: #dcdbdb;
 }
 main .welcome---message--container .welcome---message--input::placeholder {
-  color: #929292;
+  color: #616161;
   font-style: italic;
 }
 
@@ -440,6 +439,7 @@ main .motivational---quote--container .motivational---quote {
   margin: 15px auto;
   text-align: center;
   line-height: 1.7;
+  height: 56px;
   font-weight: bold;
   font-size: 8pt;
   /* width: 300px; */
@@ -451,6 +451,12 @@ main .motivational---quote--container .motivational---quote {
   padding: 7px;
   border-radius: 8px;
   border: solid #ffdb6a 1px;
+  display: flex;
+  justify-content: space-around;
+  /* justify-content: start; */
+  /* justify-self: center; */
+  align-items: center;
+  align-self: center;
 }
 main .motivational---quote--container .motivational---quote::before {
   top: 2px;
