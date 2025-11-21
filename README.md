@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 19-11-2025 - 16:07
+Last Updated: 21-11-2025 - 10:25
 
 ## Sections
 
@@ -9,8 +9,13 @@ Last Updated: 19-11-2025 - 16:07
 
 ## Tasks 
 
-### Total: `39` Completed: `15`
+### Total: `42` Completed: `17`
 
++ `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
++ `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
++ `COMPLETED: 06-10-2025` - extend styles for use of multiple tooltips
++ `COMPLETED: 08-10-2025` - Prototype and style Live Clock Feature -
++ `COMPLETED: 09-10-2025` - Prototype and style the Theme Switcher (standard plus at least 2 other modes)
 + `COMPLETED: 15-10-2025` - Implement hoverable toolip on TODO list feature
 + `COMPLETED: 16-10-2025` - Prototype and style the Daily Quote Feature
 + `COMPLETED: 16-10-2025` - Prototype and style the Welcome Message Feature - welcome message element
@@ -20,21 +25,24 @@ Last Updated: 19-11-2025 - 16:07
 + `COMPLETED: 16-10-2025` - Prototype and style the Fetch Weather Details Feature
 + `COMPLETED: 16-10-2025:` - Sass variables for all background colours - buttons, inputs, tooltips
 + `COMPLETED: 16-10-2025:` - Finish Wireframe - concept for app
-
 + `COMPLETED: 19-11-2025:` - Implement Live Clock Feature 
++ `COMPLETED: 19-11-2025: ` - Implement random quote generation: 
+
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
-+ `TODO:` - Update Font Stack
++ `TODO:` - Update Font Stack - Currently `Arial, Helvetica, sans-serif;`
 + `TODO:` - "Featuring DOM Elements" - Text to appear as hoverable tooltips.
   + `TODO:` - Move tooltips away from CSS content property.  Need more control of positioning. May be better if we use a JS Object to store these tooltip texts.
   + `TODO:` - modify data-tooltip attribute text for existing tooltips
   + `TODO:` - `theme---selector--container` - tooltip text - `"Attribute/class manipulation (classList.add/remove/toggle)"`
-+ `TODO:` - Implement Theme Switcher (standard plus at least 2 other modes)
 + `TODO:` - Implement Daily Quote Feature
+    `TODO: ` - Random quote retrieved every 24 hours. From midnight GMT
 + `TODO:` - Implement Welcome Message Feature - welcome message element 
-  + `TODO:` - Finalise input element colour.
+  + `TODO:` - Finalise input element colour - `js--name_input`. 
   + `TODO:` - Mouseout event of `` will save the element value to local storage.
   + `TODO:` - "hello.. what do I call you?" make content content editable
-  + `TODO:` - Salutation change based on time of day `.morning---or--evening` (Morning/Afternoon/Evening)
+  + `TODO:` - Salutation change based on time of day `.morning---or--evening` (Morning/Afternoon/Evening) - `#morning---or--evening`
++ `TODO:` - Implement Theme Options Switcher (standard plus at least 2 other modes)
+
 + `TODO:` - Implement Main Dashboard TODO List Feature
   + `TODO:` - add remaining conteneditable attributes to `todo---item--text` elements.
   + `TODO:` - When TODO list items are clicked they should be disabled with no ability to focus on edit them.
@@ -46,11 +54,6 @@ Last Updated: 19-11-2025 - 16:07
 + `TODO:` - Add custom vertical scrolling styles for dashboard sections
 + `TODO:` - Add meta tags for SEO and social media sharing
 + `TODO:` - Set Dynamic Live Clock to local Time Zone
-+ `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
-+ `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
-+ `COMPLETED: 06-10-2025` - extend styles for use of multiple tooltips
-+ `COMPLETED: 08-10-2025` - Prototype and style Live Clock Feature -
-+ `COMPLETED: 09-10-2025` - Prototype and style the Theme Switcher (standard plus at least 2 other modes)
 
 <!-- .innerText or .textContent -->
 
