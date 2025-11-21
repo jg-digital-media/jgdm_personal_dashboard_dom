@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 21-11-2025 - 10:25
+Last Updated: 21-11-2025 - 11:21
 
 ## Sections
 
@@ -9,7 +9,7 @@ Last Updated: 21-11-2025 - 10:25
 
 ## Tasks 
 
-### Total: `42` Completed: `17`
+### Total: `44` Completed: `17`
 
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
@@ -26,26 +26,28 @@ Last Updated: 21-11-2025 - 10:25
 + `COMPLETED: 16-10-2025:` - Sass variables for all background colours - buttons, inputs, tooltips
 + `COMPLETED: 16-10-2025:` - Finish Wireframe - concept for app
 + `COMPLETED: 19-11-2025:` - Implement Live Clock Feature 
-+ `COMPLETED: 19-11-2025: ` - Implement random quote generation: 
++ `COMPLETED: 21-11-2025:` - Implement random quote generation
++ `COMPLETED: 21-11-2025:` - Finalise input element colour - `js--name_input`. 
++ `COMPLETED: 21-11-2025:` - Implement Welcome Message Feature 
+  + `COMPLETED: 21-11-2025:` - Salutation change based on time of day `.morning---or--evening` (Morning/Afternoon/Evening) -
+  + `COMPLETED: 21-11-2025:` - welcome message element "Good Morning/Evening, [NAME]"
+  + `COMPLETED: 21-11-2025:` - Mouseout event of `js--name_input` will save the element value to localStorage - triggered when the element loses focus.
+  + `COMPLETED: 21-11-2025:` - "hello.. what do I call you?" make content content editable `#morning---or--evening`
 
-+ `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
-+ `TODO:` - Update Font Stack - Currently `Arial, Helvetica, sans-serif;`
 + `TODO:` - "Featuring DOM Elements" - Text to appear as hoverable tooltips.
-  + `TODO:` - Move tooltips away from CSS content property.  Need more control of positioning. May be better if we use a JS Object to store these tooltip texts.
+  + `TODO:` - Move tooltips away from CSS content property. Need more control of positioning. May be better if we use a JS Object to store these tooltip texts.
   + `TODO:` - modify data-tooltip attribute text for existing tooltips
   + `TODO:` - `theme---selector--container` - tooltip text - `"Attribute/class manipulation (classList.add/remove/toggle)"`
 + `TODO:` - Implement Daily Quote Feature
     `TODO: ` - Random quote retrieved every 24 hours. From midnight GMT
-+ `TODO:` - Implement Welcome Message Feature - welcome message element 
-  + `TODO:` - Finalise input element colour - `js--name_input`. 
-  + `TODO:` - Mouseout event of `` will save the element value to local storage.
-  + `TODO:` - "hello.. what do I call you?" make content content editable
-  + `TODO:` - Salutation change based on time of day `.morning---or--evening` (Morning/Afternoon/Evening) - `#morning---or--evening`
 + `TODO:` - Implement Theme Options Switcher (standard plus at least 2 other modes)
 
++ `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
++ `TODO:` - Update Font Stack - Currently `Arial, Helvetica, sans-serif;`
 + `TODO:` - Implement Main Dashboard TODO List Feature
   + `TODO:` - add remaining conteneditable attributes to `todo---item--text` elements.
   + `TODO:` - When TODO list items are clicked they should be disabled with no ability to focus on edit them.
++ `TODO:` - Modify placeholder message welcome message input element
 + `TODO:` - Implement Main Dashboard Note Writing Feature
 + `TODO:` - Implement Main Dashboard Shortcut Links Feature
 + `TODO:` - Implement Fetch Weather Details Feature
@@ -88,6 +90,9 @@ Last Updated: 21-11-2025 - 10:25
 
 + ### v1
 `19-11-2025` - Implemented the Live Clock feature. As far as I can tell, it's only working as far as GMT is concerned, which is local to the United Kingdom. I am noting for the future to extend this, if possible to all other time zones. 
+
++ ### v2
+`21-11-2025` - Implemented the random quote feature.
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
