@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 21-11-2025 - 15:12
+Last Updated: 21-11-2025 - 15:32
 
 ## Sections
 
@@ -95,8 +95,9 @@ Last Updated: 21-11-2025 - 15:12
 `19-11-2025` - Implemented the Live Clock feature. As far as I can tell, it's only working as far as GMT is concerned, which is local to the United Kingdom. I am noting for the future to extend this, if possible to all other time zones. 
 
 + ### v2
-`21-11-2025` - Implemented the random quote feature. At the moment, this loads a new quote on each page load.  The second, major feature is the a personalisation feature. Users can input their own name and persist this across multiple visits using localStorage.
+`21-11-2025` - Implemented the random quote feature. At the moment, this loads a new quote on each page load. The second, major feature is the a personalisation feature. Users can input their own name and persist this across multiple visits using localStorage.
 
+The next step is to handle the toggling of the main section into view with the sticky footer bar.
 
 On page load: Updates salutation and loads saved name
 When user types name: Name is stored in the input
