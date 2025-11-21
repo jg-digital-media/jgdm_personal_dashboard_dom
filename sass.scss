@@ -274,7 +274,8 @@ main {
             font-style: italic;
             margin: 15px auto;
             text-align: center;
-            line-height: 1.7;
+            line-height: 1.7;     
+            height: 56px;            
             font-weight: bold;
             font-size: 8pt;
             /* width: 300px; */
@@ -285,7 +286,14 @@ main {
             /* background: none; */
             padding: 7px;
             border-radius: 8px;
-            border: solid darken($bg---section--qotd, 10%) 1px;                    
+            border: solid darken($bg---section--qotd, 10%) 1px;  
+            display: flex; 
+            justify-content: space-around;
+            /* justify-content: start; */
+            /* justify-self: center; */
+            align-items: center;
+            align-self: center;
+        
 
             @extend %tooltip;
 

@@ -1,4 +1,4 @@
-console.log('app.js connected - 19-11-2025 - 15:00');
+console.log('app.js connected - 21-11-2025 - 09:08');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -163,6 +163,43 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize responsive tooltip handling
     handleResponsiveTooltips();
+    
+    // Load random quote
+    getRandomQuote();
 
 });
 
+// Get Random Quote Functionality - Fetches and displays a random quote
+async function getRandomQuote() {
+    const quoteElement = document.querySelector('#js---random_quote');
+
+    if (!quoteElement) {
+        console.log('Random quote element not found');
+        return;
+    }
+
+    try {
+        // Fetch the quotes JSON file
+        const response = await fetch('assets/data/quotes_list.json');
+        
+        // Check if response is ok
+        if (!response.ok) {
+            throw new Error('Failed to fetch quotes');
+        }
+        
+        // Parse JSON data
+        const quotesData = await response.json();
+        
+        // Get random quote from the quotes array
+        const randomIndex = Math.floor(Math.random() * quotesData.quotes.length);
+        const randomQuote = quotesData.quotes[randomIndex];
+        
+        // Update the DOM element with the random quote
+        quoteElement.textContent = randomQuote;
+        
+    } catch (error) {
+        console.error('Error fetching quotes:', error);
+        // Optionally set a fallback quote
+        quoteElement.textContent = "The only way to do great work is to love what you do.";
+    }
+}

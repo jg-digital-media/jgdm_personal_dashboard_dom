@@ -45,7 +45,10 @@
 
             <h3 class="motivational---quote--heading">Quote of the Day!</h3>
 
-            <p class="motivational---quote" data-tooltip="Quote of the day">&quot;The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.&quot;</p>
+            <p class="motivational---quote" data-tooltip="Quote of the day">
+                
+                <span id="js---random_quote">The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.</span>
+            </p>
 
         </section>
 
