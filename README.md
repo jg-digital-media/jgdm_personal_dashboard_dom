@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 21-11-2025 - 15:32
+Last Updated: 24-11-2025 - 14:11
 
 ## Sections
 
@@ -9,7 +9,7 @@ Last Updated: 21-11-2025 - 15:32
 
 ## Tasks 
 
-### Total: `45` Completed: `22`
+### Total: `52` Completed: `27`
 
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
@@ -34,6 +34,16 @@ Last Updated: 21-11-2025 - 15:32
   + `COMPLETED: 21-11-2025:` - Mouseout event of `js--name_input` will save the element value to localStorage - triggered when the element loses focus.
   + `COMPLETED: 21-11-2025:` - "hello.. what do I call you?" make content content editable `#morning---or--evening`
 
++ `COMPLETED: 24-11-2025:` - Add button - Reset `.js---btn_reset`
++ `COMPLETED: 24-11-2025:` - Implement sticky footer banner at bottom of page - for adding and closing sections and to default state. Add and close the sections, `js---dashboard--todo`, `.js---dashboard--notes`, `js---dashboard--shortcuts` and `js----dashboard--weather`, preferably with an animation that indicates the section toggled is being minimised and taking steps to maintain the space vacated by the minimised section.
++ `COMPLETED: 24-11-2025:` - Maintain sticky footer position at bottom of the viewport when any and all dashboard sections are minimised.
++ `COMPLETED: 24-11-2025:` - Reset button with modal area for seeking confirmation to revert to default settings
++ `COMPLETED: 24-11-2025:` - Use JavaScript to create the elements needed to create the modal with template literals. 
++ `TODO:` - Customise styling of the reset modal area.
++ `TODO:` - Implement Main Dashboard TODO List Feature
+  + `TODO:` - add remaining contentditable attributes to `todo---item--text` elements.
+  + `TODO:` - When TODO list items are clicked they should be disabled with no ability to focus on edit them.
+
 + `TODO:` - "Featuring DOM Elements" - Text to appear as hoverable tooltips.
   + `TODO:` - `dashboard---section--buttons` element - customise linear gradient on these elements.
   + `TODO:` - Move tooltips away from using the CSS content property. Need more control of positioning. May be better if we use a JS Object to store these tooltip texts.
@@ -47,15 +57,13 @@ Last Updated: 21-11-2025 - 15:32
 
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
 + `TODO:` - Update Font Stack - Currently `Arial, Helvetica, sans-serif;`
-+ `TODO:` - Implement Main Dashboard TODO List Feature
-  + `TODO:` - add remaining conteneditable attributes to `todo---item--text` elements.
-  + `TODO:` - When TODO list items are clicked they should be disabled with no ability to focus on edit them.
 + `TODO:` - Modify placeholder message welcome message input element
 + `TODO:` - Implement Main Dashboard Note Writing Feature
 + `TODO:` - Implement Main Dashboard Shortcut Links Feature
 + `TODO:` - Implement Fetch Weather Details Feature
 + `TODO:` - Implement Footer
-+ `TODO:` - Implement sticky footer banner at bottom of page - for adding and closing sections - resetting defaults.
+  + `TODO:` - "How To" link should open an animaed modal window with relevant copy and any links.
+  + `TODO:` - Plan "How To" link copy.
 + `TODO:` - Add custom vertical scrolling styles for dashboard sections
 + `TODO:` - Add meta tags for SEO and social media sharing
 + `TODO:` - Set Dynamic Live Clock to local Time Zone
