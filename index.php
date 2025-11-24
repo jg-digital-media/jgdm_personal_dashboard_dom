@@ -78,7 +78,7 @@
                 
                 </div>
 
-                <div class="dashboard---section--content" id="js---dashboard--notes" data-tooltip="Notes: section details">
+                <div class="dashboard---section--content" data-tooltip="Notes: section details">
 
                     <div class="todo---dashboard--container"> 
                         
@@ -356,7 +356,7 @@
             <li><a href="#" class="link button button---toggle" id="js---btn_notes">Notes</a></li>
             <li><a href="#" class="link button button---toggle" id="js---btn_links">Links</a></li>
             <li><a href="#" class="link button button---toggle" id="js---btn_weather">Weather</a></li>
-            <li><a href="#" class="button---reset" id="js---btn_reset">Reset</a></li>
+            <li><a href="#" class="button---reset" id="js---btn_reset" disabled="disabled">Reset</a></li>
             <li><a href="#" class="link" id="js---btn_howto">How to</a></li>
             <li><a href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom" class="link" target="_blank">Repository</a></li>
             <li>&copy; <a href="#">Jonnie Grieve Digital Media</a> (<?php echo date("Y"); ?>)</li>

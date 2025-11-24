@@ -1,4 +1,4 @@
-console.log('app.js connected - 21-11-2025 - 11:20');
+console.log('app.js connected - 24-11-2025 - 13:33');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -171,6 +171,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialise Welcome Message Feature
     initializeWelcomeMessage();
+    
+    // Initialise Dashboard Toggle Functionality
+    initializeDashboardToggles();
 
 });
 
@@ -289,4 +292,101 @@ async function getRandomQuote() {
         // Optionally set a fallback quote
         quoteElement.textContent = "The only way to do great work is to love what you do.";
     }
+}
+
+// Dashboard Toggle Functionality - Toggle visibility of dashboard sections
+function initializeDashboardToggles() {
+    
+    // Map button IDs to their corresponding dashboard section IDs
+    const dashboardMap = {
+        'js---btn_todos': 'js---dashboard--todo',
+        'js---btn_notes': 'js---dashboard--notes',
+        'js---btn_links': 'js---dashboard--shortcuts',
+        'js---btn_weather': 'js----dashboard--weather'
+    };
+    
+    // Get all toggle buttons
+    const toggleButtons = {};
+    Object.keys(dashboardMap).forEach(buttonId => {
+        toggleButtons[buttonId] = document.querySelector(`#${buttonId}`);
+    });
+    
+    // Get all dashboard sections
+    const dashboardSections = {};
+    Object.values(dashboardMap).forEach(sectionId => {
+        dashboardSections[sectionId] = document.querySelector(`#${sectionId}`);
+    });
+    
+    // Function to toggle a dashboard section
+    function toggleDashboardSection(buttonId, sectionId) {
+        const button = toggleButtons[buttonId];
+        const section = dashboardSections[sectionId];
+        
+        if (!button || !section) {
+            console.warn(`Button ${buttonId} or section ${sectionId} not found`);
+            return;
+        }
+        
+        // Check if section is currently minimized
+        const isMinimized = section.classList.contains('dashboard---minimized');
+        
+        if (isMinimized) {
+            // Expand the section
+            section.classList.remove('dashboard---minimized');
+            button.classList.remove('toggled---inactive');
+        } else {
+            // Minimize the section
+            section.classList.add('dashboard---minimized');
+            button.classList.add('toggled---inactive');
+        }
+    }
+    
+    // Add click event listeners to all toggle buttons
+    Object.keys(dashboardMap).forEach(buttonId => {
+        const button = toggleButtons[buttonId];
+        if (button) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const sectionId = dashboardMap[buttonId];
+                toggleDashboardSection(buttonId, sectionId);
+            });
+        }
+    });
+    
+    // Handle Reset button
+    /* const resetButton = document.querySelector('#js---btn_reset');
+    if (resetButton) {
+        resetButton.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Reset all sections to visible state
+            Object.values(dashboardMap).forEach(sectionId => {
+                const section = dashboardSections[sectionId];
+                if (section) {
+                    section.classList.remove('dashboard---minimized');
+                }
+            });
+            
+            // Reset all buttons to active state (remove toggled---inactive)
+            Object.keys(dashboardMap).forEach(buttonId => {
+                const button = toggleButtons[buttonId];
+                if (button) {
+                    button.classList.remove('toggled---inactive');
+                }
+            });
+        });
+    }
+    */
+
+    // Initialize default state based on button classes
+    // If a button has 'toggled---inactive' class, minimize its corresponding section
+    Object.keys(dashboardMap).forEach(buttonId => {
+        const button = toggleButtons[buttonId];
+        const sectionId = dashboardMap[buttonId];
+        const section = dashboardSections[sectionId];
+        
+        if (button && section && button.classList.contains('toggled---inactive')) {
+            section.classList.add('dashboard---minimized');
+        }
+    });
 }
