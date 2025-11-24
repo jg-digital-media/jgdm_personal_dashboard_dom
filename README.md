@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 24-11-2025 - 14:11
+Last Updated: 24-11-2025 - 16:31
 
 ## Sections
 
@@ -111,6 +111,13 @@ On page load: Updates salutation and loads saved name
 When user types name: Name is stored in the input
 On blur/mouseout: Saves to localStorage (or removes if empty)
 On next visit: Name is automatically restored
+
++ ### v3
+`24-11-2025` - In this update, I've completed implementing the Sticky Footer Bar with some animated toggle transitions of the main dashboard sections. Dashboard section areas toggle between expanded and minimized states while maintaing any vacated space. And the footer stays in place at the bottom of the page/viewport.
+
++ This implementation is a fairly rudimentary fade effect animation, but for now it does the job.  There's still some stying and visual work that need to be done on it. But the basics are there. 
+
++ I've also done an initial implementation of an application reset. That allows the user to click to reset the app to default state, which should eventually include clearing localStorage key value pairs at the behest of clicking confirmation in a neat animated modal area - created by JavaScript.
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
