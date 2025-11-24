@@ -352,25 +352,17 @@
 
         <ul>
             <li id="toggle---dashboard--title">Toggle Dashboard Panels:</li>
-            <li><a href="#" class="link buttton button---toggle" id="js---btn_todos">Todos</a></li>
-            <li><a href="#" class="link buttton button---toggle" id="js---btn_notes">Notes</a></li>
-            <li><a href="#" class="link buttton button---toggle" id="js---btn_links">Links</a></li>
-            <li><a href="#" class="link buttton button---toggle" id="js---btn_weather">Weather</a></li>
-            <li><a href="#" class="link button button---toggle" id="js---btn_howto">How to</a></li>
-            <!-- <li><a href="#" class="link button button---toggle" id="js---btn_reset">Reset</a></li> -->
-            <li><a href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom" target="_blank">Repository</a></li>
-            <li><a href="#">&copy; Jonnie Grieve Digital Media</a></li>
+            <li><a href="#" class="link button button---toggle" id="js---btn_todos">Todos</a></li>
+            <li><a href="#" class="link button button---toggle" id="js---btn_notes">Notes</a></li>
+            <li><a href="#" class="link button button---toggle" id="js---btn_links">Links</a></li>
+            <li><a href="#" class="link button button---toggle" id="js---btn_weather">Weather</a></li>
+            <li><a href="#" class="button---reset" id="js---btn_reset">Reset</a></li>
+            <li><a href="#" class="link" id="js---btn_howto">How to</a></li>
+            <li><a href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom" class="link" target="_blank">Repository</a></li>
+            <li>&copy; <a href="#">Jonnie Grieve Digital Media</a> (<?php echo date("Y"); ?>)</li>
         </ul>
 
     </section>
-
-    <!-- <footer>
-
-        <p>footer</p>  
-        
-
-    </footer>  -->
-
 
     <script type="text/javascript" src="app.js"></script>
 

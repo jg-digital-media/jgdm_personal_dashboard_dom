@@ -11,6 +11,7 @@
 @import "assets/sass/extends/buttons/button---dashboard/button---dashboard--actions";
 @import "assets/sass/extends/buttons/button---dashboard/btn---section--close";
 @import "assets/sass/extends/buttons/button---dashboard/btn---section--collapse";
+@import "assets/sass/extends/buttons/button---footer--reset/btn---dashboard--reset";
 @import "assets/sass/extends/buttons/button---footer--toggles/btn---section--toggles";
 @import "assets/sass/extends/buttons/button---item--close/button---close";
 @import "assets/sass/extends/buttons/button---item--edit/button---edit";
@@ -86,7 +87,7 @@ header {
 
             @media (max-width: $breakpoint---md) {
 
-                font-size: 4vw;
+                font-size: 3.4vw;
 
             }
 
@@ -909,25 +910,50 @@ main {
     text-align: center;
     box-shadow: black 0px 0px 4px 0px;
 
+    @media (max-width: $breakpoint---md) {
+
+        height: auto;
+        /* height: 39px; */
+    }
+
     ul {
 
         display: inline-block;
         /* vertical-align: top; */
-        color: white;
+        /* color: white; */
         margin: 8px 6px;
+        padding: 3px 0;
+
+        @media (max-width: $breakpoint---md) {
+
+            margin: 0 5px;
+            font-size: 12px;
+            vertical-align: middle;
+        }
 
         li {
-
-            &#toggle---dashboard--title {
-
-                font-weight: bold;
-            }
 
             display: inline-block;
             vertical-align: top;
             color: $col---secondary;
             margin: 0 5px;
             font-size: 12px;
+
+            @media (max-width: $breakpoint---md) {
+                
+                margin: 7px 5px;
+            }
+
+            &#toggle---dashboard--title {
+
+                font-weight: bold;
+
+                @media (max-width: $breakpoint---md) {
+
+                    display: none;
+                    /* visibility: hidden; */
+                }
+            }           
 
             a {
 
@@ -939,13 +965,30 @@ main {
 
                     color: $url---col---footer-hover;
                 }
-              
-            }
 
-            .button---toggle {
+                &.link {
 
-                // extend button toggle partial
-                @extend %btn---dashboard--toggles;
+                    color: $url---col---footer; 
+                    transition: color .4s;
+
+                    &:hover {
+
+                        color: $url---col---footer-hover;
+                    }
+
+                }              
+                
+                &.button---reset {
+
+                    @extend %btn---dashboard--reset;
+                }
+                
+                &.button---toggle {
+
+                    // extend button toggle partial
+                    @extend %btn---dashboard--toggles;
+                }
+
             }
 
         }
