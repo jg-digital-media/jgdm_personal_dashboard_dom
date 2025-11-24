@@ -7,8 +7,8 @@
     border: solid 1px white;
     border-radius: 6px;
     padding: 5px;
-    color: yellow;
-    background: none;
+    background: yellow;
+    color: #980303;
     text-decoration: none;
     position: relative;
     top: 2px;
@@ -18,5 +18,15 @@
     &:hover {
 
         background: #676363;
+        background: darken(yellow, 10%);
+        background: none;
+        background: #676363;
     }
+
+    &.toggled---inactive {
+
+        color: yellow;
+        background: none;
+    }
+
 }
