@@ -1,4 +1,4 @@
-console.log('app.js connected - 24-11-2025 - 13:33');
+console.log('app.js connected - 24-11-2025 - 14:12');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -353,30 +353,37 @@ function initializeDashboardToggles() {
         }
     });
     
-    // Handle Reset button
-    /* const resetButton = document.querySelector('#js---btn_reset');
+    // Handle Reset button with modal confirmation
+    const resetButton = document.querySelector('#js---btn_reset');
     if (resetButton) {
+        // Remove disabled attribute to enable the button
+        resetButton.removeAttribute('disabled');
+        
         resetButton.addEventListener('click', function(e) {
             e.preventDefault();
             
-            // Reset all sections to visible state
-            Object.values(dashboardMap).forEach(sectionId => {
-                const section = dashboardSections[sectionId];
-                if (section) {
-                    section.classList.remove('dashboard---minimized');
-                }
-            });
-            
-            // Reset all buttons to active state (remove toggled---inactive)
-            Object.keys(dashboardMap).forEach(buttonId => {
-                const button = toggleButtons[buttonId];
-                if (button) {
-                    button.classList.remove('toggled---inactive');
+            // Show confirmation modal
+            showResetConfirmationModal(function(confirmed) {
+                if (confirmed) {
+                    // Reset all sections to visible state
+                    Object.values(dashboardMap).forEach(sectionId => {
+                        const section = dashboardSections[sectionId];
+                        if (section) {
+                            section.classList.remove('dashboard---minimized');
+                        }
+                    });
+                    
+                    // Reset all buttons to active state (remove toggled---inactive)
+                    Object.keys(dashboardMap).forEach(buttonId => {
+                        const button = toggleButtons[buttonId];
+                        if (button) {
+                            button.classList.remove('toggled---inactive');
+                        }
+                    });
                 }
             });
         });
     }
-    */
 
     // Initialize default state based on button classes
     // If a button has 'toggled---inactive' class, minimize its corresponding section
@@ -389,4 +396,104 @@ function initializeDashboardToggles() {
             section.classList.add('dashboard---minimized');
         }
     });
+}
+
+// Modal Confirmation Functionality - Creates and displays modal for reset confirmation
+function showResetConfirmationModal(callback) {
+    
+    // Check if modal already exists
+    let existingModal = document.querySelector('.modal---reset--confirmation');
+    if (existingModal) {
+        existingModal.remove();
+    }
+    
+    // Create modal HTML using template literals
+    const modalHTML = `
+        <div class="modal---reset--confirmation">
+            <div class="modal---reset--backdrop"></div>
+            <div class="modal---reset--content">
+                <div class="modal---reset--header">
+                    <h3 class="modal---reset--title">Reset Dashboard Settings</h3>
+                    <button class="modal---reset--close" aria-label="Close modal">&times;</button>
+                </div>
+                <div class="modal---reset--body">
+                    <p class="modal---reset--message">
+                        Are you sure you want to reset all dashboard sections to their default state?
+                    </p>
+                    <p class="modal---reset--submessage">
+                        This will expand all minimized sections and restore default settings.
+                    </p>
+                </div>
+                <div class="modal---reset--footer">
+                    <button class="modal---reset--button modal---reset--button--cancel" id="modal---reset--cancel">
+                        Cancel
+                    </button>
+                    <button class="modal---reset--button modal---reset--button--confirm" id="modal---reset--confirm">
+                        Reset
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Insert modal into body
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+    
+    // Get modal elements
+    const modal = document.querySelector('.modal---reset--confirmation');
+    const backdrop = document.querySelector('.modal---reset--backdrop');
+    const closeButton = document.querySelector('.modal---reset--close');
+    const cancelButton = document.querySelector('#modal---reset--cancel');
+    const confirmButton = document.querySelector('#modal---reset--confirm');
+    
+    // Function to close modal
+    function closeModal() {
+        if (modal) {
+            modal.classList.add('modal---reset--closing');
+            setTimeout(() => {
+                modal.remove();
+            }, 300); // Match CSS transition duration
+        }
+    }
+    
+    // Event listeners
+    if (backdrop) {
+        backdrop.addEventListener('click', closeModal);
+    }
+    
+    if (closeButton) {
+        closeButton.addEventListener('click', closeModal);
+    }
+    
+    if (cancelButton) {
+        cancelButton.addEventListener('click', function() {
+            closeModal();
+            if (callback) callback(false);
+        });
+    }
+    
+    if (confirmButton) {
+        confirmButton.addEventListener('click', function() {
+            closeModal();
+            if (callback) callback(true);
+        });
+    }
+    
+    // Close on Escape key
+    function handleEscapeKey(e) {
+        if (e.key === 'Escape' && modal) {
+            closeModal();
+            if (callback) callback(false);
+            document.removeEventListener('keydown', handleEscapeKey);
+        }
+    }
+    
+    document.addEventListener('keydown', handleEscapeKey);
+    
+    // Trigger animation by adding active class after a brief delay
+    setTimeout(() => {
+        if (modal) {
+            modal.classList.add('modal---reset--active');
+        }
+    }, 10);
 }
