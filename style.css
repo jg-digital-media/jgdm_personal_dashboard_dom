@@ -1,6 +1,6 @@
 /*
 
-    Last Update: 21-11-2025 - 14:57
+    Last Update: 24-11-2025 - 16:32
 */
 * {
   padding: 0;
@@ -164,20 +164,43 @@ main .main---dashboard--container article .dashboard---section .dashboard---sect
   color: #8f0202;
 }
 
-/* btn---section--collapse.scss */
-.sticky---footer--container ul li .button---toggle {
+.sticky---footer--container ul li a.button---reset {
   border: solid 1px white;
   border-radius: 6px;
   padding: 5px;
-  color: yellow;
-  background: none;
+  color: #980303;
+  background: #fdfd8a;
+  text-decoration: none;
+  position: relative;
+  top: 2px;
+  transition: color 0.3s, background 0.3s;
+}
+.sticky---footer--container ul li a.button---reset:hover {
+  background: #ffcb21;
+  color: #630404;
+}
+
+/* btn---section--collapse.scss */
+.sticky---footer--container ul li a.button---toggle {
+  border: solid 1px white;
+  border-radius: 6px;
+  padding: 5px;
+  background: yellow;
+  color: #980303;
   text-decoration: none;
   position: relative;
   top: 2px;
   transition: background 0.3s;
 }
-.sticky---footer--container ul li .button---toggle:hover {
+.sticky---footer--container ul li a.button---toggle:hover {
   background: #676363;
+  background: #cccc00;
+  background: none;
+  background: #676363;
+}
+.sticky---footer--container ul li a.toggled---inactive.button---toggle {
+  color: yellow;
+  background: none;
 }
 
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .icon---close, main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span.icon---close {
@@ -263,11 +286,19 @@ main .welcome---message--container .welcome---message--input::placeholder {
   font-style: italic;
 }
 
+html {
+  height: 100%;
+  min-height: 100vh;
+}
+
 body {
   background: #cdcccc;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   color: #323232;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
@@ -311,7 +342,7 @@ header .website---heading h1 {
 }
 @media (max-width: 768px) {
   header .website---heading h1 {
-    font-size: 4vw;
+    font-size: 3.4vw;
   }
 }
 header .website---heading h1 a {
@@ -423,6 +454,10 @@ header .theme---selector--container #theme-four:hover {
   background: #dddddd;
 }
 
+main {
+  flex: 1 0 auto;
+  min-height: calc(100vh - 50px - 60px);
+}
 main .motivational---quote--container {
   display: block;
   text-align: center;
@@ -512,10 +547,28 @@ main .main---dashboard--container article {
   text-align: left;
   /* background: $bg---dashboards; */
   border-radius: 3px;
-  transition: background 0.4s;
+  transition: background 0.4s, height 0.4s ease-in-out, min-height 0.4s ease-in-out;
+  overflow: hidden;
 }
 main .main---dashboard--container article:hover {
   /* background: lighten(#ffe79d, 4%); */
+}
+main .main---dashboard--container article.dashboard---minimized {
+  height: 50px;
+  min-height: 50px;
+}
+main .main---dashboard--container article.dashboard---minimized .dashboard---section--content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease-in-out, max-height 0.4s ease-in-out;
+  padding: 0;
+  margin: 0;
+}
+main .main---dashboard--container article .dashboard---section--content {
+  transition: opacity 0.3s ease-in-out, max-height 0.4s ease-in-out;
+  opacity: 1;
+  max-height: 1000px;
 }
 @media (max-width: 768px) {
   main .main---dashboard--container article {
@@ -731,10 +784,33 @@ main .section---fetch--weather {
   border-radius: 6px;
   margin: 10px auto;
   width: 80%;
-  transition: border 0.3s;
+  min-height: 200px;
+  overflow: hidden;
+  transition: border 0.3s, height 0.4s ease-in-out, min-height 0.4s ease-in-out;
 }
 main .section---fetch--weather:hover {
   border: #626262 solid 1px;
+}
+main .section---fetch--weather.dashboard---minimized {
+  height: 60px;
+  min-height: 60px;
+}
+main .section---fetch--weather.dashboard---minimized .section---fetch--weather-output {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.3s ease-in-out, max-height 0.4s ease-in-out;
+  padding: 0;
+  margin: 0;
+}
+main .section---fetch--weather.dashboard---minimized h3.section---fetch--weather--output__heading {
+  margin: 5px 0;
+  padding: 5px 0;
+}
+main .section---fetch--weather .section---fetch--weather-output {
+  transition: opacity 0.3s ease-in-out, max-height 0.4s ease-in-out;
+  opacity: 1;
+  max-height: 2000px;
 }
 main .section---fetch--weather::before {
   top: 0px;
@@ -801,12 +877,29 @@ main .section---fetch--weather .section---fetch--weather-output .section---fetch
   background: #212121;
   text-align: center;
   box-shadow: black 0px 0px 4px 0px;
+  flex-shrink: 0;
+  margin-top: auto;
+  z-index: 100;
+}
+@media (max-width: 768px) {
+  .sticky---footer--container {
+    height: auto;
+    /* height: 39px; */
+  }
 }
 .sticky---footer--container ul {
   display: inline-block;
   /* vertical-align: top; */
-  color: white;
+  /* color: white; */
   margin: 8px 6px;
+  padding: 3px 0;
+}
+@media (max-width: 768px) {
+  .sticky---footer--container ul {
+    margin: 0 5px;
+    font-size: 12px;
+    vertical-align: middle;
+  }
 }
 .sticky---footer--container ul li {
   display: inline-block;
@@ -815,8 +908,19 @@ main .section---fetch--weather .section---fetch--weather-output .section---fetch
   margin: 0 5px;
   font-size: 12px;
 }
+@media (max-width: 768px) {
+  .sticky---footer--container ul li {
+    margin: 7px 5px;
+  }
+}
 .sticky---footer--container ul li#toggle---dashboard--title {
   font-weight: bold;
+}
+@media (max-width: 768px) {
+  .sticky---footer--container ul li#toggle---dashboard--title {
+    display: none;
+    /* visibility: hidden; */
+  }
 }
 .sticky---footer--container ul li a {
   color: white;
@@ -826,11 +930,153 @@ main .section---fetch--weather .section---fetch--weather-output .section---fetch
 .sticky---footer--container ul li a:hover {
   color: yellow;
 }
+.sticky---footer--container ul li a.link {
+  /* color: $url---col---footer;  */
+  transition: color 0.4s;
+}
+.sticky---footer--container ul li a.link:hover {
+  /* color: $url---col---footer-hover; */
+}
 footer {
   font-size: 10px;
 }
 footer p {
   text-align: center;
+}
+
+.modal---reset--confirmation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.modal---reset--confirmation.modal---reset--active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal---reset--confirmation.modal---reset--closing {
+  opacity: 0;
+  visibility: hidden;
+}
+.modal---reset--confirmation .modal---reset--backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+}
+.modal---reset--confirmation .modal---reset--content {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow: hidden;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+}
+.modal---reset--confirmation.modal---reset--active .modal---reset--content {
+  transform: scale(1);
+}
+.modal---reset--confirmation.modal---reset--closing .modal---reset--content {
+  transform: scale(0.9);
+}
+.modal---reset--confirmation .modal---reset--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: solid 1px #e0e0e0;
+  background: linear-gradient(0deg, #3a3939 -25%, wheat 4%);
+}
+.modal---reset--confirmation .modal---reset--header .modal---reset--title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #5c5656;
+}
+.modal---reset--confirmation .modal---reset--header .modal---reset--close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #5c5656;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+.modal---reset--confirmation .modal---reset--header .modal---reset--close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #890505;
+}
+.modal---reset--confirmation .modal---reset--body {
+  padding: 25px 20px;
+}
+.modal---reset--confirmation .modal---reset--body .modal---reset--message {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #323232;
+  font-weight: 500;
+}
+.modal---reset--confirmation .modal---reset--body .modal---reset--submessage {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #666;
+}
+.modal---reset--confirmation .modal---reset--footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 20px;
+  border-top: solid 1px #e0e0e0;
+  background: #f9f9f9;
+}
+.modal---reset--confirmation .modal---reset--button {
+  padding: 10px 20px;
+  border: solid 1px #bdb5b5;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+.modal---reset--confirmation .modal---reset--button.modal---reset--button--cancel {
+  background: white;
+  color: #5c5656;
+}
+.modal---reset--confirmation .modal---reset--button.modal---reset--button--cancel:hover {
+  background: #f0f0f0;
+  border-color: #626262;
+}
+.modal---reset--confirmation .modal---reset--button.modal---reset--button--confirm {
+  background: #fdfd8a;
+  color: #980303;
+  border-color: #980303;
+}
+.modal---reset--confirmation .modal---reset--button.modal---reset--button--confirm:hover {
+  background: #ffcb21;
+  color: #630404;
+  border-color: #630404;
 }
 
 /*# sourceMappingURL=style.css.map */
