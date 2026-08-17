@@ -1,4 +1,4 @@
-console.log('app.js connected - 24-11-2025 - 14:12');
+console.log('app.js connected - 17-08-2026 - 13:37');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -175,6 +175,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialise Dashboard Toggle Functionality
     initializeDashboardToggles();
 
+    // Initialise To Do List Feature
+    initializeTodoList();
+
 });
 
 // Welcome Message Functionality - Time-based salutation and name persistence
@@ -292,6 +295,209 @@ async function getRandomQuote() {
         // Optionally set a fallback quote
         quoteElement.textContent = "The only way to do great work is to love what you do.";
     }
+}
+
+// To Do List Functionality - Add, toggle complete, delete, and persist tasks
+function initializeTodoList() {
+
+    const todoDashboardElement = document.querySelector('#js---dashboard--todo');
+    const todoListElement = document.querySelector('#js---todo--list');
+    const addTodoButton = todoDashboardElement
+        ? todoDashboardElement.querySelector('#add---todo--item')
+        : null;
+    const localStorageKey = 'dashboard_todos';
+
+    if (!todoListElement) {
+        console.log('To Do list element not found');
+        return;
+    }
+
+    // Create a single list item in either the open (editable) or completed state
+    function createTodoListItem(text, completed) {
+
+        const listItem = document.createElement('li');
+
+        const closeIcon = document.createElement('span');
+        closeIcon.className = 'icon---close';
+        closeIcon.textContent = '\u00D7';
+
+        const editIcon = document.createElement('span');
+        editIcon.className = 'icon---edit';
+        editIcon.innerHTML = '&nbsp;';
+
+        const textSpan = document.createElement('span');
+        textSpan.className = 'todo---item--text';
+        textSpan.textContent = text;
+
+        applyTodoItemState(editIcon, textSpan, completed);
+
+        listItem.appendChild(closeIcon);
+        listItem.appendChild(editIcon);
+        listItem.appendChild(textSpan);
+
+        return listItem;
+    }
+
+    // Apply open (red/editable) or completed (green/locked) visual and edit state
+    function applyTodoItemState(editIcon, textSpan, completed) {
+
+        if (completed) {
+            editIcon.classList.add('edit---state--icon');
+            textSpan.classList.add('text---edit--state');
+            textSpan.setAttribute('contenteditable', 'false');
+        } else {
+            editIcon.classList.remove('edit---state--icon');
+            textSpan.classList.remove('text---edit--state');
+            textSpan.setAttribute('contenteditable', 'true');
+        }
+    }
+
+    function isTodoItemCompleted(listItem) {
+        const editIcon = listItem.querySelector('.icon---edit');
+        return editIcon ? editIcon.classList.contains('edit---state--icon') : false;
+    }
+
+    // Read current list items from the DOM
+    function getTodosFromDOM() {
+
+        const todos = [];
+        const listItems = todoListElement.querySelectorAll('li');
+
+        listItems.forEach(function(listItem) {
+            const textSpan = listItem.querySelector('.todo---item--text');
+            todos.push({
+                text: textSpan ? textSpan.textContent : '',
+                completed: isTodoItemCompleted(listItem)
+            });
+        });
+
+        return todos;
+    }
+
+    // Persist current list state to localStorage
+    function saveTodosToLocalStorage() {
+        localStorage.setItem(localStorageKey, JSON.stringify(getTodosFromDOM()));
+    }
+
+    function renderTodos(todos) {
+
+        todoListElement.innerHTML = '';
+
+        todos.forEach(function(todo) {
+            const listItem = createTodoListItem(todo.text, todo.completed);
+            todoListElement.appendChild(listItem);
+        });
+    }
+
+    // Restore saved tasks, or keep the markup defaults on a first visit
+    function loadTodosFromLocalStorage() {
+
+        const savedTodos = localStorage.getItem(localStorageKey);
+
+        if (savedTodos === null) {
+            saveTodosToLocalStorage();
+            return;
+        }
+
+        try {
+            const todos = JSON.parse(savedTodos);
+
+            if (Array.isArray(todos)) {
+                renderTodos(todos);
+            }
+        } catch (error) {
+            console.error('Error loading to-do items from localStorage:', error);
+        }
+    }
+
+    function toggleTodoItemState(listItem) {
+
+        const editIcon = listItem.querySelector('.icon---edit');
+        const textSpan = listItem.querySelector('.todo---item--text');
+
+        if (!editIcon || !textSpan) {
+            return;
+        }
+
+        const completed = !editIcon.classList.contains('edit---state--icon');
+        applyTodoItemState(editIcon, textSpan, completed);
+
+        if (completed) {
+            textSpan.blur();
+        }
+
+        saveTodosToLocalStorage();
+    }
+
+    function deleteTodoItem(listItem) {
+        listItem.remove();
+        saveTodosToLocalStorage();
+    }
+
+    function addTodoItem() {
+
+        const listItem = createTodoListItem('New Task', false);
+        todoListElement.appendChild(listItem);
+        saveTodosToLocalStorage();
+
+        const textSpan = listItem.querySelector('.todo---item--text');
+        if (textSpan) {
+            textSpan.focus();
+
+            const selection = window.getSelection();
+            const range = document.createRange();
+            range.selectNodeContents(textSpan);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+    }
+
+    // Event delegation for toggle, delete, and text edits on dynamic list items
+    todoListElement.addEventListener('click', function(event) {
+
+        const closeIcon = event.target.closest('.icon---close');
+        const editIcon = event.target.closest('.icon---edit');
+
+        if (closeIcon) {
+            const listItem = closeIcon.closest('li');
+            if (listItem) {
+                deleteTodoItem(listItem);
+            }
+            return;
+        }
+
+        if (editIcon) {
+            const listItem = editIcon.closest('li');
+            if (listItem) {
+                toggleTodoItemState(listItem);
+            }
+        }
+    });
+
+    // contenteditable blur does not bubble, so listen in the capture phase
+    todoListElement.addEventListener('blur', function(event) {
+
+        if (event.target.classList.contains('todo---item--text')) {
+            saveTodosToLocalStorage();
+        }
+    }, true);
+
+    todoListElement.addEventListener('keydown', function(event) {
+
+        if (event.key === 'Enter' && event.target.classList.contains('todo---item--text')) {
+            event.preventDefault();
+            event.target.blur();
+        }
+    });
+
+    if (addTodoButton) {
+        addTodoButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            addTodoItem();
+        });
+    }
+
+    loadTodosFromLocalStorage();
 }
 
 // Dashboard Toggle Functionality - Toggle visibility of dashboard sections

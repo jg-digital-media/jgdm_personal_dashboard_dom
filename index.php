@@ -146,16 +146,10 @@
 
                     <div class="todo---dashboard--container"> 
                         
-                        <ul>
+                        <ul id="js---todo--list">
 
                             <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text" contenteditable="true">Item 1</span></li>
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit edit---state--icon">&nbsp;</span>  <span class="todo---item--text text---edit--state" contenteditable="true">Item 2</span></li>
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit edit---state--icon">&nbsp;</span>  <span class="todo---item--text text---edit--state" contenteditable="true">Item 3</span></li>
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit edit---state--icon">&nbsp;</span>  <span class="todo---item--text text---edit--state" contenteditable="true">Item 4</span></li>
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit edit---state--icon">&nbsp;</span>  <span class="todo---item--text text---edit--state" contenteditable="true">Item 5</span></li>
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text" contenteditable="true">Item 6</span></li> 
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text" contenteditable="true">Item 7</span></li> 
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text" contenteditable="true">Item 8</span></li>
+                            <li><span class="icon---close">&times;</span>  <span class="icon---edit edit---state--icon">&nbsp;</span>  <span class="todo---item--text text---edit--state" contenteditable="false">Item 2</span></li>
                         </ul>
 
                         <!-- <p>Content goes here</p> -->
