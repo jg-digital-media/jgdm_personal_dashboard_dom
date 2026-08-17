@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 17-08-2026 - 12:51
+Last Updated: 17-08-2026 - 14:46
 
 ## Sections
 
@@ -9,7 +9,7 @@ Last Updated: 17-08-2026 - 12:51
 
 ## Tasks 
 
-### Total: `58` Completed: `27`
+### Total: `58` Completed: `28`
 
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
@@ -33,18 +33,18 @@ Last Updated: 17-08-2026 - 12:51
   + `COMPLETED: 21-11-2025:` - welcome message element "Good Morning/Evening, [NAME]"
   + `COMPLETED: 21-11-2025:` - Mouseout event of `js--name_input` will save the element value to localStorage - triggered when the element loses focus.
   + `COMPLETED: 21-11-2025:` - "hello.. what do I call you?" make content content editable `#morning---or--evening`
-
 + `COMPLETED: 24-11-2025:` - Add button - Reset `.js---btn_reset`
 + `COMPLETED: 24-11-2025:` - Implement sticky footer banner at bottom of page - for adding and closing sections and to default state. Add and close the sections, `js---dashboard--todo`, `.js---dashboard--notes`, `js---dashboard--shortcuts` and `js----dashboard--weather`, preferably with an animation that indicates the section toggled is being minimised and taking steps to maintain the space vacated by the minimised section.
 + `COMPLETED: 24-11-2025:` - Maintain sticky footer position at bottom of the viewport when any and all dashboard sections are minimised.
 + `COMPLETED: 24-11-2025:` - Reset button with modal area for seeking confirmation to revert to default settings
 + `COMPLETED: 24-11-2025:` - Use JavaScript to create the elements needed to create the modal with template literals. 
++ `COMPLETED: 17-08-2026:` - add remaining contentditable attributes to `todo---item--text` elements.
+
 + `TODO:` - `Feature` - Reset Dashboard Settings
   + `TODO:` - Customise styling of the reset modal area.
   + `TODO:` - Customise modal area text to include confirmation of note and task reset.
   + `TODO:` - Resetting button does not reset user name text input to empty string.
-+ `TODO:` - `Feature` Implement Main Dashboard TODO List Feature
-  + `TODO:` - add remaining contentditable attributes to `todo---item--text` elements.
++ `TODO:` - `Feature` - Implement Main Dashboard TODO List Feature
   + `TODO:` - When TODO list items are clicked they should be disabled with no ability to focus on edit them.
 + `TODO:` - "Featuring DOM Elements" - Text to appear as hoverable tooltips.
   + `TODO:` - `dashboard---section--buttons` element - customise linear gradient on these elements.
