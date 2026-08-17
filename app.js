@@ -1,4 +1,4 @@
-console.log('app.js connected - 17-08-2026 - 13:37');
+console.log('app.js connected - 17-08-2026 - 13:53');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -302,6 +302,10 @@ function initializeTodoList() {
 
     const todoDashboardElement = document.querySelector('#js---dashboard--todo');
     const todoListElement = document.querySelector('#js---todo--list');
+    const todoContainerElement = todoDashboardElement
+        ? todoDashboardElement.querySelector('.todo---dashboard--container')
+        : null;
+    const emptyStateElement = document.querySelector('#js---todo--empty');
     const addTodoButton = todoDashboardElement
         ? todoDashboardElement.querySelector('#add---todo--item')
         : null;
@@ -377,6 +381,21 @@ function initializeTodoList() {
     // Persist current list state to localStorage
     function saveTodosToLocalStorage() {
         localStorage.setItem(localStorageKey, JSON.stringify(getTodosFromDOM()));
+        updateEmptyState();
+    }
+
+    // Show the empty-state message when the list has no tasks
+    function updateEmptyState() {
+
+        const isEmpty = getTodosFromDOM().length === 0;
+
+        if (todoContainerElement) {
+            todoContainerElement.classList.toggle('todo---list--empty', isEmpty);
+        }
+
+        if (emptyStateElement) {
+            emptyStateElement.hidden = !isEmpty;
+        }
     }
 
     function renderTodos(todos) {
@@ -387,15 +406,17 @@ function initializeTodoList() {
             const listItem = createTodoListItem(todo.text, todo.completed);
             todoListElement.appendChild(listItem);
         });
+
+        updateEmptyState();
     }
 
-    // Restore saved tasks, or keep the markup defaults on a first visit
+    // Restore saved tasks, or show the empty state when nothing is persisted
     function loadTodosFromLocalStorage() {
 
         const savedTodos = localStorage.getItem(localStorageKey);
 
         if (savedTodos === null) {
-            saveTodosToLocalStorage();
+            renderTodos([]);
             return;
         }
 
@@ -404,10 +425,13 @@ function initializeTodoList() {
 
             if (Array.isArray(todos)) {
                 renderTodos(todos);
+                return;
             }
         } catch (error) {
             console.error('Error loading to-do items from localStorage:', error);
         }
+
+        renderTodos([]);
     }
 
     function toggleTodoItemState(listItem) {

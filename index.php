@@ -144,13 +144,15 @@
 
                 <div class="dashboard---section--content" data-tooltip="Notes: section details">
 
-                    <div class="todo---dashboard--container"> 
-                        
-                        <ul id="js---todo--list">
+                    <div class="todo---dashboard--container todo---list--empty">
 
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit">&nbsp;</span>  <span class="todo---item--text" contenteditable="true">Item 1</span></li>
-                            <li><span class="icon---close">&times;</span>  <span class="icon---edit edit---state--icon">&nbsp;</span>  <span class="todo---item--text text---edit--state" contenteditable="false">Item 2</span></li>
-                        </ul>
+                        <div class="todo---list--panel">
+
+                            <p class="todo---empty--state" id="js---todo--empty">There are currently no tasks. Add one to get started.</p>
+
+                            <ul id="js---todo--list"></ul>
+
+                        </div>
 
                         <!-- <p>Content goes here</p> -->
                         <a href="#" class="dashboard---btn" id="add---todo--item">Add Task</a>
