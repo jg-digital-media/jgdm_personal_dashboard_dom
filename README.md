@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 17-08-2026 - 14:50
+Last Updated: 17-08-2026 - 15:04
 
 ## Sections
 
@@ -121,6 +121,14 @@ On next visit: Name is automatically restored
 + This implementation is a fairly rudimentary fade effect animation, but for now it does the job.  There's still some stying and visual work that need to be done on it. But the basics are there. 
 
 + I've also done an initial implementation of an application reset. That allows the user to click to reset the app to default state, which should eventually include clearing localStorage key value pairs at the behest of clicking confirmation in a neat animated modal area - created by JavaScript.
+
++ ### v4.1
+
++ `17-08-2026` - Fully implemented the TODO List Panel, complete with toggled list items with content that can either be edited or not, depending on whether the task is completed.  New tasks can be added and deleted at any time.
+
++ Implemented the first Dashboard Reset feature.  This allows the user to click the reset button to reset the app to its default state, so there are no list items and the welcome message is reset to its initial state. All persisted data is cleared from localStorage.
+
++ What we have now is a reasonably styled interface, a functional clock, a random quote generator, and a to-do list panel; fully implemented and persisted using localStorage.
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
