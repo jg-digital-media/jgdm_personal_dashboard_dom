@@ -559,13 +559,33 @@ main {
                     /* margin-top: 15px; */
                     /* background: $bg---dashboards; */
 
-                    ul {
+                    .todo---list--panel {
 
                         height: 195px;
-                        /* overflow-y: scroll; */
                         overflow-y: auto;
                         width: 100%;
                         border-top: solid 1px #d3bebe;
+                    }
+
+                    .todo---empty--state {
+
+                        display: none;
+                        margin: 0;
+                        padding: 56px 16px 0;
+                        text-align: center;
+                        color: gray;
+                        font-size: 14px;
+                        line-height: 1.5;
+                    }
+
+                    &.todo---list--empty .todo---empty--state {
+
+                        display: block;
+                    }
+
+                    ul {
+
+                        width: 100%;
 
                         li {
 
