@@ -1,6 +1,6 @@
 /*
 
-    Last Update: 24-11-2025 - 16:32
+    Last Update: 17-08-2026 - 15:04
 */
 * {
   padding: 0;
@@ -636,12 +636,26 @@ main .main---dashboard--container .main---dashboard--todo .dashboard---section--
   /* margin-top: 15px; */
   /* background: $bg---dashboards; */
 }
-main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul {
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container .todo---list--panel {
   height: 195px;
-  /* overflow-y: scroll; */
   overflow-y: auto;
   width: 100%;
   border-top: solid 1px #d3bebe;
+}
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container .todo---empty--state {
+  display: none;
+  margin: 0;
+  padding: 56px 16px 0;
+  text-align: center;
+  color: gray;
+  font-size: 14px;
+  line-height: 1.5;
+}
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container.todo---list--empty .todo---empty--state {
+  display: block;
+}
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul {
+  width: 100%;
 }
 main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li {
   list-style: none;
