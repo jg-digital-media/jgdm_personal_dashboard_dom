@@ -1,4 +1,4 @@
-console.log('app.js connected - 17-08-2026 - 13:53');
+console.log('app.js connected - 17-08-2026 - 14:51');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -170,13 +170,23 @@ document.addEventListener('DOMContentLoaded', function() {
     getRandomQuote();
     
     // Initialise Welcome Message Feature
-    initializeWelcomeMessage();
-    
-    // Initialise Dashboard Toggle Functionality
-    initializeDashboardToggles();
+    const welcomeMessageFeature = initializeWelcomeMessage();
 
     // Initialise To Do List Feature
-    initializeTodoList();
+    const todoListFeature = initializeTodoList();
+    
+    // Initialise Dashboard Toggle Functionality
+    initializeDashboardToggles({
+        resetPersistedContent: function() {
+            if (welcomeMessageFeature && typeof welcomeMessageFeature.reset === 'function') {
+                welcomeMessageFeature.reset();
+            }
+
+            if (todoListFeature && typeof todoListFeature.reset === 'function') {
+                todoListFeature.reset();
+            }
+        }
+    });
 
 });
 
@@ -260,6 +270,16 @@ function initializeWelcomeMessage() {
             }
         });
     }
+
+    return {
+        reset: function() {
+            if (nameInputElement) {
+                nameInputElement.value = '';
+            }
+
+            localStorage.removeItem(localStorageKey);
+        }
+    };
 }
 
 // Get Random Quote Functionality - Fetches and displays a random quote
@@ -522,10 +542,19 @@ function initializeTodoList() {
     }
 
     loadTodosFromLocalStorage();
+
+    return {
+        reset: function() {
+            localStorage.removeItem(localStorageKey);
+            renderTodos([]);
+        }
+    };
 }
 
 // Dashboard Toggle Functionality - Toggle visibility of dashboard sections
-function initializeDashboardToggles() {
+function initializeDashboardToggles(options) {
+
+    const resetPersistedContent = options && options.resetPersistedContent;
     
     // Map button IDs to their corresponding dashboard section IDs
     const dashboardMap = {
@@ -586,6 +615,7 @@ function initializeDashboardToggles() {
     // Handle Reset button with modal confirmation
     const resetButton = document.querySelector('#js---btn_reset');
     if (resetButton) {
+        
         // Remove disabled attribute to enable the button
         resetButton.removeAttribute('disabled');
         
@@ -610,6 +640,11 @@ function initializeDashboardToggles() {
                             button.classList.remove('toggled---inactive');
                         }
                     });
+
+                    // Clear persisted name and to-do items back to the default empty state
+                    if (typeof resetPersistedContent === 'function') {
+                        resetPersistedContent();
+                    }
                 }
             });
         });
@@ -648,10 +683,10 @@ function showResetConfirmationModal(callback) {
                 </div>
                 <div class="modal---reset--body">
                     <p class="modal---reset--message">
-                        Are you sure you want to reset all dashboard sections to their default state?
+                        Are you sure you want to reset the dashboard to its default state?
                     </p>
                     <p class="modal---reset--submessage">
-                        This will expand all minimized sections and restore default settings.
+                        This will clear your name, remove all to-do items, and expand any minimised sections. A page refresh will not undo this.
                     </p>
                 </div>
                 <div class="modal---reset--footer">
