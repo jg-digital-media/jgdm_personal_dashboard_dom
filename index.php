@@ -1,8 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+
+    <!-- Basic SEO Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <!-- Slick Styling -->
+    <!-- <link rel="stylesheet" type="text/css" href ="assets/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href ="assets/slick/slick-theme.css" /> -->
+
+    <!-- Lightbox-->
+    <!-- <link href="../assets/lightbox/dist/css/lightbox.css" rel="stylesheet" /> -->
+
+    <!-- Google Font -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather|Odibee+Sans|Quicksand&display=swap" rel="stylesheet"> -->
+
+    <!-- Meta Tags -->
+    <meta name="description" content="">
+    <meta name="image" content="">
+
+    <!-- FACEBOOK: Open Graph -->
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:locale" content="en_GB">
+
+    <!-- TWITTER: Card Tags -->
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+    <meta name="twitter:card" content="">
+    <meta name="twitter:creator" content="@jonniegrieve">
+
+    <!-- Structured Data (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            "name": "Weigh up the Pros and Cons",
+            "url": "https://www.jonniegrieve.co.uk/",
+            "description": "A simple web app that helps you weigh up pros and cons and make better decisions.",
+            "applicationCategory": "ProductivityApplication",
+            "operatingSystem": "All",
+            "creator": {
+                "@type": "Person",
+                "name": "Jonnie Grieve",
+                "url": "https://www.jonniegrieve.co.uk/"
+            },
+            "image": "https://www.jonniegrieve.co.uk/assets/images/share-image.jpg",
+            "inLanguage": "en-GB"
+        }
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.png" type="image/png">
+
+    <!-- Canonical link -->
+    <link rel="canonical" href="">
+
+
     <title>JGDM: Dom Project - Personal Dashboard</title>
 
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -19,7 +83,7 @@
 
         <div class="website---heading">
 
-            <h1>Personal Dashboard App  <a class="heading---links" href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom?tab=readme-ov-file#development" target="_blank">v2</a>  <a class="heading---links" href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom" target="_blank">Github Repo</a></h1>
+            <h1>Personal Dashboard App  <a class="heading---links" href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom?tab=readme-ov-file#development" target="_blank">v3</a>  <a class="heading---links" href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom" target="_blank">Github Repo</a></h1>
            
 
         </div>
