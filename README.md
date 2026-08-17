@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 17-08-2026 - 14:46
+Last Updated: 17-08-2026 - 14:50
 
 ## Sections
 
@@ -9,7 +9,7 @@ Last Updated: 17-08-2026 - 14:46
 
 ## Tasks 
 
-### Total: `58` Completed: `28`
+### Total: `59` Completed: `31`
 
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
@@ -43,9 +43,9 @@ Last Updated: 17-08-2026 - 14:46
 + `TODO:` - `Feature` - Reset Dashboard Settings
   + `TODO:` - Customise styling of the reset modal area.
   + `TODO:` - Customise modal area text to include confirmation of note and task reset.
-  + `TODO:` - Resetting button does not reset user name text input to empty string.
-+ `TODO:` - `Feature` - Implement Main Dashboard TODO List Feature
-  + `TODO:` - When TODO list items are clicked they should be disabled with no ability to focus on edit them.
+  + `COMPLETED: 17-08-2026:` - Resetting button does not reset user name text input to empty string.
++ `COMPLETED: 17-08-2026:` - `Feature` - Implement Main Dashboard TODO List Feature
+  + `COMPLETED: 17-08-2026:` - When TODO list items are clicked they should be disabled with no ability to focus on edit them.
 + `TODO:` - "Featuring DOM Elements" - Text to appear as hoverable tooltips.
   + `TODO:` - `dashboard---section--buttons` element - customise linear gradient on these elements.
   + `TODO:` - Move tooltips away from using the CSS content property. Need more control of positioning. May be better if we use a JS Object to store these tooltip texts.
