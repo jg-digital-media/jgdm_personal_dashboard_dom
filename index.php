@@ -180,44 +180,16 @@
 
                 <div class="dashboard---section--content">
 
-                    <div class="notes---dashboard--container"> 
-                        
-                        <div class="note---dashboard--item">
+                    <div class="notes---dashboard--container notes---list--empty">
 
-                            <span class="icon---close">&times;</span>
-                            
-                            <div class="note---dashboard--content" contenteditable="true">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
+                        <p class="notes---empty--state" id="js---notes--empty">There are currently no notes. Add one to get started.</p>
 
-                        </div>
-                        
-                        <div class="note---dashboard--item">
-
-                            <span class="icon---close">&times;</span>
-                            
-                            <div class="note---dashboard--content" contenteditable="true">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-
-                        </div>
-                        
-                        <div class="note---dashboard--item">
-
-                            <span class="icon---close">&times;</span>
-                            
-                            <div class="note---dashboard--content" contenteditable="true">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-
-                        </div>
-                        
-                        <div class="note---dashboard--item">
-
-                            <span class="icon---close">&times;</span>
-                            
-                            <div class="note---dashboard--content" contenteditable="true">lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</div>
-
-                        </div>
+                        <div id="js---notes--list"></div>
 
                     </div>
 
                     <!-- <div> <p>Content goes here</p> </div> -->
-                    <a href="#" class="dashboard---btn" id="add---todo--item">Add Note ></a>
+                    <a href="#" class="dashboard---btn" id="add---note--item">Add Note ></a>
 
                 </div>
               

@@ -1,4 +1,4 @@
-console.log('app.js connected - 17-08-2026 - 14:51');
+console.log('app.js connected - 18-08-2026 - 12:59');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -174,6 +174,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialise To Do List Feature
     const todoListFeature = initializeTodoList();
+
+    // Initialise Notes Feature
+    const notesFeature = initializeNotes();
     
     // Initialise Dashboard Toggle Functionality
     initializeDashboardToggles({
@@ -184,6 +187,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (todoListFeature && typeof todoListFeature.reset === 'function') {
                 todoListFeature.reset();
+            }
+
+            if (notesFeature && typeof notesFeature.reset === 'function') {
+                notesFeature.reset();
             }
         }
     });
@@ -551,6 +558,172 @@ function initializeTodoList() {
     };
 }
 
+// Notes Functionality - Add, edit, delete, and persist notes
+function initializeNotes() {
+
+    const notesDashboardElement = document.querySelector('#js---dashboard--notes');
+    const notesListElement = document.querySelector('#js---notes--list');
+    const notesContainerElement = notesDashboardElement
+        ? notesDashboardElement.querySelector('.notes---dashboard--container')
+        : null;
+    const emptyStateElement = document.querySelector('#js---notes--empty');
+    const addNoteButton = notesDashboardElement
+        ? notesDashboardElement.querySelector('#add---note--item')
+        : null;
+    const localStorageKey = 'dashboard_notes';
+
+    if (!notesListElement) {
+        console.log('Notes list element not found');
+        return;
+    }
+
+    function createNoteItem(text) {
+
+        const noteItem = document.createElement('div');
+        noteItem.className = 'note---dashboard--item';
+
+        const closeIcon = document.createElement('span');
+        closeIcon.className = 'icon---close';
+        closeIcon.textContent = '\u00D7';
+
+        const content = document.createElement('div');
+        content.className = 'note---dashboard--content';
+        content.setAttribute('contenteditable', 'true');
+        content.innerText = text;
+
+        noteItem.appendChild(closeIcon);
+        noteItem.appendChild(content);
+
+        return noteItem;
+    }
+
+    function getNotesFromDOM() {
+
+        const notes = [];
+        const noteItems = notesListElement.querySelectorAll('.note---dashboard--item');
+
+        noteItems.forEach(function(noteItem) {
+            const content = noteItem.querySelector('.note---dashboard--content');
+            notes.push({
+                text: content ? content.innerText : ''
+            });
+        });
+
+        return notes;
+    }
+
+    function saveNotesToLocalStorage() {
+        localStorage.setItem(localStorageKey, JSON.stringify(getNotesFromDOM()));
+        updateEmptyState();
+    }
+
+    function updateEmptyState() {
+
+        const isEmpty = getNotesFromDOM().length === 0;
+
+        if (notesContainerElement) {
+            notesContainerElement.classList.toggle('notes---list--empty', isEmpty);
+        }
+
+        if (emptyStateElement) {
+            emptyStateElement.hidden = !isEmpty;
+        }
+    }
+
+    function renderNotes(notes) {
+
+        notesListElement.innerHTML = '';
+
+        notes.forEach(function(note) {
+            const noteItem = createNoteItem(note.text);
+            notesListElement.appendChild(noteItem);
+        });
+
+        updateEmptyState();
+    }
+
+    function loadNotesFromLocalStorage() {
+
+        const savedNotes = localStorage.getItem(localStorageKey);
+
+        if (savedNotes === null) {
+            renderNotes([]);
+            return;
+        }
+
+        try {
+            const notes = JSON.parse(savedNotes);
+
+            if (Array.isArray(notes)) {
+                renderNotes(notes);
+                return;
+            }
+        } catch (error) {
+            console.error('Error loading notes from localStorage:', error);
+        }
+
+        renderNotes([]);
+    }
+
+    function deleteNoteItem(noteItem) {
+        noteItem.remove();
+        saveNotesToLocalStorage();
+    }
+
+    function addNoteItem() {
+
+        const noteItem = createNoteItem('New Note');
+        notesListElement.appendChild(noteItem);
+        saveNotesToLocalStorage();
+
+        const content = noteItem.querySelector('.note---dashboard--content');
+        if (content) {
+            content.focus();
+
+            const selection = window.getSelection();
+            const range = document.createRange();
+            range.selectNodeContents(content);
+            selection.removeAllRanges();
+            selection.addRange(range);
+        }
+    }
+
+    notesListElement.addEventListener('click', function(event) {
+
+        const closeIcon = event.target.closest('.icon---close');
+
+        if (closeIcon) {
+            const noteItem = closeIcon.closest('.note---dashboard--item');
+            if (noteItem) {
+                deleteNoteItem(noteItem);
+            }
+        }
+    });
+
+    notesListElement.addEventListener('blur', function(event) {
+
+        if (event.target.classList.contains('note---dashboard--content')) {
+            saveNotesToLocalStorage();
+        }
+    }, true);
+
+    if (addNoteButton) {
+        addNoteButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            addNoteItem();
+        });
+    }
+
+    loadNotesFromLocalStorage();
+
+    return {
+        reset: function() {
+            localStorage.removeItem(localStorageKey);
+            renderNotes([]);
+        }
+    };
+}
+
 // Dashboard Toggle Functionality - Toggle visibility of dashboard sections
 function initializeDashboardToggles(options) {
 
@@ -641,7 +814,7 @@ function initializeDashboardToggles(options) {
                         }
                     });
 
-                    // Clear persisted name and to-do items back to the default empty state
+                    // Clear persisted name, to-do items, and notes back to the default empty state
                     if (typeof resetPersistedContent === 'function') {
                         resetPersistedContent();
                     }
@@ -686,7 +859,7 @@ function showResetConfirmationModal(callback) {
                         Are you sure you want to reset the dashboard to its default state?
                     </p>
                     <p class="modal---reset--submessage">
-                        This will clear your name, remove all to-do items, and expand any minimised sections. A page refresh will not undo this.
+                        This will clear your name, remove all to-do items and notes, and expand any minimised sections. A page refresh will not undo this.
                     </p>
                 </div>
                 <div class="modal---reset--footer">

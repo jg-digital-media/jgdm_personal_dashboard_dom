@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 17-08-2026 - 15:04
+Last Updated: 18-08-2026 - 12:59
 
 ## Sections
 
@@ -9,7 +9,7 @@ Last Updated: 17-08-2026 - 15:04
 
 ## Tasks 
 
-### Total: `59` Completed: `31`
+### Total: `59` Completed: `32`
 
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
@@ -39,6 +39,7 @@ Last Updated: 17-08-2026 - 15:04
 + `COMPLETED: 24-11-2025:` - Reset button with modal area for seeking confirmation to revert to default settings
 + `COMPLETED: 24-11-2025:` - Use JavaScript to create the elements needed to create the modal with template literals. 
 + `COMPLETED: 17-08-2026:` - add remaining contentditable attributes to `todo---item--text` elements.
++ `COMPLETED: 18-08-2026` - Implement Main Dashboard Note Writing Feature
 
 + `TODO:` - `Feature` - Reset Dashboard Settings
   + `TODO:` - Customise styling of the reset modal area.
@@ -59,7 +60,6 @@ Last Updated: 17-08-2026 - 15:04
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
 + `TODO:` - Update Font Stack - Currently `Arial, Helvetica, sans-serif;`
 + `TODO:` - Modify placeholder message welcome message input element
-+ `TODO:` - Implement Main Dashboard Note Writing Feature
 + `TODO:` - Implement Main Dashboard Shortcut Links Feature
 + `TODO:` - Implement Fetch Weather Details Feature
 + `TODO:` - Implement Footer `Feature`
@@ -70,6 +70,7 @@ Last Updated: 17-08-2026 - 15:04
 + `TODO:` - Set Dynamic Live Clock to local Time Zone
 + `TODO:` - Remove X and minimise icons from any panels. 
 + `TODO:` - Customise style of vertical scrollbars for dashboard panels.
++ `TODO:` - Modify the note functionality to allow for note titles - with a level 4 heading.
 
 <!-- .innerText or .textContent -->
 
