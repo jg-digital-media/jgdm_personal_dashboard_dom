@@ -1,314 +1,115 @@
 /*
 
-    Last Update: 17-08-2026 - 15:04
+    Last Update: 18-08-2026 - 16:39
 */
 * {
   padding: 0;
   margin: 0;
 }
 
+:root,
+[data-theme=theme-one] {
+  --bg-body: #cdcccc;
+  --col-text: #323232;
+  --bg-header: #212121;
+  --col-header: #fff;
+  --bg-quote: #ffe79d;
+  --bg-dashboard: wheat;
+  --border-dashboard: #bdb5b5;
+  --border-dashboard-hvr: #626262;
+  --bg-note: #fffb75;
+  --bg-weather: wheat;
+  --bg-footer: #212121;
+  --col-footer: #fff;
+  --col-link: gray;
+  --col-link-hover: #990202;
+  --col-heading-link: #ffd53e;
+  --col-heading-link-hover: white;
+}
+
+[data-theme=theme-two] {
+  --bg-body: #d5e8c8;
+  --col-text: #24331c;
+  --bg-header: #1e3a1a;
+  --col-header: #e8ffd4;
+  --bg-quote: #c8f5a0;
+  --bg-dashboard: #e4f3c9;
+  --border-dashboard: #bdb5b5;
+  --border-dashboard-hvr: #626262;
+  --bg-note: #d4ff9a;
+  --bg-weather: #e4f3c9;
+  --bg-footer: #1e3a1a;
+  --col-footer: #e8ffd4;
+  --col-link: #3d7a2a;
+  --col-link-hover: #1f4d14;
+  --col-heading-link: #a6ff58;
+  --col-heading-link-hover: #ffffff;
+}
+
+[data-theme=theme-three] {
+  --bg-body: #c5d4e8;
+  --col-text: #1a2a3d;
+  --bg-header: #0d2137;
+  --col-header: #d6e8ff;
+  --bg-quote: #b3d4ff;
+  --bg-dashboard: #d6e6f7;
+  --border-dashboard: #bdb5b5;
+  --border-dashboard-hvr: #626262;
+  --bg-note: #c2ddff;
+  --bg-weather: #d6e6f7;
+  --bg-footer: #0d2137;
+  --col-footer: #d6e8ff;
+  --col-link: #2a5a8a;
+  --col-link-hover: #0d3a66;
+  --col-heading-link: #7eb8ff;
+  --col-heading-link-hover: #ffffff;
+}
+
+[data-theme=theme-four] {
+  --bg-body: #e4e4e4;
+  --col-text: #2a2a2a;
+  --bg-header: #3a3a3a;
+  --col-header: #f2f2f2;
+  --bg-quote: #dcdcdc;
+  --bg-dashboard: #f2f2f2;
+  --border-dashboard: #bdb5b5;
+  --border-dashboard-hvr: #626262;
+  --bg-note: #ececec;
+  --bg-weather: #f2f2f2;
+  --bg-footer: #3a3a3a;
+  --col-footer: #f2f2f2;
+  --col-link: #555555;
+  --col-link-hover: #222222;
+  --col-heading-link: #c3c3c3;
+  --col-heading-link-hover: #ffffff;
+}
+
 /* main.scss */
-/* Tooltips */
-main .section---fetch--weather, main .main---dashboard--container .main---dashboard--shortcuts, main .main---dashboard--container .main---dashboard--notes, main .main---dashboard--container .main---dashboard--todo, main .welcome---message--container, main .motivational---quote--container .motivational---quote, header .theme---selector--container .theme---selector--inner, header .live---clock--container .live---clock {
-  position: relative;
-  cursor: help;
-  padding: 0;
-  /* margin: 0; */
-}
-main .section---fetch--weather::after, main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, main .motivational---quote--container .motivational---quote::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 100%;
-  left: 45%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  padding: 10px;
-  color: #f78d8d;
-  border: solid 1px gray;
-  border-radius: 4px;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-  /* font-size: 14px; */
-  font-size: 10px;
-  font-weight: normal;
-  /* white-space: nowrap; */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s, visibility 0.2s;
-  z-index: 1000;
-  pointer-events: none;
-  /* max-width: 200px; */
-}
-@media (max-width: 992px) {
-  main .section---fetch--weather::after, main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, main .motivational---quote--container .motivational---quote::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
-    max-width: 150px;
-    font-size: 12px;
-    padding: 6px;
-    white-space: normal;
-    word-wrap: break-word;
-  }
-}
-@media (max-width: 768px) {
-  main .section---fetch--weather::after, main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, main .motivational---quote--container .motivational---quote::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
-    max-width: 120px;
-    font-size: 10px;
-    padding: 4px 6px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-  main .section---fetch--weather::after[data-position=left], main .main---dashboard--container .main---dashboard--shortcuts::after[data-position=left], main .main---dashboard--container .main---dashboard--notes::after[data-position=left], main .main---dashboard--container .main---dashboard--todo::after[data-position=left], main .welcome---message--container::after[data-position=left], main .motivational---quote--container .motivational---quote::after[data-position=left], header .theme---selector--container .theme---selector--inner::after[data-position=left], header .live---clock--container .live---clock::after[data-position=left] {
-    left: 0;
-    transform: translateX(0);
-  }
-  main .section---fetch--weather::after[data-position=right], main .main---dashboard--container .main---dashboard--shortcuts::after[data-position=right], main .main---dashboard--container .main---dashboard--notes::after[data-position=right], main .main---dashboard--container .main---dashboard--todo::after[data-position=right], main .welcome---message--container::after[data-position=right], main .motivational---quote--container .motivational---quote::after[data-position=right], header .theme---selector--container .theme---selector--inner::after[data-position=right], header .live---clock--container .live---clock::after[data-position=right] {
-    left: auto;
-    right: 0;
-    transform: translateX(0);
-  }
-}
-@media (max-width: 480px) {
-  main .section---fetch--weather::after, main .main---dashboard--container .main---dashboard--shortcuts::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--todo::after, main .welcome---message--container::after, main .motivational---quote--container .motivational---quote::after, header .theme---selector--container .theme---selector--inner::after, header .live---clock--container .live---clock::after {
-    max-width: 100px;
-    font-size: 9px;
-    padding: 3px 4px;
-  }
-}
-main .section---fetch--weather:hover::after, main .main---dashboard--container .main---dashboard--shortcuts:hover::after, main .main---dashboard--container .main---dashboard--notes:hover::after, main .main---dashboard--container .main---dashboard--todo:hover::after, main .welcome---message--container:hover::after, main .motivational---quote--container .motivational---quote:hover::after, header .theme---selector--container .theme---selector--inner:hover::after, header .live---clock--container .live---clock:hover::after {
-  opacity: 1;
-  visibility: visible;
-}
-main .section---fetch--weather::before, main .main---dashboard--container .main---dashboard--shortcuts::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--todo::before, main .welcome---message--container::before, main .motivational---quote--container .motivational---quote::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
-  content: "";
-  position: absolute;
-  /* bottom: 100%; */
-  left: 50%;
-  /* transform: translateX(-50%) translateY(1px); */
-  border: 4px solid transparent;
-  border-top-color: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
-  top: 34px;
-  bottom: auto;
-  border-top-color: transparent;
-  /* border-bottom-color: rgba(0, 0, 0, 0.8); */
-  border-bottom-color: #f78d8d;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.2s, visibility 0.2s;
-  pointer-events: none;
-  transform: translateX(-50%) rotate(180deg);
-}
-@media (max-width: 768px) {
-  main .section---fetch--weather::before, main .main---dashboard--container .main---dashboard--shortcuts::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--todo::before, main .welcome---message--container::before, main .motivational---quote--container .motivational---quote::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
-    border-width: 3px;
-  }
-}
-@media (max-width: 480px) {
-  main .section---fetch--weather::before, main .main---dashboard--container .main---dashboard--shortcuts::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--todo::before, main .welcome---message--container::before, main .motivational---quote--container .motivational---quote::before, header .theme---selector--container .theme---selector--inner::before, header .live---clock--container .live---clock::before {
-    border-width: 2px;
-  }
-}
-main .section---fetch--weather:hover::before, main .main---dashboard--container .main---dashboard--shortcuts:hover::before, main .main---dashboard--container .main---dashboard--notes:hover::before, main .main---dashboard--container .main---dashboard--todo:hover::before, main .welcome---message--container:hover::before, main .motivational---quote--container .motivational---quote:hover::before, header .theme---selector--container .theme---selector--inner:hover::before, header .live---clock--container .live---clock:hover::before {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* btn---button---dashboards.scss */
-main .main---dashboard--container .main---dashboard--shortcuts .dashboard---btn, main .main---dashboard--container .main---dashboard--notes .dashboard---btn, main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container #add---todo--item {
-  border: solid 1px red;
-  /*  padding: 3px; */
-  /* margin: 7px; */
-  /* position: relative; */
-  /* top: 6px; */
-  /* border-radius: 5px; */
-  /* font-size: 13px; */
-  background: wheat;
-  border: solid 1px #929292;
-  padding: 5px;
-  margin: 6px;
-  position: relative;
-  top: 7px;
-  border-radius: 5px;
-  font-size: 12px;
-  text-decoration: none;
-  text-align: center;
-  color: black;
-  color: #323232;
-  transition: background 0.3s;
-}
-main .main---dashboard--container .main---dashboard--shortcuts .dashboard---btn:hover, main .main---dashboard--container .main---dashboard--notes .dashboard---btn:hover, main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container #add---todo--item:hover {
-  background: #f9eace;
-}
-
-/* btn---section---close */
-main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--close {
-  font-weight: bold;
-  vertical-align: top;
-  font-size: 16pt;
-  display: inline-block;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--close:hover {
-  color: #8f0202;
-}
-
-/* btn---section--collapse.scss */
-main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--collapse {
-  font-weight: bold;
-  vertical-align: top;
-  font-size: 16pt;
-  display: inline-block;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--collapse:hover {
-  color: #8f0202;
-}
-
-.sticky---footer--container ul li a.button---reset {
-  border: solid 1px white;
-  border-radius: 6px;
-  padding: 5px;
-  color: #980303;
-  background: #fdfd8a;
-  text-decoration: none;
-  position: relative;
-  top: 2px;
-  transition: color 0.3s, background 0.3s;
-}
-.sticky---footer--container ul li a.button---reset:hover {
-  background: #ffcb21;
-  color: #630404;
-}
-
-/* btn---section--collapse.scss */
-.sticky---footer--container ul li a.button---toggle {
-  border: solid 1px white;
-  border-radius: 6px;
-  padding: 5px;
-  background: yellow;
-  color: #980303;
-  text-decoration: none;
-  position: relative;
-  top: 2px;
-  transition: background 0.3s;
-}
-.sticky---footer--container ul li a.button---toggle:hover {
-  background: #676363;
-  background: #cccc00;
-  background: none;
-  background: #676363;
-}
-.sticky---footer--container ul li a.toggled---inactive.button---toggle {
-  color: yellow;
-  background: none;
-}
-
-main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .icon---close, main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span.icon---close {
-  display: inline-block;
-  color: white;
-  background: #f46666;
-  border: solid 1px #f46666;
-  height: 25px;
-  width: 25px;
-  border-radius: 50%;
-  text-align: center;
-  padding: 0;
-  /* margin: 0; */
-  margin: 3px 9px;
-  font-size: 24px;
-  content: "X close button";
-  vertical-align: middle;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .icon---close:hover, main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span.icon---close:hover {
-  background: #820303;
-}
-
-main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item span.icon---edit, main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span.icon---edit {
-  background: red;
-  border: solid 1px red;
-  width: 18px;
-  height: 18px;
-  margin: 0 10px;
-  display: inline-block;
-  border-radius: 50%;
-  vertical-align: middle;
-  cursor: pointer;
-  cursor: pointer;
-}
-main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item span.edit---state--icon.icon---edit, main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span.edit---state--icon.icon---edit {
-  background: #16ff16;
-  border: solid 1px #06a706;
-}
-
-main .section---fetch--weather .section---fetch--weather-output .section---fetch--weather-container .section---fetch--weather-input {
-  display: inline-block;
-  border: solid 1px #626262;
-  margin: 0 12px;
-  padding: 4px;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-main .section---fetch--weather .section---fetch--weather-output .section---fetch--weather-container .section---fetch--weather-input:hover {
-  background: lightblue;
-}
-
-/* content: "welcome---message--editable"; */
-main .welcome---message--container .welcome---message--input {
-  padding: 2px 0px;
-  background: none;
-  border: none;
-  outline: none;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  transition: border-bottom 0.3s;
-  font-size: 16px;
-  font-weight: bold;
-  color: #810202;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-main .welcome---message--container .welcome---message--input:focus {
-  outline: none;
-  background: #c24141;
-  background: #cdcccc;
-  border-bottom: #c24141 solid 2px;
-}
-main .welcome---message--container .welcome---message--input:hover {
-  /* border: solid 2px #c24141; */
-  border-bottom: #ed5959 solid 2px;
-  /* background: lightyellow; */
-  background: #dcdbdb;
-}
-main .welcome---message--container .welcome---message--input::placeholder {
-  color: #616161;
-  font-style: italic;
-}
-
 html {
   height: 100%;
   min-height: 100vh;
 }
 
 body {
-  background: #cdcccc;
+  background: var(--bg-body);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  color: #323232;
+  color: var(--col-text);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  transition: background 0.3s, color 0.3s;
 }
 
 header {
-  background: #212121;
+  background: var(--bg-header);
   display: flex;
   width: 100%;
-  color: #fff;
+  color: var(--col-header);
   /* margin: 5px 0 0 0; */
-  box-shadow: #212121 0px 0px 2px 1px;
+  box-shadow: var(--bg-header) 0px 0px 2px 1px;
   height: 50px;
+  transition: background 0.3s, color 0.3s;
 }
 header div {
   /* width: 21%; */
@@ -346,13 +147,13 @@ header .website---heading h1 {
   }
 }
 header .website---heading h1 a {
-  color: #ffd53e;
+  color: var(--col-heading-link);
   font-size: 10px;
   vertical-align: middle;
   transition: color 0.3s;
 }
 header .website---heading h1 a:hover {
-  color: white;
+  color: var(--col-heading-link-hover);
 }
 header .theme---selector--container {
   /* text-align: right; */
@@ -401,7 +202,7 @@ header .theme---selector--container .theme---selector--inner::before {
   bottom: auto;
   transform: translateX(-50%) rotate(180deg);
   border-top-color: transparent;
-  border-bottom-color: rgba(0, 0, 0, 0.8);
+  /* border-bottom-color: rgba(0, 0, 0, 0.8); */
   border-bottom-color: #f78d8d;
 }
 header .theme---selector--container .theme---selector {
@@ -412,6 +213,10 @@ header .theme---selector--container .theme---selector {
   height: 4px;
   width: 4px;
   margin: 3px;
+}
+header .theme---selector--container .theme---selector.theme---selector--active {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 2px #fff;
 }
 header .theme---selector--container #theme-one {
   background: #ff3c3c;
@@ -477,19 +282,12 @@ main .motivational---quote--container .motivational---quote {
   height: 56px;
   font-weight: bold;
   font-size: 8pt;
-  /* width: 300px; */
-  /* background: #626262; */
-  /* background: none; */
-  /* background: #caff99; */
-  background: #ffe79d;
-  /* background: none; */
+  background: var(--bg-quote);
   padding: 7px;
   border-radius: 8px;
-  border: solid #ffdb6a 1px;
+  border: solid color-mix(in srgb, var(--bg-quote), black 10%) 1px;
   display: flex;
   justify-content: space-around;
-  /* justify-content: start; */
-  /* justify-self: center; */
   align-items: center;
   align-self: center;
 }
@@ -499,10 +297,8 @@ main .motivational---quote--container .motivational---quote::before {
 main .welcome---message--container {
   display: block;
   margin: 25px 18px;
-  /* height: 15px; */
   height: 22px;
   width: 88%;
-  /* margin: 25px auto; */
   margin: 0px 0px 11px 49px;
 }
 main .welcome---message--container::before {
@@ -527,12 +323,14 @@ main .main---dashboard--container {
   text-align: center;
 }
 main .main---dashboard--container article.main---dashboard {
-  background: wheat;
-  border: solid 1px #bdb5b5;
+  background: var(--bg-dashboard);
+  border: solid 1px var(--border-dashboard);
   transition: border 0.3s;
 }
 main .main---dashboard--container article.main---dashboard:hover {
+  border: solid 1px var(--border-dashboard-hvr);
   border: solid 1px #626262;
+  border: solid 1px var(--border-dashboard-hvr);
 }
 main .main---dashboard--container article.main---dashboard .dashboard---section--content div {
   /* height: 195px; */
@@ -587,7 +385,7 @@ main .main---dashboard--container article .dashboard---section .dashboard---sect
   padding: 5px 12px;
   /* background: $bg---dashboards; */
   background: none;
-  background: linear-gradient(0deg, #3a3939 -25%, wheat 4%);
+  background: linear-gradient(0deg, #3a3939 -25%, var(--bg-dashboard) 4%);
 }
 main .main---dashboard--container article .dashboard---section .dashboard---section--buttons h3.dashboard---section--heading {
   margin: 0 12px;
@@ -699,11 +497,23 @@ main .main---dashboard--container .main---dashboard--notes .dashboard---section-
   /* margin-top: 15px; */
   border-top: solid 1px #d3bebe;
 }
+main .main---dashboard--container .main---dashboard--notes .dashboard---section--content .notes---dashboard--container .notes---empty--state {
+  display: none;
+  margin: 0;
+  padding: 56px 16px 0;
+  text-align: center;
+  color: gray;
+  font-size: 14px;
+  line-height: 1.5;
+}
+main .main---dashboard--container .main---dashboard--notes .dashboard---section--content .notes---dashboard--container.notes---list--empty .notes---empty--state {
+  display: block;
+}
 main .main---dashboard--container .main---dashboard--notes .dashboard---section--content .notes---dashboard--container .note---dashboard--item {
   display: block;
   margin: 10px auto;
   text-align: left;
-  background: #fffb75;
+  background: var(--bg-note);
   border: #bdbdbd 1px solid;
   font-size: 18px;
   line-height: 1.6;
@@ -762,11 +572,24 @@ main .main---dashboard--container .main---dashboard--shortcuts .dashboard---sect
   overflow: auto;
   border-top: solid 1px #d3bebe;
 }
+main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--container .links---empty--state {
+  display: none;
+  margin: 0;
+  padding: 56px 16px 0;
+  text-align: center;
+  color: gray;
+  font-size: 14px;
+  line-height: 1.5;
+}
+main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--container.links---list--empty .links---empty--state {
+  display: block;
+}
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item {
   /* margin: 10px 0px; */
-  padding: 4px 0;
+  padding: 4px 8px 4px 0;
   display: flex;
   align-items: center;
+  gap: 4px;
   transition: background 0.3s;
 }
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item:hover {
@@ -776,24 +599,29 @@ main .main---dashboard--container .main---dashboard--shortcuts .dashboard---sect
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .icon---close {
   /* padding: 0 2px; */
   vertical-align: middle;
+  flex-shrink: 0;
 }
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .dashboard---link {
-  padding: 0 2px;
-  margin: auto 0;
-  vertical-align: top;
+  padding: 0 6px 0 2px;
+  margin: 0;
+  flex: 1;
+  min-width: 0;
+  vertical-align: middle;
 }
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .dashboard---link a {
-  color: gray;
+  color: var(--col-link);
   font-size: 14px;
-  vertical-align: bottom;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .dashboard---link a:hover {
-  color: #990202;
+  color: var(--col-link-hover);
 }
 main .section---fetch--weather {
   display: block;
   /* display: none; */
-  background: wheat;
+  background: var(--bg-weather);
   border: solid 1px #bdb5b5;
   border-radius: 6px;
   margin: 10px auto;
@@ -888,7 +716,7 @@ main .section---fetch--weather .section---fetch--weather-output .section---fetch
   display: block;
   position: sticky;
   bottom: 0;
-  background: #212121;
+  background: var(--bg-footer);
   text-align: center;
   box-shadow: black 0px 0px 4px 0px;
   flex-shrink: 0;
@@ -918,7 +746,7 @@ main .section---fetch--weather .section---fetch--weather-output .section---fetch
 .sticky---footer--container ul li {
   display: inline-block;
   vertical-align: top;
-  color: #fff;
+  color: var(--col-footer);
   margin: 0 5px;
   font-size: 12px;
 }
@@ -937,16 +765,16 @@ main .section---fetch--weather .section---fetch--weather-output .section---fetch
   }
 }
 .sticky---footer--container ul li a {
-  color: white;
+  color: var(--col-footer);
+  /* font-size: 12px; */
   transition: color 0.4s;
-  font-size: 12px;
 }
 .sticky---footer--container ul li a:hover {
   color: yellow;
 }
 .sticky---footer--container ul li a.link {
   /* color: $url---col---footer;  */
-  transition: color 0.4s;
+  /* transition: color .4s; */
 }
 .sticky---footer--container ul li a.link:hover {
   /* color: $url---col---footer-hover; */
@@ -1091,6 +919,442 @@ footer p {
   background: #ffcb21;
   color: #630404;
   border-color: #630404;
+}
+
+.modal---add--link {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+.modal---add--link.modal---add--link--active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal---add--link.modal---add--link--closing {
+  opacity: 0;
+  visibility: hidden;
+}
+.modal---add--link .modal---add--link--backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  cursor: pointer;
+}
+.modal---add--link .modal---add--link--content {
+  position: relative;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  width: 90%;
+  overflow: hidden;
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+}
+.modal---add--link.modal---add--link--active .modal---add--link--content {
+  transform: scale(1);
+}
+.modal---add--link.modal---add--link--closing .modal---add--link--content {
+  transform: scale(0.9);
+}
+.modal---add--link .modal---add--link--header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: solid 1px #e0e0e0;
+  background: linear-gradient(0deg, #3a3939 -25%, wheat 4%);
+}
+.modal---add--link .modal---add--link--header .modal---add--link--title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: #5c5656;
+}
+.modal---add--link .modal---add--link--header .modal---add--link--close {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #5c5656;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+.modal---add--link .modal---add--link--header .modal---add--link--close:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: #890505;
+}
+.modal---add--link .modal---add--link--body {
+  padding: 20px;
+}
+.modal---add--link .modal---add--link--field {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+.modal---add--link .modal---add--link--field:last-child {
+  margin-bottom: 0;
+}
+.modal---add--link .modal---add--link--field label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #5c5656;
+}
+.modal---add--link .modal---add--link--field input {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px 10px;
+  border: solid 1px #bdb5b5;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #323232;
+  background: white;
+}
+.modal---add--link .modal---add--link--field input:focus {
+  outline: none;
+  border-color: #626262;
+  background: #dcdbdb;
+}
+.modal---add--link .modal---add--link--field input::placeholder {
+  color: #9a9a9a;
+  font-style: italic;
+}
+.modal---add--link .modal---add--link--footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px;
+  border-top: solid 1px #e0e0e0;
+  background: #f9f9f9;
+}
+.modal---add--link .modal---add--link--button {
+  padding: 8px 18px;
+  border: solid 1px #bdb5b5;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+.modal---add--link .modal---add--link--button.modal---add--link--button--cancel {
+  background: white;
+  color: #5c5656;
+}
+.modal---add--link .modal---add--link--button.modal---add--link--button--cancel:hover {
+  background: #f0f0f0;
+  border-color: #626262;
+}
+.modal---add--link .modal---add--link--button.modal---add--link--button--confirm {
+  background: wheat;
+  color: #323232;
+  border-color: #929292;
+}
+.modal---add--link .modal---add--link--button.modal---add--link--button--confirm:hover {
+  background: #f9eace;
+}
+
+/* Tooltips */
+header .live---clock--container .live---clock, header .theme---selector--container .theme---selector--inner, main .motivational---quote--container .motivational---quote, main .welcome---message--container, main .main---dashboard--container .main---dashboard--todo, main .main---dashboard--container .main---dashboard--notes, main .main---dashboard--container .main---dashboard--shortcuts, main .section---fetch--weather {
+  position: relative;
+  cursor: help;
+  padding: 0;
+  /* margin: 0; */
+}
+header .live---clock--container .live---clock::after, header .theme---selector--container .theme---selector--inner::after, main .motivational---quote--container .motivational---quote::after, main .welcome---message--container::after, main .main---dashboard--container .main---dashboard--todo::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--shortcuts::after, main .section---fetch--weather::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 45%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  color: #f78d8d;
+  border: solid 1px gray;
+  border-radius: 4px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  /* font-size: 14px; */
+  font-size: 10px;
+  font-weight: normal;
+  /* white-space: nowrap; */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  z-index: 1000;
+  pointer-events: none;
+  min-height: 43px;
+  height: auto;
+  /* max-width: 200px; */
+}
+@media (max-width: 992px) {
+  header .live---clock--container .live---clock::after, header .theme---selector--container .theme---selector--inner::after, main .motivational---quote--container .motivational---quote::after, main .welcome---message--container::after, main .main---dashboard--container .main---dashboard--todo::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--shortcuts::after, main .section---fetch--weather::after {
+    max-width: 150px;
+    font-size: 12px;
+    padding: 6px;
+    white-space: normal;
+    word-wrap: break-word;
+  }
+}
+@media (max-width: 768px) {
+  header .live---clock--container .live---clock::after, header .theme---selector--container .theme---selector--inner::after, main .motivational---quote--container .motivational---quote::after, main .welcome---message--container::after, main .main---dashboard--container .main---dashboard--todo::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--shortcuts::after, main .section---fetch--weather::after {
+    max-width: 120px;
+    font-size: 10px;
+    padding: 4px 6px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  header .live---clock--container .live---clock::after[data-position=left], header .theme---selector--container .theme---selector--inner::after[data-position=left], main .motivational---quote--container .motivational---quote::after[data-position=left], main .welcome---message--container::after[data-position=left], main .main---dashboard--container .main---dashboard--todo::after[data-position=left], main .main---dashboard--container .main---dashboard--notes::after[data-position=left], main .main---dashboard--container .main---dashboard--shortcuts::after[data-position=left], main .section---fetch--weather::after[data-position=left] {
+    left: 0;
+    transform: translateX(0);
+  }
+  header .live---clock--container .live---clock::after[data-position=right], header .theme---selector--container .theme---selector--inner::after[data-position=right], main .motivational---quote--container .motivational---quote::after[data-position=right], main .welcome---message--container::after[data-position=right], main .main---dashboard--container .main---dashboard--todo::after[data-position=right], main .main---dashboard--container .main---dashboard--notes::after[data-position=right], main .main---dashboard--container .main---dashboard--shortcuts::after[data-position=right], main .section---fetch--weather::after[data-position=right] {
+    left: auto;
+    right: 0;
+    transform: translateX(0);
+  }
+}
+@media (max-width: 480px) {
+  header .live---clock--container .live---clock::after, header .theme---selector--container .theme---selector--inner::after, main .motivational---quote--container .motivational---quote::after, main .welcome---message--container::after, main .main---dashboard--container .main---dashboard--todo::after, main .main---dashboard--container .main---dashboard--notes::after, main .main---dashboard--container .main---dashboard--shortcuts::after, main .section---fetch--weather::after {
+    max-width: 100px;
+    font-size: 9px;
+    padding: 3px 4px;
+  }
+}
+header .live---clock--container .live---clock:hover::after, header .theme---selector--container .theme---selector--inner:hover::after, main .motivational---quote--container .motivational---quote:hover::after, main .welcome---message--container:hover::after, main .main---dashboard--container .main---dashboard--todo:hover::after, main .main---dashboard--container .main---dashboard--notes:hover::after, main .main---dashboard--container .main---dashboard--shortcuts:hover::after, main .section---fetch--weather:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+header .live---clock--container .live---clock::before, header .theme---selector--container .theme---selector--inner::before, main .motivational---quote--container .motivational---quote::before, main .welcome---message--container::before, main .main---dashboard--container .main---dashboard--todo::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--shortcuts::before, main .section---fetch--weather::before {
+  content: "";
+  position: absolute;
+  /* bottom: 100%; */
+  left: 50%;
+  /* transform: translateX(-50%) translateY(1px); */
+  border: 4px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  top: 34px;
+  bottom: auto;
+  border-top-color: transparent;
+  /* border-bottom-color: rgba(0, 0, 0, 0.8); */
+  border-bottom-color: #f78d8d;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+  pointer-events: none;
+  transform: translateX(-50%) rotate(180deg);
+}
+@media (max-width: 768px) {
+  header .live---clock--container .live---clock::before, header .theme---selector--container .theme---selector--inner::before, main .motivational---quote--container .motivational---quote::before, main .welcome---message--container::before, main .main---dashboard--container .main---dashboard--todo::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--shortcuts::before, main .section---fetch--weather::before {
+    border-width: 3px;
+  }
+}
+@media (max-width: 480px) {
+  header .live---clock--container .live---clock::before, header .theme---selector--container .theme---selector--inner::before, main .motivational---quote--container .motivational---quote::before, main .welcome---message--container::before, main .main---dashboard--container .main---dashboard--todo::before, main .main---dashboard--container .main---dashboard--notes::before, main .main---dashboard--container .main---dashboard--shortcuts::before, main .section---fetch--weather::before {
+    border-width: 2px;
+  }
+}
+header .live---clock--container .live---clock:hover::before, header .theme---selector--container .theme---selector--inner:hover::before, main .motivational---quote--container .motivational---quote:hover::before, main .welcome---message--container:hover::before, main .main---dashboard--container .main---dashboard--todo:hover::before, main .main---dashboard--container .main---dashboard--notes:hover::before, main .main---dashboard--container .main---dashboard--shortcuts:hover::before, main .section---fetch--weather:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* btn---button---dashboards.scss */
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container #add---todo--item, main .main---dashboard--container .main---dashboard--notes .dashboard---btn, main .main---dashboard--container .main---dashboard--shortcuts .dashboard---btn {
+  border: solid 1px red;
+  /*  padding: 3px; */
+  /* margin: 7px; */
+  /* position: relative; */
+  /* top: 6px; */
+  /* border-radius: 5px; */
+  /* font-size: 13px; */
+  background: var(--bg-dashboard);
+  border: solid 1px #929292;
+  padding: 5px;
+  margin: 6px;
+  position: relative;
+  top: 7px;
+  border-radius: 5px;
+  font-size: 12px;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  color: var(--col-text);
+  transition: background 0.3s;
+}
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container #add---todo--item:hover, main .main---dashboard--container .main---dashboard--notes .dashboard---btn:hover, main .main---dashboard--container .main---dashboard--shortcuts .dashboard---btn:hover {
+  background: color-mix(in srgb, var(--bg-dashboard), white 12%);
+}
+
+/* btn---section---close */
+main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--close {
+  font-weight: bold;
+  vertical-align: top;
+  font-size: 16pt;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--close:hover {
+  color: #8f0202;
+}
+
+/* btn---section--collapse.scss */
+main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--collapse {
+  font-weight: bold;
+  vertical-align: top;
+  font-size: 16pt;
+  display: inline-block;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--collapse:hover {
+  color: #8f0202;
+}
+
+.sticky---footer--container ul li a.button---reset {
+  border: solid 1px white;
+  border-radius: 6px;
+  padding: 5px;
+  color: #980303;
+  background: #fdfd8a;
+  text-decoration: none;
+  position: relative;
+  top: 2px;
+  transition: color 0.3s, background 0.3s;
+}
+.sticky---footer--container ul li a.button---reset:hover {
+  background: #ffcb21;
+  color: #630404;
+}
+
+/* btn---section--collapse.scss */
+.sticky---footer--container ul li a.button---toggle {
+  border: solid 1px white;
+  border-radius: 6px;
+  padding: 5px;
+  background: yellow;
+  color: #980303;
+  text-decoration: none;
+  position: relative;
+  top: 2px;
+  transition: background 0.3s, color 0.3s;
+}
+.sticky---footer--container ul li a.button---toggle:hover {
+  /* background: #676363; */
+  /* background: darken(yellow, 10%); */
+  /* background: none; */
+  background: #676363;
+  color: yellow;
+}
+.sticky---footer--container ul li a.toggled---inactive.button---toggle {
+  color: yellow;
+  background: none;
+}
+
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span.icon---close, main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .icon---close {
+  display: inline-block;
+  color: white;
+  background: #f46666;
+  border: solid 1px #f46666;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 0;
+  /* margin: 0; */
+  margin: 3px 9px;
+  font-size: 24px;
+  content: "X close button";
+  vertical-align: middle;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span.icon---close:hover, main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .icon---close:hover {
+  background: #820303;
+}
+
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span.icon---edit {
+  background: red;
+  border: solid 1px red;
+  width: 18px;
+  height: 18px;
+  margin: 0 10px;
+  display: inline-block;
+  border-radius: 50%;
+  vertical-align: middle;
+  cursor: pointer;
+  cursor: pointer;
+}
+main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span.edit---state--icon.icon---edit {
+  background: #16ff16;
+  border: solid 1px #06a706;
+}
+
+main .section---fetch--weather .section---fetch--weather-output .section---fetch--weather-container .section---fetch--weather-input {
+  display: inline-block;
+  border: solid 1px #626262;
+  margin: 0 12px;
+  padding: 4px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+main .section---fetch--weather .section---fetch--weather-output .section---fetch--weather-container .section---fetch--weather-input:hover {
+  background: lightblue;
+}
+
+/* content: "welcome---message--editable"; */
+main .welcome---message--container .welcome---message--input {
+  padding: 2px 0px;
+  background: none;
+  border: none;
+  outline: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  transition: border-bottom 0.3s;
+  font-size: 16px;
+  font-weight: bold;
+  color: #810202;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+main .welcome---message--container .welcome---message--input:focus {
+  outline: none;
+  background: #c24141;
+  background: var(--bg-body);
+  border-bottom: #c24141 solid 2px;
+}
+main .welcome---message--container .welcome---message--input:hover {
+  /* border: solid 2px #c24141; */
+  border-bottom: #ed5959 solid 2px;
+  /* background: lightyellow; */
+  background: color-mix(in srgb, var(--bg-body), white 12%);
+}
+main .welcome---message--container .welcome---message--input::placeholder {
+  color: #616161;
+  font-style: italic;
 }
 
 /*# sourceMappingURL=style.css.map */
