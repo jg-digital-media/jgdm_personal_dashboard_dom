@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 18-08-2026 - 12:59
+Last Updated: 18-08-2026 - 13:24
 
 ## Sections
 
@@ -41,6 +41,8 @@ Last Updated: 18-08-2026 - 12:59
 + `COMPLETED: 17-08-2026:` - add remaining contentditable attributes to `todo---item--text` elements.
 + `COMPLETED: 18-08-2026` - Implement Main Dashboard Note Writing Feature
 
++ `COMPLETED:` - Implement Main Dashboard Shortcut Links Feature
+
 + `TODO:` - `Feature` - Reset Dashboard Settings
   + `TODO:` - Customise styling of the reset modal area.
   + `TODO:` - Customise modal area text to include confirmation of note and task reset.
@@ -60,7 +62,6 @@ Last Updated: 18-08-2026 - 12:59
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
 + `TODO:` - Update Font Stack - Currently `Arial, Helvetica, sans-serif;`
 + `TODO:` - Modify placeholder message welcome message input element
-+ `TODO:` - Implement Main Dashboard Shortcut Links Feature
 + `TODO:` - Implement Fetch Weather Details Feature
 + `TODO:` - Implement Footer `Feature`
   + `TODO:` - "How To" link should open an animated modal window with relevant copy and any links.

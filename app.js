@@ -1,4 +1,4 @@
-console.log('app.js connected - 18-08-2026 - 12:59');
+console.log('app.js connected - 18-08-2026 - 13:24');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -177,6 +177,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialise Notes Feature
     const notesFeature = initializeNotes();
+
+    // Initialise Shortcut Links Feature
+    const shortcutLinksFeature = initializeShortcutLinks();
     
     // Initialise Dashboard Toggle Functionality
     initializeDashboardToggles({
@@ -191,6 +194,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (notesFeature && typeof notesFeature.reset === 'function') {
                 notesFeature.reset();
+            }
+
+            if (shortcutLinksFeature && typeof shortcutLinksFeature.reset === 'function') {
+                shortcutLinksFeature.reset();
             }
         }
     });
@@ -724,6 +731,165 @@ function initializeNotes() {
     };
 }
 
+// Shortcut Links Functionality - Add via modal, delete, and persist links
+function initializeShortcutLinks() {
+
+    const linksDashboardElement = document.querySelector('#js---dashboard--shortcuts');
+    const linksListElement = document.querySelector('#js---links--list');
+    const linksContainerElement = linksDashboardElement
+        ? linksDashboardElement.querySelector('.links---dashboard--container')
+        : null;
+    const emptyStateElement = document.querySelector('#js---links--empty');
+    const addLinkButton = linksDashboardElement
+        ? linksDashboardElement.querySelector('#add---link--item')
+        : null;
+    const localStorageKey = 'dashboard_links';
+
+    if (!linksListElement) {
+        console.log('Shortcut links list element not found');
+        return;
+    }
+
+    function createShortcutLinkItem(text, url) {
+
+        const linkItem = document.createElement('div');
+        linkItem.className = 'links---dashboard--item';
+
+        const closeIcon = document.createElement('span');
+        closeIcon.className = 'icon---close';
+        closeIcon.textContent = '\u00D7';
+
+        const linkWrap = document.createElement('span');
+        linkWrap.className = 'dashboard---link';
+
+        const anchor = document.createElement('a');
+        anchor.setAttribute('href', url);
+        anchor.setAttribute('target', '_blank');
+        anchor.setAttribute('rel', 'noopener noreferrer');
+        anchor.textContent = text;
+
+        linkWrap.appendChild(anchor);
+        linkItem.appendChild(closeIcon);
+        linkItem.appendChild(linkWrap);
+
+        return linkItem;
+    }
+
+    function getLinksFromDOM() {
+
+        const links = [];
+        const linkItems = linksListElement.querySelectorAll('.links---dashboard--item');
+
+        linkItems.forEach(function(linkItem) {
+            const anchor = linkItem.querySelector('.dashboard---link a');
+            links.push({
+                text: anchor ? anchor.textContent : '',
+                url: anchor ? anchor.getAttribute('href') : ''
+            });
+        });
+
+        return links;
+    }
+
+    function saveLinksToLocalStorage() {
+        localStorage.setItem(localStorageKey, JSON.stringify(getLinksFromDOM()));
+        updateEmptyState();
+    }
+
+    function updateEmptyState() {
+
+        const isEmpty = getLinksFromDOM().length === 0;
+
+        if (linksContainerElement) {
+            linksContainerElement.classList.toggle('links---list--empty', isEmpty);
+        }
+
+        if (emptyStateElement) {
+            emptyStateElement.hidden = !isEmpty;
+        }
+    }
+
+    function renderLinks(links) {
+
+        linksListElement.innerHTML = '';
+
+        links.forEach(function(link) {
+            const linkItem = createShortcutLinkItem(link.text, link.url);
+            linksListElement.appendChild(linkItem);
+        });
+
+        updateEmptyState();
+    }
+
+    function loadLinksFromLocalStorage() {
+
+        const savedLinks = localStorage.getItem(localStorageKey);
+
+        if (savedLinks === null) {
+            renderLinks([]);
+            return;
+        }
+
+        try {
+            const links = JSON.parse(savedLinks);
+
+            if (Array.isArray(links)) {
+                renderLinks(links);
+                return;
+            }
+        } catch (error) {
+            console.error('Error loading shortcut links from localStorage:', error);
+        }
+
+        renderLinks([]);
+    }
+
+    function deleteShortcutLink(linkItem) {
+        linkItem.remove();
+        saveLinksToLocalStorage();
+    }
+
+    function addShortcutLink(text, url) {
+
+        const linkItem = createShortcutLinkItem(text, url);
+        linksListElement.appendChild(linkItem);
+        saveLinksToLocalStorage();
+    }
+
+    linksListElement.addEventListener('click', function(event) {
+
+        const closeIcon = event.target.closest('.icon---close');
+
+        if (closeIcon) {
+            event.preventDefault();
+            const linkItem = closeIcon.closest('.links---dashboard--item');
+            if (linkItem) {
+                deleteShortcutLink(linkItem);
+            }
+        }
+    });
+
+    if (addLinkButton) {
+        addLinkButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            showAddLinkModal(function(linkData) {
+                if (linkData) {
+                    addShortcutLink(linkData.text, linkData.url);
+                }
+            });
+        });
+    }
+
+    loadLinksFromLocalStorage();
+
+    return {
+        reset: function() {
+            localStorage.removeItem(localStorageKey);
+            renderLinks([]);
+        }
+    };
+}
+
 // Dashboard Toggle Functionality - Toggle visibility of dashboard sections
 function initializeDashboardToggles(options) {
 
@@ -814,7 +980,7 @@ function initializeDashboardToggles(options) {
                         }
                     });
 
-                    // Clear persisted name, to-do items, and notes back to the default empty state
+                    // Clear persisted name, to-do items, notes, and shortcut links back to the default empty state
                     if (typeof resetPersistedContent === 'function') {
                         resetPersistedContent();
                     }
@@ -859,7 +1025,7 @@ function showResetConfirmationModal(callback) {
                         Are you sure you want to reset the dashboard to its default state?
                     </p>
                     <p class="modal---reset--submessage">
-                        This will clear your name, remove all to-do items and notes, and expand any minimised sections. A page refresh will not undo this.
+                        This will clear your name, remove all to-do items, notes and shortcut links, and expand any minimised sections. A page refresh will not undo this.
                     </p>
                 </div>
                 <div class="modal---reset--footer">
@@ -932,6 +1098,128 @@ function showResetConfirmationModal(callback) {
     setTimeout(() => {
         if (modal) {
             modal.classList.add('modal---reset--active');
+        }
+    }, 10);
+}
+
+// Add Shortcut Link Modal - Collects display text and URL before adding a link
+function showAddLinkModal(callback) {
+
+    let existingModal = document.querySelector('.modal---add--link');
+    if (existingModal) {
+        existingModal.remove();
+    }
+
+    const modalHTML = `
+        <div class="modal---add--link">
+            <div class="modal---add--link--backdrop"></div>
+            <div class="modal---add--link--content">
+                <div class="modal---add--link--header">
+                    <h3 class="modal---add--link--title">Add Shortcut Link</h3>
+                    <button class="modal---add--link--close" type="button" aria-label="Close modal">&times;</button>
+                </div>
+                <form class="modal---add--link--form">
+                    <div class="modal---add--link--body">
+                        <div class="modal---add--link--field">
+                            <label for="js---link--text">Display text</label>
+                            <input id="js---link--text" type="text" name="link-text" placeholder="YouTube" autocomplete="off" />
+                        </div>
+                        <div class="modal---add--link--field">
+                            <label for="js---link--url">URL</label>
+                            <input id="js---link--url" type="text" name="link-url" placeholder="https://youtube.com" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="modal---add--link--footer">
+                        <button class="modal---add--link--button modal---add--link--button--cancel" type="button" id="modal---add--link--cancel">
+                            Cancel
+                        </button>
+                        <button class="modal---add--link--button modal---add--link--button--confirm" type="submit" id="modal---add--link--confirm">
+                            Add Link
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    const modal = document.querySelector('.modal---add--link');
+    const backdrop = document.querySelector('.modal---add--link--backdrop');
+    const closeButton = document.querySelector('.modal---add--link--close');
+    const cancelButton = document.querySelector('#modal---add--link--cancel');
+    const form = document.querySelector('.modal---add--link--form');
+    const textInput = document.querySelector('#js---link--text');
+    const urlInput = document.querySelector('#js---link--url');
+
+    function closeModal() {
+        document.removeEventListener('keydown', handleEscapeKey);
+
+        if (modal) {
+            modal.classList.add('modal---add--link--closing');
+            setTimeout(() => {
+                modal.remove();
+            }, 300);
+        }
+    }
+
+    function submitLink(event) {
+        if (event) {
+            event.preventDefault();
+        }
+
+        const text = textInput ? textInput.value : '';
+        const url = urlInput ? urlInput.value : '';
+
+        closeModal();
+
+        if (callback) {
+            callback({ text: text, url: url });
+        }
+    }
+
+    if (backdrop) {
+        backdrop.addEventListener('click', function() {
+            closeModal();
+            if (callback) callback(false);
+        });
+    }
+
+    if (closeButton) {
+        closeButton.addEventListener('click', function() {
+            closeModal();
+            if (callback) callback(false);
+        });
+    }
+
+    if (cancelButton) {
+        cancelButton.addEventListener('click', function() {
+            closeModal();
+            if (callback) callback(false);
+        });
+    }
+
+    if (form) {
+        form.addEventListener('submit', submitLink);
+    }
+
+    function handleEscapeKey(event) {
+        if (event.key === 'Escape' && modal) {
+            closeModal();
+            if (callback) callback(false);
+            document.removeEventListener('keydown', handleEscapeKey);
+        }
+    }
+
+    document.addEventListener('keydown', handleEscapeKey);
+
+    setTimeout(() => {
+        if (modal) {
+            modal.classList.add('modal---add--link--active');
+        }
+
+        if (textInput) {
+            textInput.focus();
         }
     }, 10);
 }

@@ -213,72 +213,17 @@
                 <div class="dashboard---section--content">
 
                     
-                  <div class="links---dashboard--container"> 
-                        
-                        <div class="links---dashboard--item">
+                  <div class="links---dashboard--container links---list--empty">
 
-                            <span class="icon---close">&times;</span>
-                            <span class="icon---edit">&nbsp;</span>
-                            <span class="dashboard---link"><a href="">Link 1</a></span>
+                        <p class="links---empty--state" id="js---links--empty">There are currently no shortcut links. Add one to get started.</p>
 
-                        </div>
+                        <div id="js---links--list"></div>
 
-                        <div class="links---dashboard--item">
-
-                            <span class="icon---close">&times;</span>
-                            <span class="icon---edit">&nbsp;</span>
-                            <span class="dashboard---link"><a href="">Link 2</a></span>
-
-                        </div>
-
-                        <div class="links---dashboard--item">
-
-                            <span class="icon---close">&times;</span>
-                            <span class="icon---edit">&nbsp;</span>
-                            <span class="dashboard---link"><a href="">Link 3</a></span>
-
-                        </div>
-
-                        <div class="links---dashboard--item">
-
-                            <span class="icon---close">&times;</span>
-                            <span class="icon---edit">&nbsp;</span>
-                            <span class="dashboard---link"><a href="">Link 4</a></span>
-
-                        </div>
-
-                        <div class="links---dashboard--item">
-
-                            <span class="icon---close">&times;</span>
-                            <span class="icon---edit">&nbsp;</span>
-                            <span class="dashboard---link"><a href="">Link 5</a></span>
-
-                        </div>
-
-
-                        <div class="links---dashboard--item">
-
-                            <span class="icon---close">&times;</span>
-                            <span class="icon---edit">&nbsp;</span>
-                            <span class="dashboard---link"><a href="">Link 6</a></span>
-
-                        </div>
-
-
-                        <div class="links---dashboard--item">
-
-                            <span class="icon---close">&times;</span>
-                            <span class="icon---edit">&nbsp;</span>
-                            <span class="dashboard---link"><a href="">Link 7</a></span>
-
-                        </div>
-
-                    <!-- <div> <p>Content goes here</p> </div> -->
-                    </div>  
+                    </div>
 
                 </div>
 
-                <a href="#" class="dashboard---btn" id="add---todo--item">Add Link ></a>
+                <a href="#" class="dashboard---btn" id="add---link--item">Add Link ></a>
               
             </article> 
 
