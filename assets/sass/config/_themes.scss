@@ -1,0 +1,117 @@
+// Theme CSS custom properties
+// Each feature exposes one or two variables. Attach additional CSS rules
+// to these variables as the theme system grows.
+
+:root,
+[data-theme="theme-one"] {
+
+    // Body
+    --bg-body: #{$bg---body};
+    --col-text: #{$col---primary};
+
+    // Header
+    --bg-header: #{$bg---header};
+    --col-header: #{$col---secondary};
+
+    // Quote of the Day
+    --bg-quote: #{$bg---section--qotd};
+
+    // Dashboard panels (To Do, Notes, Shortcut Links)
+    --bg-dashboard: #{$bg---section--dashboards};
+
+    // Notes cards
+    --bg-note: #fffb75;
+
+    // Weather
+    --bg-weather: #{$bg---section--weather-fetch};
+
+    // Footer
+    --bg-footer: #{$bg---footer};
+    --col-footer: #{$col---secondary};
+
+    // Shortcut link text
+    --col-link: #{$url---col--secondary};
+    --col-link-hover: #{$url---col--secondary-hover};
+
+    // Header heading links
+    --col-heading-link: #{$url---col--primary};
+    --col-heading-link-hover: #{$url---col--primary-hover};
+}
+
+[data-theme="theme-two"] {
+
+    --bg-body: #d5e8c8;
+    --col-text: #24331c;
+
+    --bg-header: #1e3a1a;
+    --col-header: #e8ffd4;
+
+    --bg-quote: #c8f5a0;
+
+    --bg-dashboard: #e4f3c9;
+
+    --bg-note: #d4ff9a;
+
+    --bg-weather: #e4f3c9;
+
+    --bg-footer: #1e3a1a;
+    --col-footer: #e8ffd4;
+
+    --col-link: #3d7a2a;
+    --col-link-hover: #1f4d14;
+
+    --col-heading-link: #a6ff58;
+    --col-heading-link-hover: #ffffff;
+}
+
+[data-theme="theme-three"] {
+
+    --bg-body: #c5d4e8;
+    --col-text: #1a2a3d;
+
+    --bg-header: #0d2137;
+    --col-header: #d6e8ff;
+
+    --bg-quote: #b3d4ff;
+
+    --bg-dashboard: #d6e6f7;
+
+    --bg-note: #c2ddff;
+
+    --bg-weather: #d6e6f7;
+
+    --bg-footer: #0d2137;
+    --col-footer: #d6e8ff;
+
+    --col-link: #2a5a8a;
+    --col-link-hover: #0d3a66;
+
+    --col-heading-link: #7eb8ff;
+    --col-heading-link-hover: #ffffff;
+}
+
+[data-theme="theme-four"] {
+
+    --bg-body: #e4e4e4;
+    --col-text: #2a2a2a;
+
+    --bg-header: #3a3a3a;
+    --col-header: #f2f2f2;
+
+    --bg-quote: #dcdcdc;
+
+    --bg-dashboard: #f2f2f2;
+
+    --bg-note: #ececec;
+
+    --bg-weather: #f2f2f2;
+
+    --bg-footer: #3a3a3a;
+    --col-footer: #f2f2f2;
+
+    --col-link: #555555;
+    --col-link-hover: #222222;
+
+    --col-heading-link: #c3c3c3;
+    --col-heading-link-hover: #ffffff;
+}
