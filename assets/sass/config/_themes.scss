@@ -18,6 +18,8 @@
 
     // Dashboard panels (To Do, Notes, Shortcut Links)
     --bg-dashboard: #{$bg---section--dashboards};
+    --border-dashboard: #bdb5b5;
+    --border-dashboard-hvr: #626262;
 
     // Notes cards
     --bg-note: #fffb75;
@@ -49,6 +51,8 @@
     --bg-quote: #c8f5a0;
 
     --bg-dashboard: #e4f3c9;
+    --border-dashboard: #bdb5b5;
+    --border-dashboard-hvr: #626262;
 
     --bg-note: #d4ff9a;
 
@@ -75,6 +79,8 @@
     --bg-quote: #b3d4ff;
 
     --bg-dashboard: #d6e6f7;
+    --border-dashboard: #bdb5b5;
+    --border-dashboard-hvr: #626262;
 
     --bg-note: #c2ddff;
 
@@ -101,6 +107,8 @@
     --bg-quote: #dcdcdc;
 
     --bg-dashboard: #f2f2f2;
+    --border-dashboard: #bdb5b5;
+    --border-dashboard-hvr: #626262;
 
     --bg-note: #ececec;
 
