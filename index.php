@@ -71,7 +71,7 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body>
+<body data-theme="theme-one">
 
     <header>
 
@@ -93,10 +93,10 @@
             <h2>Theme Options</h2>
 
             <div class="theme---selector--inner" data-tooltip="Select Theme Option: Attribute/class manipulation (classList.add/remove/toggle">
-                <div class="theme---selector" id="theme-one">&nbsp;</div>
-                <div class="theme---selector" id="theme-two">&nbsp;</div>
-                <div class="theme---selector" id="theme-three">&nbsp;</div>
-                <div class="theme---selector" id="theme-four">&nbsp;</div>
+                <div class="theme---selector" id="theme-one" title="Theme 1" role="button" tabindex="0">&nbsp;</div>
+                <div class="theme---selector" id="theme-two" title="Theme 2" role="button" tabindex="0">&nbsp;</div>
+                <div class="theme---selector" id="theme-three" title="Theme 3" role="button" tabindex="0">&nbsp;</div>
+                <div class="theme---selector" id="theme-four" title="Theme 4" role="button" tabindex="0">&nbsp;</div>
             </div>
 
         </div>

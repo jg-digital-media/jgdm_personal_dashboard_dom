@@ -1,4 +1,4 @@
-console.log('app.js connected - 18-08-2026 - 13:24');
+console.log('app.js connected - 18-08-2026 - 13:59');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -169,6 +169,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Load random quote
     getRandomQuote();
     
+    // Initialise Theme Options Feature
+    const themeOptionsFeature = initializeThemeOptions();
+
     // Initialise Welcome Message Feature
     const welcomeMessageFeature = initializeWelcomeMessage();
 
@@ -199,10 +202,71 @@ document.addEventListener('DOMContentLoaded', function() {
             if (shortcutLinksFeature && typeof shortcutLinksFeature.reset === 'function') {
                 shortcutLinksFeature.reset();
             }
+
+            if (themeOptionsFeature && typeof themeOptionsFeature.reset === 'function') {
+                themeOptionsFeature.reset();
+            }
         }
     });
 
 });
+
+// Theme Options Functionality - Switch palettes via CSS custom properties
+function initializeThemeOptions() {
+
+    const themeButtons = document.querySelectorAll('.theme---selector');
+    const localStorageKey = 'dashboard_theme';
+    const defaultTheme = 'theme-one';
+    const validThemes = {
+        'theme-one': true,
+        'theme-two': true,
+        'theme-three': true,
+        'theme-four': true
+    };
+
+    function applyTheme(themeId) {
+
+        const theme = validThemes[themeId] ? themeId : defaultTheme;
+
+        document.body.setAttribute('data-theme', theme);
+
+        themeButtons.forEach(function(button) {
+            button.classList.toggle('theme---selector--active', button.id === theme);
+        });
+    }
+
+    function saveTheme(themeId) {
+        localStorage.setItem(localStorageKey, themeId);
+    }
+
+    function selectTheme(themeId) {
+        applyTheme(themeId);
+        saveTheme(themeId);
+    }
+
+    themeButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            selectTheme(button.id);
+        });
+
+        button.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                selectTheme(button.id);
+            }
+        });
+    });
+
+    const savedTheme = localStorage.getItem(localStorageKey);
+    applyTheme(savedTheme || defaultTheme);
+
+    return {
+        reset: function() {
+            localStorage.removeItem(localStorageKey);
+            applyTheme(defaultTheme);
+        }
+    };
+}
 
 // Welcome Message Functionality - Time-based salutation and name persistence
 function initializeWelcomeMessage() {
@@ -980,7 +1044,7 @@ function initializeDashboardToggles(options) {
                         }
                     });
 
-                    // Clear persisted name, to-do items, notes, and shortcut links back to the default empty state
+                    // Clear persisted name, to-do items, notes, shortcut links, and theme back to the default empty state
                     if (typeof resetPersistedContent === 'function') {
                         resetPersistedContent();
                     }
@@ -1025,7 +1089,7 @@ function showResetConfirmationModal(callback) {
                         Are you sure you want to reset the dashboard to its default state?
                     </p>
                     <p class="modal---reset--submessage">
-                        This will clear your name, remove all to-do items, notes and shortcut links, and expand any minimised sections. A page refresh will not undo this.
+                        This will clear your name, remove all to-do items, notes and shortcut links, restore the default theme, and expand any minimised sections. A page refresh will not undo this.
                     </p>
                 </div>
                 <div class="modal---reset--footer">
