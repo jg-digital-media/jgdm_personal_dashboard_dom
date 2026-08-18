@@ -673,6 +673,22 @@ main {
                     /* margin-top: 15px; */
                     border-top: solid 1px #d3bebe;
 
+                    .notes---empty--state {
+
+                        display: none;
+                        margin: 0;
+                        padding: 56px 16px 0;
+                        text-align: center;
+                        color: gray;
+                        font-size: 14px;
+                        line-height: 1.5;
+                    }
+
+                    &.notes---list--empty .notes---empty--state {
+
+                        display: block;
+                    }
+
                     .note---dashboard--item {
 
                         display: block;
@@ -769,14 +785,31 @@ main {
                     /* margin-top: 15px; */
                     overflow: auto;
                     border-top: solid 1px #d3bebe;
+
+                    .links---empty--state {
+
+                        display: none;
+                        margin: 0;
+                        padding: 56px 16px 0;
+                        text-align: center;
+                        color: gray;
+                        font-size: 14px;
+                        line-height: 1.5;
+                    }
+
+                    &.links---list--empty .links---empty--state {
+
+                        display: block;
+                    }
                 }
 
                 .links---dashboard--item {
                    
                     /* margin: 10px 0px; */
-                    padding: 4px 0;
+                    padding: 4px 8px 4px 0;
                     display: flex;
                     align-items: center;
+                    gap: 4px;
 
                     transition: background .3s;
 
@@ -793,27 +826,24 @@ main {
                         @extend %btn---item--close;
 
                         vertical-align: middle;
-                    }
-                    
-                    .dashboard---link {
-
-                        padding: 0 2px;
-                        margin: auto 0;
-                        vertical-align: top;
-                    }                   
-
-                    span.icon---edit {                       
-
-                        @extend %btn---item--edit;
+                        flex-shrink: 0;
                     }
 
                     .dashboard---link {
+
+                        padding: 0 6px 0 2px;
+                        margin: 0;
+                        flex: 1;
+                        min-width: 0;
+                        vertical-align: middle;
 
                         a {
 
                             color: $url---col--secondary;
                             font-size: 14px;
-                            vertical-align: bottom;
+                            vertical-align: middle;
+                            overflow-wrap: anywhere;
+                            word-break: break-word;
 
                             &:hover {
 
@@ -1052,8 +1082,10 @@ main {
             a {
 
                 color: $url---col---footer;
+                /* font-size: 12px; */
+
+                
                 transition: color .4s;
-                font-size: 12px;
 
                 &:hover {
 
@@ -1063,7 +1095,7 @@ main {
                 &.link {
 
                     /* color: $url---col---footer;  */
-                    transition: color .4s;
+                    /* transition: color .4s; */
 
                     &:hover {
 
@@ -1272,6 +1304,209 @@ footer {
                 background: #ffcb21;
                 color: #630404;
                 border-color: #630404;
+            }
+        }
+    }
+}
+
+// Add Shortcut Link Modal Styles
+.modal---add--link {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .3s ease-in-out, visibility .3s ease-in-out;
+
+    &.modal---add--link--active {
+
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &.modal---add--link--closing {
+
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .modal---add--link--backdrop {
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(2px);
+        cursor: pointer;
+    }
+
+    .modal---add--link--content {
+
+        position: relative;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        max-width: 400px;
+        width: 90%;
+        overflow: hidden;
+        transform: scale(0.9);
+        transition: transform .3s ease-in-out;
+    }
+
+    &.modal---add--link--active .modal---add--link--content {
+
+        transform: scale(1);
+    }
+
+    &.modal---add--link--closing .modal---add--link--content {
+
+        transform: scale(0.9);
+    }
+
+    .modal---add--link--header {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 20px;
+        border-bottom: solid 1px #e0e0e0;
+        background: linear-gradient(0deg, #3a3939 -25%, wheat 4%);
+
+        .modal---add--link--title {
+
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #5c5656;
+        }
+
+        .modal---add--link--close {
+
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #5c5656;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            transition: background .2s, color .2s;
+
+            &:hover {
+
+                background: rgba(0, 0, 0, 0.1);
+                color: #890505;
+            }
+        }
+    }
+
+    .modal---add--link--body {
+
+        padding: 20px;
+    }
+
+    .modal---add--link--field {
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 6px;
+        margin-bottom: 16px;
+
+        &:last-child {
+
+            margin-bottom: 0;
+        }
+
+        label {
+
+            font-size: 14px;
+            font-weight: bold;
+            color: #5c5656;
+        }
+
+        input {
+
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 8px 10px;
+            border: solid 1px #bdb5b5;
+            border-radius: 5px;
+            font-size: 14px;
+            color: $col---primary;
+            background: white;
+
+            &:focus {
+
+                outline: none;
+                border-color: #626262;
+                background: lighten($bg---body, 6%);
+            }
+
+            &::placeholder {
+
+                color: #9a9a9a;
+                font-style: italic;
+            }
+        }
+    }
+
+    .modal---add--link--footer {
+
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 20px;
+        border-top: solid 1px #e0e0e0;
+        background: #f9f9f9;
+    }
+
+    .modal---add--link--button {
+
+        padding: 8px 18px;
+        border: solid 1px #bdb5b5;
+        border-radius: 6px;
+        font-size: 14px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background .3s, color .3s, border-color .3s;
+
+        &.modal---add--link--button--cancel {
+
+            background: white;
+            color: #5c5656;
+
+            &:hover {
+
+                background: #f0f0f0;
+                border-color: #626262;
+            }
+        }
+
+        &.modal---add--link--button--confirm {
+
+            background: wheat;
+            color: $col---primary;
+            border-color: #929292;
+
+            &:hover {
+
+                background: lighten($bg---section--dashboards, 6%);
             }
         }
     }

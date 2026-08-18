@@ -13,14 +13,15 @@
     position: relative;
     top: 2px;
 
-    transition: background .3s;
+    transition: background .3s, color .3s;
 
     &:hover {
 
+        /* background: #676363; */
+        /* background: darken(yellow, 10%); */
+        /* background: none; */
         background: #676363;
-        background: darken(yellow, 10%);
-        background: none;
-        background: #676363;
+        color: yellow;
     }
 
     &.toggled---inactive {
