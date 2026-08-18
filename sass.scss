@@ -3,6 +3,7 @@
 
 // colours background colours, font stack and breakpoints
 @import "assets/sass/config/config";
+@import "assets/sass/config/themes";
 
 @import "assets/sass/main";
 
@@ -29,25 +30,27 @@ html {
 
 body {
 
-    background: $bg---body;
+    background: var(--bg-body);
     font-family: $font---main;
     font-size: $font---size--medium;
-    color: #323232;
+    color: var(--col-text);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    transition: background .3s, color .3s;
 }
 
 
 header {
 
-    background: $bg---header;
+    background: var(--bg-header);
     display: flex;
     width: 100%;
-    color: $col---secondary;
+    color: var(--col-header);
     /* margin: 5px 0 0 0; */
-    box-shadow: $bg---header 0px 0px 2px 1px;
+    box-shadow: var(--bg-header) 0px 0px 2px 1px;
     height: 50px;
+    transition: background .3s, color .3s;
 
     div {
     
@@ -102,7 +105,7 @@ header {
 
             a {
 
-                color: $url---col--primary;
+                color: var(--col-heading-link);
                 font-size: $font---size--small;
                 vertical-align: middle;
 
@@ -110,7 +113,7 @@ header {
 
                 &:hover {
 
-                    color: $url---col--primary-hover;
+                    color: var(--col-heading-link-hover);
                 }
             
             }
@@ -191,7 +194,13 @@ header {
             border-radius: 4px;
             height: 4px;
             width: 4px;
-            margin: 3px;   
+            margin: 3px;
+
+            &.theme---selector--active {
+
+                transform: scale(1.25);
+                box-shadow: 0 0 0 2px #fff;
+            }
         }
 
         #theme-one {
@@ -295,11 +304,11 @@ main {
             /* background: #626262; */
             /* background: none; */
             /* background: #caff99; */
-            background: $bg---section--qotd;
+            background: var(--bg-quote);
             /* background: none; */
             padding: 7px;
             border-radius: 8px;
-            border: solid darken($bg---section--qotd, 10%) 1px;  
+            border: solid color-mix(in srgb, var(--bg-quote), black 10%) 1px;  
             display: flex; 
             justify-content: space-around;
             /* justify-content: start; */
@@ -373,7 +382,7 @@ main {
 
         article.main---dashboard {
 
-            background: $bg---section--dashboards;  // common background style to containers
+            background: var(--bg-dashboard);  // common background style to containers
             border: solid 1px #bdb5b5;
 
             transition: border .3s;
@@ -463,7 +472,7 @@ main {
                     padding: 5px 12px;
                     /* background: $bg---dashboards; */
                     background: none;
-                    background: linear-gradient(0deg, #3a3939 -25%, wheat 4%);
+                    background: linear-gradient(0deg, #3a3939 -25%, var(--bg-dashboard) 4%);
 
                     h3.dashboard---section--heading {
 
@@ -694,7 +703,7 @@ main {
                         display: block;
                         margin: 10px auto;
                         text-align: left;
-                        background: #fffb75;
+                        background: var(--bg-note);
                         border: #bdbdbd 1px solid;
                         font-size: 18px;
                         line-height: 1.6;
@@ -839,7 +848,7 @@ main {
 
                         a {
 
-                            color: $url---col--secondary;
+                            color: var(--col-link);
                             font-size: 14px;
                             vertical-align: middle;
                             overflow-wrap: anywhere;
@@ -847,7 +856,7 @@ main {
 
                             &:hover {
 
-                                color: $url---col--secondary-hover;
+                                color: var(--col-link-hover);
                             }
 
                         }
@@ -869,7 +878,7 @@ main {
 
         display: block;
         /* display: none; */
-        background: $bg---section--weather-fetch;
+        background: var(--bg-weather);
         border: solid 1px #bdb5b5;
         border-radius: 6px;
         margin: 10px auto;
@@ -1027,7 +1036,7 @@ main {
     display: block;
     position: sticky;
     bottom: 0;
-    background: $bg---footer;
+    background: var(--bg-footer);
     text-align: center;
     box-shadow: black 0px 0px 4px 0px;
     flex-shrink: 0;
@@ -1059,7 +1068,7 @@ main {
 
             display: inline-block;
             vertical-align: top;
-            color: $col---secondary;
+            color: var(--col-footer);
             margin: 0 5px;
             font-size: 12px;
 
@@ -1081,7 +1090,7 @@ main {
 
             a {
 
-                color: $url---col---footer;
+                color: var(--col-footer);
                 /* font-size: 12px; */
 
                 
