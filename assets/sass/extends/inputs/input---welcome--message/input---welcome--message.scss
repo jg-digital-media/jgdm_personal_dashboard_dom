@@ -20,7 +20,7 @@
 
         outline: none;
         background: #c24141;
-        background: $bg---body;
+        background: var(--bg-body);
         border-bottom: #c24141 solid 2px;
 
     }
@@ -30,7 +30,7 @@
         /* border: solid 2px #c24141; */
         border-bottom: #ed5959 solid 2px;
         /* background: lightyellow; */
-        background: lighten($bg---body, 6%);
+        background: color-mix(in srgb, var(--bg-body), white 12%);
     }
 
     &::placeholder {

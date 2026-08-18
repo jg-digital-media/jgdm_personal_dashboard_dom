@@ -12,7 +12,7 @@
     /* border-radius: 5px; */
     /* font-size: 13px; */
 
-    background: wheat;
+    background: var(--bg-dashboard);
     border: solid 1px #929292;
     padding: 5px;
     margin: 6px;
@@ -23,13 +23,13 @@
     text-decoration: none;
     text-align: center;
     color: black;
-    color: $col---primary;
+    color: var(--col-text);
 
     transition: background .3s;
 
     &:hover {
 
-        background: lighten($bg---section--dashboards, 6%);
+        background: color-mix(in srgb, var(--bg-dashboard), white 12%);
     }
 }
  
