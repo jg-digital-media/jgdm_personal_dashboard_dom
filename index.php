@@ -71,6 +71,7 @@
 
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body data-theme="theme-one">
 
     <header>
@@ -83,7 +84,7 @@
 
         <div class="website---heading">
 
-            <h1>Personal Dashboard App  <a class="heading---links" href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom?tab=readme-ov-file#development" target="_blank">v4.1</a>  <a class="heading---links" href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom" target="_blank">Github Repo</a></h1>
+            <h1>Personal Dashboard App  <a class="heading---links" href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom?tab=readme-ov-file#development" target="_blank">v4.2</a>  <a class="heading---links" href="https://github.com/jg-digital-media/jgdm_personal_dashboard_dom" target="_blank">Github Repo</a></h1>
            
 
         </div>

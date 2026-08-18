@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 18-08-2026 - 13:24
+Last Updated: 18-08-2026 - 14:59
 
 ## Sections
 
@@ -9,7 +9,7 @@ Last Updated: 18-08-2026 - 13:24
 
 ## Tasks 
 
-### Total: `59` Completed: `32`
+### Total: `60` Completed: `32`
 
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
@@ -72,6 +72,7 @@ Last Updated: 18-08-2026 - 13:24
 + `TODO:` - Remove X and minimise icons from any panels. 
 + `TODO:` - Customise style of vertical scrollbars for dashboard panels.
 + `TODO:` - Modify the note functionality to allow for note titles - with a level 4 heading.
++ `TODO:` - Shortcuts panel - make the list items for the link drag and drop orderable..
 
 <!-- .innerText or .textContent -->
 
@@ -131,6 +132,18 @@ On next visit: Name is automatically restored
 + Implemented the first Dashboard Reset feature.  This allows the user to click the reset button to reset the app to its default state, so there are no list items and the welcome message is reset to its initial state. All persisted data is cleared from localStorage.
 
 + What we have now is a reasonably styled interface, a functional clock, a random quote generator, and a to-do list panel; fully implemented and persisted using localStorage.
+
++ ### v4.2
+
++ `17-08-2026` - Made tremendous progress with this project with the following:
+
+  + Implemented the Note and Shortcut Link Panels in full. The 3 panels add new notes and links, respectively. They are easily editable and deletable. The only way to easily remove these notes is to reset the whole app - which requires a confirmation modal to do.
+
+  + The "Theme Options" panel is up and running. That is to say each theme option makes changes to the style, except the first theme palette, which preserves the original styles. 
+ 
+  + Resetting the app will also preserve the original styles, but theme palettes persist where n needed. It'd be interesting to know how much memory it takes to do it all. Up to now at least. But it works.  
+
+  + It's now got to be worth examining the CSS variables and choosing more appropriate styles for each theme before moving on and finding a way to implement the weather search panel.
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
