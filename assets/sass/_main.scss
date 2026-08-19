@@ -939,6 +939,21 @@ main {
             }
         }
 
+        .weather---message {
+
+            display: block;
+            margin: 16px 12px 8px;
+            text-align: center;
+            color: gray;
+            font-size: 14px;
+            line-height: 1.5;
+
+            &[hidden] {
+
+                display: none;
+            }
+        }
+
         .section---fetch--weather--output-content {
 
             display: flex;

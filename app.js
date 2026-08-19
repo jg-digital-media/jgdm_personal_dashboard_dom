@@ -1,4 +1,4 @@
-console.log('app.js connected - 18-08-2026 - 14:59');
+console.log('app.js connected - 19-08-2026 - 14:58');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -183,6 +183,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Initialise Shortcut Links Feature
     const shortcutLinksFeature = initializeShortcutLinks();
+
+    // Initialise Fetch Weather Feature
+    const weatherFeature = initializeWeather();
     
     // Initialise Dashboard Toggle Functionality
     initializeDashboardToggles({
@@ -201,6 +204,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (shortcutLinksFeature && typeof shortcutLinksFeature.reset === 'function') {
                 shortcutLinksFeature.reset();
+            }
+
+            if (weatherFeature && typeof weatherFeature.reset === 'function') {
+                weatherFeature.reset();
             }
 
             if (themeOptionsFeature && typeof themeOptionsFeature.reset === 'function') {
@@ -954,6 +961,248 @@ function initializeShortcutLinks() {
     };
 }
 
+// Fetch Weather Functionality - City search via Open-Meteo (free, no API key)
+function initializeWeather() {
+
+    const weatherInput = document.querySelector('#js---weather--input');
+    const weatherButton = document.querySelector('#js---weather--button');
+    const weatherList = document.querySelector('#js---weather--list');
+    const weatherMessage = document.querySelector('#js---weather--message');
+    const weatherHeading = document.querySelector('.section---fetch--weather--output__heading');
+    const localStorageKey = 'dashboard_weather_city';
+    const defaultHeading = weatherHeading ? weatherHeading.textContent : 'Fetch Your latest Weather Forecast';
+    const emptyMessage = 'Enter a city name and click Fetch to see a 14-day forecast.';
+
+    if (!weatherList || !weatherInput || !weatherButton) {
+        console.log('Weather elements not found');
+        return;
+    }
+
+    function weatherFromCode(code) {
+
+        if (code === 0) {
+            return { word: 'Sunny', icon: 'sunny' };
+        }
+
+        if (code === 1) {
+            return { word: 'Clear', icon: 'sunny' };
+        }
+
+        if (code === 2 || code === 3) {
+            return { word: 'Cloudy', icon: 'cloudy' };
+        }
+
+        if (code === 45 || code === 48) {
+            return { word: 'Foggy', icon: 'cloudy' };
+        }
+
+        if (code >= 51 && code <= 57) {
+            return { word: 'Drizzle', icon: 'cloudy' };
+        }
+
+        if ((code >= 61 && code <= 67) || (code >= 80 && code <= 82)) {
+            return { word: 'Rainy', icon: 'cloudy' };
+        }
+
+        if ((code >= 71 && code <= 77) || code === 85 || code === 86) {
+            return { word: 'Snowy', icon: 'cloudy' };
+        }
+
+        if (code >= 95) {
+            return { word: 'Stormy', icon: 'cloudy' };
+        }
+
+        return { word: 'Cloudy', icon: 'cloudy' };
+    }
+
+    function dayLabelFromDate(dateString) {
+        const date = new Date(dateString + 'T12:00:00');
+        return date.toLocaleDateString('en-GB', { weekday: 'short' });
+    }
+
+    function createForecastCard(dayLabel, description, temperature, iconName) {
+
+        const card = document.createElement('div');
+        card.className = 'day---forecast';
+
+        const heading = document.createElement('h4');
+        heading.textContent = dayLabel;
+
+        const icon = document.createElement('img');
+        icon.className = 'forecast---icon';
+        icon.src = 'assets/img/icon-weather-' + iconName + '.png';
+        icon.alt = 'Forecast: ' + description;
+        icon.title = 'Forecast: ' + description;
+
+        const details = document.createElement('div');
+        details.className = 'forecast---details';
+
+        const descriptionElement = document.createElement('div');
+        descriptionElement.className = 'forecast---temperature';
+        descriptionElement.textContent = description;
+
+        const temperatureElement = document.createElement('div');
+        temperatureElement.className = 'forecast---temperature';
+        temperatureElement.textContent = temperature + '\u00B0C';
+
+        details.appendChild(descriptionElement);
+        details.appendChild(temperatureElement);
+        card.appendChild(heading);
+        card.appendChild(icon);
+        card.appendChild(details);
+
+        return card;
+    }
+
+    function showMessage(text) {
+        weatherList.innerHTML = '';
+
+        if (weatherMessage) {
+            weatherMessage.hidden = false;
+            weatherMessage.textContent = text;
+        }
+    }
+
+    function renderForecast(cityName, daily) {
+
+        weatherList.innerHTML = '';
+
+        daily.time.forEach(function(dateString, index) {
+            const condition = weatherFromCode(daily.weather_code[index]);
+            const temperature = Math.round(daily.temperature_2m_max[index]);
+            const card = createForecastCard(
+                dayLabelFromDate(dateString),
+                condition.word,
+                temperature,
+                condition.icon
+            );
+            weatherList.appendChild(card);
+        });
+
+        if (weatherMessage) {
+            weatherMessage.hidden = true;
+        }
+
+        if (weatherHeading) {
+            weatherHeading.textContent = 'Forecast for ' + cityName;
+        }
+    }
+
+    async function geocodeCity(cityName) {
+
+        const url = 'https://geocoding-api.open-meteo.com/v1/search?name='
+            + encodeURIComponent(cityName)
+            + '&count=1&language=en&format=json';
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error('Could not look up that city.');
+        }
+
+        const data = await response.json();
+
+        if (!data.results || data.results.length === 0) {
+            throw new Error('Could not find that city.');
+        }
+
+        return data.results[0];
+    }
+
+    async function fetchForecast(latitude, longitude) {
+
+        const url = 'https://api.open-meteo.com/v1/forecast?latitude='
+            + encodeURIComponent(latitude)
+            + '&longitude='
+            + encodeURIComponent(longitude)
+            + '&daily=weather_code,temperature_2m_max&timezone=auto&forecast_days=14';
+
+        const response = await fetch(url);
+
+        if (!response.ok) {
+            throw new Error('Could not fetch the forecast.');
+        }
+
+        const data = await response.json();
+
+        if (!data.daily || !data.daily.time) {
+            throw new Error('Could not fetch the forecast.');
+        }
+
+        return data.daily;
+    }
+
+    async function fetchWeatherForCity(cityName) {
+
+        const query = cityName.trim();
+
+        if (query === '') {
+            showMessage(emptyMessage);
+            if (weatherHeading) {
+                weatherHeading.textContent = defaultHeading;
+            }
+            return;
+        }
+
+        weatherButton.disabled = true;
+        showMessage('Fetching forecast...');
+
+        try {
+            const place = await geocodeCity(query);
+            const daily = await fetchForecast(place.latitude, place.longitude);
+            const displayName = place.name || query;
+
+            renderForecast(displayName, daily);
+            localStorage.setItem(localStorageKey, query);
+            weatherInput.value = displayName;
+        } catch (error) {
+            console.error('Error fetching weather:', error);
+            showMessage(error.message || 'Could not fetch the forecast.');
+            if (weatherHeading) {
+                weatherHeading.textContent = defaultHeading;
+            }
+        } finally {
+            weatherButton.disabled = false;
+        }
+    }
+
+    function loadSavedCity() {
+        const savedCity = localStorage.getItem(localStorageKey);
+
+        if (savedCity) {
+            weatherInput.value = savedCity;
+            fetchWeatherForCity(savedCity);
+        }
+    }
+
+    weatherButton.addEventListener('click', function() {
+        fetchWeatherForCity(weatherInput.value);
+    });
+
+    weatherInput.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            fetchWeatherForCity(weatherInput.value);
+        }
+    });
+
+    loadSavedCity();
+
+    return {
+        reset: function() {
+            localStorage.removeItem(localStorageKey);
+            weatherInput.value = '';
+            weatherButton.disabled = false;
+
+            if (weatherHeading) {
+                weatherHeading.textContent = defaultHeading;
+            }
+
+            showMessage(emptyMessage);
+        }
+    };
+}
+
 // Dashboard Toggle Functionality - Toggle visibility of dashboard sections
 function initializeDashboardToggles(options) {
 
@@ -1089,7 +1338,7 @@ function showResetConfirmationModal(callback) {
                         Are you sure you want to reset the dashboard to its default state?
                     </p>
                     <p class="modal---reset--submessage">
-                        This will clear your name, remove all to-do items, notes and shortcut links, restore the default theme, and expand any minimised sections. A page refresh will not undo this.
+                        This will clear your name, remove all to-do items, notes and shortcut links, restore the default theme and weather, and expand any minimised sections. A page refresh will not undo this.
                     </p>
                 </div>
                 <div class="modal---reset--footer">
