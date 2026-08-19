@@ -849,7 +849,6 @@ main {
     .section---fetch--weather {
 
         display: block;
-        /* display: none; */
         background: var(--bg-weather);
         border: solid 1px #bdb5b5;
         border-radius: 6px;
@@ -865,7 +864,6 @@ main {
             border: #626262 solid 1px;
         }
 
-        // Minimized state - maintains space but collapses content
         &.dashboard---minimized {
 
             height: 60px;
@@ -888,28 +886,16 @@ main {
             }
         }
 
-        // Ensure content transitions smoothly
-        .section---fetch--weather-output {
-
-            transition: opacity .3s ease-in-out, max-height .4s ease-in-out;
-            opacity: 1;
-            max-height: 2000px; // Large enough to accommodate content
-        }
-
-        // Add tooltip functionality
         @extend %tooltip;
 
         &::before {
 
             top: 0px;
-        }      
-
+        }
 
         &::after {
 
             top: 0px;
-            /* top: 4px; */
-            /* min-height: 20px; */
             height: 20px;
             width: auto;
         }
@@ -923,79 +909,127 @@ main {
 
         .section---fetch--weather-output {
 
-            .section---fetch--weather-container {
+            transition: opacity .3s ease-in-out, max-height .4s ease-in-out;
+            opacity: 1;
+            max-height: 2000px;
+        }
 
-                .section---fetch--weather-input {                   
+        .section---fetch--weather-container {
 
-                    @extend %input---fetch--weather;
-                }
+            .section---fetch--weather-input {
 
-                .section---fetch--weather-button {
-
-                    font-weight: bold;
-                    padding: 4px;
-                    border-radius: 5px;                 
-                    text-align: center;
-                    border: solid black 1px;
-                    background: #ffec88;
-                    transition: background .3s;
-                    
-                    cursor: pointer; // button element
-
-                    &:hover {
-
-                        background: lightblue;
-                    }
-                }
-
+                @extend %input---fetch--weather;
             }
 
-            .section---fetch--weather-output {
+            .section---fetch--weather-button {
 
-                margin: 10pt auto;
+                font-weight: bold;
+                padding: 4px;
+                border-radius: 5px;
+                text-align: center;
+                border: solid black 1px;
+                background: #ffec88;
+                transition: background .3s;
+                cursor: pointer;
 
-                .section---fetch--weather--output-heading {
+                &:hover {
 
+                    background: lightblue;
+                }
+            }
+        }
+
+        .section---fetch--weather--output-content {
+
+            display: flex;
+            flex-wrap: nowrap;
+            align-items: stretch;
+            gap: 12px;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            margin: 10px 0 0;
+            padding: 8px 12px 14px;
+            overflow-x: auto;
+            overflow-y: hidden;
+
+            scrollbar-width: thin;
+            scrollbar-color: transparent transparent;
+
+            &:hover,
+            &:focus-within {
+
+                scrollbar-color: rgba(50, 50, 50, 0.35) transparent;
+            }
+
+            &::-webkit-scrollbar {
+
+                height: 6px;
+            }
+
+            &::-webkit-scrollbar-track {
+
+                background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+
+                background: transparent;
+                border-radius: 4px;
+            }
+
+            &:hover::-webkit-scrollbar-thumb,
+            &:focus-within::-webkit-scrollbar-thumb {
+
+                background: rgba(50, 50, 50, 0.35);
+            }
+
+            .day---forecast {
+
+                flex: 0 0 auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                width: 90px;
+                min-height: 110px;
+                padding: 6px 4px;
+                border-radius: 5px;
+                background: lightblue;
+                border: solid 1px #9a9a9a;
+                box-sizing: border-box;
+
+                h4 {
+
+                    margin: 0 0 4px;
+                    font-size: 12px;
+                    white-space: nowrap;
                 }
 
-                .section---fetch--weather--output-content {
+                .forecast---icon {
 
-                    .day---forecast {
+                    display: block;
+                    width: 36px;
+                    height: 36px;
+                    margin: 0 auto 4px;
+                    object-fit: contain;
+                }
 
-                        
-                        display: inline-block;
-                        vertical-align: top;
-                        padding: 5px;
-                        border-radius: 5px;
-                        margin: 0px 12px;
-                        width: 90px;
-                        height: 90px;
-                        background: lightblue;
-                        border: solid 1px #9a9a9a;
+                .forecast---details {
 
-                        .forecast---icon {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
 
-                            display: block;
-                            margin: 0 auto;
-                        }
+                    .forecast---temperature {
 
-                        .forecast---details {
-
-                            display: flex;
-                            flex-direction: row;
-                            justify-content: space-around;
-                            align-items: center;
-
-                            .forecast---temperature {
-
-                                font-size: 12px;
-                                text-align: center;
-                                margin: 2px;
-                            }
-
-                        }
+                        font-size: 12px;
+                        text-align: center;
+                        margin: 1px 0;
+                        white-space: nowrap;
                     }
-                }                
+                }
             }
         }
     }

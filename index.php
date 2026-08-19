@@ -241,86 +241,129 @@
                     <button class="section---fetch--weather-button" id="js---weather--button">Fetch</button>
                 </div>
 
-                <div class="section---fetch--weather-output">                    
+                <div class="section---fetch--weather--output-content">
 
-                    <div class="section---fetch--weather--output-content">
-                        
-                        <div class="day---forecast">
-                            <h4>Mon</h4>
-
-                            <img src="assets/img/icon-weather-sunny.png" class="forecast---icon" alt="Forecast: " title="Forecast" />
-
-                            <div class="forecast---details">
-                                <div class="forecast---temperature">Sunny</div>
-                                <div class="forecast---temperature">26°C</div>
-                            </div>
-                            
+                    <div class="day---forecast">
+                        <h4>Mon</h4>
+                        <img src="assets/img/icon-weather-sunny.png" class="forecast---icon" alt="Forecast: Sunny" title="Forecast: Sunny" />
+                        <div class="forecast---details">
+                            <div class="forecast---temperature">Sunny</div>
+                            <div class="forecast---temperature">26°C</div>
                         </div>
-
-                        <div class="day---forecast">
-                            <h4>Tuesday</h4>
-                            <img src="assets/img/icon-weather-sunny.png" class="forecast---icon" alt="Forecast: Sunny 30deg "   title="Forecast: Sunny 30deg" />
-
-                            <div class="forecast---details">
-                                <div class="forecast---temperature">Sunny</div>
-                                <div class="forecast---temperature">26°C</div>
-                            </div>
-                        </div>
-
-                        <div class="day---forecast">
-                            <h4>Wed</h4>
-                            <img src="assets/img/icon-weather-cloudy.png" class="forecast---icon" alt="Forecast: Sunny 30deg " title="Forecast: Sunny 30deg" />
-
-                            <div class="forecast---details">
-                                <div class="forecast---temperature">Sunny</div>
-                                <div class="forecast---temperature">26°C</div>
-                            </div>
-                        </div>
-
-                        <div class="day---forecast">
-                            <h4>Thu</h4>
-                            <img src="assets/img/icon-weather-sunny.png" class="forecast---icon" alt="Forecast: Sunny 30deg " title="Forecast: Sunny 30deg" />
-
-                            <div class="forecast---details">
-                                <div class="forecast---temperature">Sunny</div>
-                                <div class="forecast---temperature">26°C</div>
-                            </div>
-                        </div>
-
-                        <div class="day---forecast">
-                            <h4>Fri</h4>
-                            <img src="assets/img/icon-weather-sunny.png" class="forecast---icon" alt="Forecast: Sunny 30deg " title="Forecast: Sunny 30deg"/>
-
-                            <div class="forecast---details">
-                                <div class="forecast---temperature">Sunny</div>
-                                <div class="forecast---temperature">26°C</div>
-                            </div>
-                        </div>
-
-                        <div class="day---forecast">
-                            <h4>Saturday</h4>
-                            <img src="assets/img/icon-weather-cloudy.png" class="forecast---icon" alt="Forecast: Sunny 30deg " title="Forecast: Sunny 30deg"/>
-                            
-                            <div class="forecast---details">
-                                <div class="forecast---temperature">Sunny</div>
-                                <div class="forecast---temperature">26°C</div>
-                            </div>
-                        </div>
-
-                        <div class="day---forecast">
-                            <h4>Sunday</h4>
-                            <img src="assets/img/icon-weather-cloudy.png" class="forecast---icon" alt="Forecast: Cloudy 30deg " title="Forecast: Cloudy 30deg"/>
-                            
-                            <div class="forecast---details">
-                                <div class="forecast---temperature">Cloudy</div>
-                                <div class="forecast---temperature">26°C</div>
-                            </div>
-                        </div>
-
-                        <!-- More days go here -->
-
                     </div>
-                </div>  
+
+                    <div class="day---forecast">
+                        <h4>Tue</h4>
+                        <img src="assets/img/icon-weather-sunny.png" class="forecast---icon" alt="Forecast: Sunny" title="Forecast: Sunny" />
+                        <div class="forecast---details">
+                            <div class="forecast---temperature">Sunny</div>
+                            <div class="forecast---temperature">26°C</div>
+                        </div>
+                    </div>
+
+                    <div class="day---forecast">
+                        <h4>Wed</h4>
+                        <img src="assets/img/icon-weather-cloudy.png" class="forecast---icon" alt="Forecast: Cloudy" title="Forecast: Cloudy" />
+                        <div class="forecast---details">
+                            <div class="forecast---temperature">Cloudy</div>
+                            <div class="forecast---temperature">26°C</div>
+                        </div>
+                    </div>
+
+                    <div class="day---forecast">
+                        <h4>Thu</h4>
+                        <img src="assets/img/icon-weather-sunny.png" class="forecast---icon" alt="Forecast: Sunny" title="Forecast: Sunny" />
+                        <div class="forecast---details">
+                            <div class="forecast---temperature">Sunny</div>
+                            <div class="forecast---temperature">26°C</div>
+                        </div>
+                    </div>
+
+                    <div class="day---forecast">
+                        <h4>Fri</h4>
+                        <img src="assets/img/icon-weather-sunny.png" class="forecast---icon" alt="Forecast: Sunny" title="Forecast: Sunny" />
+                        <div class="forecast---details">
+                            <div class="forecast---temperature">Sunny</div>
+                            <div class="forecast---temperature">26°C</div>
+                        </div>
+                    </div>
+
+                    <div class="day---forecast">
+                        <h4>Sat</h4>
+                        <img src="assets/img/icon-weather-cloudy.png" class="forecast---icon" alt="Forecast: Cloudy" title="Forecast: Cloudy" />
+                        <div class="forecast---details">
+                            <div class="forecast---temperature">Cloudy</div>
+                            <div class="forecast---temperature">26°C</div>
+                        </div>
+                    </div>
+
+                    <div class="day---forecast">
+                        <h4>Sun</h4>
+                        <img src="assets/img/icon-weather-cloudy.png" class="forecast---icon" alt="Forecast: Cloudy" title="Forecast: Cloudy" />
+                        <div class="forecast---details">
+                            <div class="forecast---temperature">Cloudy</div>
+                            <div class="forecast---temperature">26°C</div>
+                        </div>
+                    </div>
+
+
+                    <div class="day---forecast">
+                        <h4>Mon</h4>
+                        <img src="assets/img/icon-weather-cloudy.png" class="forecast---icon" alt="Forecast: Cloudy" title="Forecast: Cloudy" />
+                        <div class="forecast---details">
+                            <div class="forecast---temperature">Cloudy</div>
+                            <div class="forecast---temperature">26°C</div>
+                        </div>
+                    </div>
+
+                    <div class="day---forecast">
+                        <h4>Tue</h4>
+                        <img src="assets/img/icon-weather-cloudy.png" class="forecast---icon" alt="Forecast: Cloudy" title="Forecast: Cloudy" />
+                        <div class="forecast---details">
+                            <div class="forecast---temperature">Cloudy</div>
+                            <div class="forecast---temperature">26°C</div>
+                        </div>
+                    </div>
+
+                    <div class="day---forecast">
+                        <h4>Wed</h4>
+                        <img src="assets/img/icon-weather-cloudy.png" class="forecast---icon" alt="Forecast: Cloudy" title="Forecast: Cloudy" />
+                        <div class="forecast---details">
+                            <div class="forecast---temperature">Cloudy</div>
+                            <div class="forecast---temperature">26°C</div>
+                        </div>
+                    </div>
+
+                    <div class="day---forecast">
+                        <h4>Sun</h4>
+                        <img src="assets/img/icon-weather-cloudy.png" class="forecast---icon" alt="Forecast: Cloudy" title="Forecast: Cloudy" />
+                        <div class="forecast---details">
+                            <div class="forecast---temperature">Cloudy</div>
+                            <div class="forecast---temperature">26°C</div>
+                        </div>
+                    </div>
+
+                    <div class="day---forecast">
+                        <h4>Sun</h4>
+                        <img src="assets/img/icon-weather-cloudy.png" class="forecast---icon" alt="Forecast: Cloudy" title="Forecast: Cloudy" />
+                        <div class="forecast---details">
+                            <div class="forecast---temperature">Cloudy</div>
+                            <div class="forecast---temperature">26°C</div>
+                        </div>
+                    </div>
+
+                    <div class="day---forecast">
+                        <h4>Sun</h4>
+                        <img src="assets/img/icon-weather-cloudy.png" class="forecast---icon" alt="Forecast: Cloudy" title="Forecast: Cloudy" />
+                        <div class="forecast---details">
+                            <div class="forecast---temperature">Cloudy</div>
+                            <div class="forecast---temperature">26°C</div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
 
         </section>
 
