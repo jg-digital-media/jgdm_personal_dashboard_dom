@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 18-08-2026 - 14:59
+Last Updated: 19-08-2026 - 15:51
 
 ## Sections
 
@@ -144,6 +144,20 @@ On next visit: Name is automatically restored
   + Resetting the app will also preserve the original styles, but theme palettes persist where n needed. It'd be interesting to know how much memory it takes to do it all. Up to now at least. But it works.  
 
   + It's now got to be worth examining the CSS variables and choosing more appropriate styles for each theme before moving on and finding a way to implement the weather search panel.
+
++ #### v4.3
+
++ `19-08-2026` - This app now features the use of *a* functioning fetch weather forecast.
+
+  +  The App uses the free OpenMeteo API. The 14-day forecast does not require an API key. The returned forecast fills in forecast "day cards" with icons, weekday, one-word condition, and temperature in Celsius.
+
+  + The last city is fetched, saved in localStorage and loaded again on refresh. Footer Reset clears it back to the empty prompt.
+
+  + I'm considering using https://github.com/erikflowers/weather-icons for weather icons, which are still needed.
+
+This API does not cover every named place. Geocoding is based on GeoNames, so you get cities, towns, and many villages worldwide, plus some postal codes. Tiny hamlets, buildings, and informal names can miss. It can be robust but some places and postcodes can be missed.
+
+  
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
