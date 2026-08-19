@@ -1088,6 +1088,22 @@ function initializeWeather() {
         }
     }
 
+    function formatPlaceLabel(place, fallback) {
+
+        const city = (place && place.name) ? place.name : fallback;
+        let countryCode = (place && place.country_code) ? String(place.country_code).toUpperCase() : '';
+
+        if (countryCode === 'GB') {
+            countryCode = 'UK';
+        }
+
+        if (city && countryCode) {
+            return city + ', ' + countryCode;
+        }
+
+        return city;
+    }
+
     async function geocodeCity(cityName) {
 
         const url = 'https://geocoding-api.open-meteo.com/v1/search?name='
@@ -1150,11 +1166,11 @@ function initializeWeather() {
         try {
             const place = await geocodeCity(query);
             const daily = await fetchForecast(place.latitude, place.longitude);
-            const displayName = place.name || query;
+            const displayName = formatPlaceLabel(place, query);
 
             renderForecast(displayName, daily);
             localStorage.setItem(localStorageKey, query);
-            weatherInput.value = displayName;
+            weatherInput.value = place.name || query;
         } catch (error) {
             console.error('Error fetching weather:', error);
             showMessage(error.message || 'Could not fetch the forecast.');
