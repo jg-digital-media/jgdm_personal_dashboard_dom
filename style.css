@@ -1,6 +1,6 @@
 /*
 
-    Last Update: 18-08-2026 - 16:39
+    Last Update: 19-08-2026 - 17:31
 */
 * {
   padding: 0;
@@ -17,10 +17,18 @@
   --bg-dashboard: wheat;
   --border-dashboard: #bdb5b5;
   --border-dashboard-hvr: #626262;
+  --bg-section--toggles: yellow;
+  --bg-section--toggles-hvr: #676353;
+  --bg-section--toggles-active: none;
+  --col-section--toggles: #980303;
+  --col-section--toggles-hvr: yellow;
+  --col-section--toggles-active: yellow;
   --bg-note: #fffb75;
   --bg-weather: wheat;
   --bg-footer: #212121;
   --col-footer: #fff;
+  --col-footer-url: white;
+  --col-footer-url-hover: yellow;
   --col-link: gray;
   --col-link-hover: #990202;
   --col-heading-link: #ffd53e;
@@ -91,24 +99,24 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
   background: var(--bg-body);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   color: var(--col-text);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  transition: background 0.3s, color 0.3s;
+  /* transition: background .3s, color .3s; */
 }
 
 header {
-  background: var(--bg-header);
   display: flex;
+  background: var(--bg-header);
   width: 100%;
+  height: 60px;
+  box-shadow: var(--bg-header) 0px 0px 2px 1px;
   color: var(--col-header);
   /* margin: 5px 0 0 0; */
-  box-shadow: var(--bg-header) 0px 0px 2px 1px;
-  height: 50px;
   transition: background 0.3s, color 0.3s;
 }
 header div {
@@ -118,9 +126,9 @@ header div {
   padding: 5px;
 }
 header .live---clock--container {
-  padding: 5px;
   text-align: center;
   position: relative;
+  /* padding: 5px; */
 }
 header .live---clock--container .live---clock {
   font-weight: bold;
@@ -130,9 +138,9 @@ header .live---clock--container .live---clock {
 }
 header .live---clock--container .live---clock::after {
   content: attr(data-tooltip);
+  display: block;
   position: relative;
   top: 21px;
-  display: block;
   /* width: 300px; */
   padding: 4px;
   width: 165px;
@@ -163,6 +171,7 @@ header .theme---selector--container {
 header .theme---selector--container h2 {
   text-align: center;
   font-size: 16px;
+  padding-bottom: 7px;
 }
 header .theme---selector--container .theme---selector--inner {
   width: 120px;
@@ -221,8 +230,8 @@ header .theme---selector--container .theme---selector.theme---selector--active {
 header .theme---selector--container #theme-one {
   background: #ff3c3c;
   border: solid red 1px;
-  transition: transform 0.2s, background 0.4s;
   cursor: pointer;
+  transition: transform 0.2s, background 0.4s;
 }
 header .theme---selector--container #theme-one:hover {
   transform: scale(1.14);
@@ -268,6 +277,7 @@ main .motivational---quote--container {
   text-align: center;
   margin: 15px auto;
   width: 320px;
+  /* font-size: 12px; */
   font-size: 12px;
   padding: 4px;
 }
@@ -390,9 +400,11 @@ main .main---dashboard--container article .dashboard---section .dashboard---sect
 main .main---dashboard--container article .dashboard---section .dashboard---section--buttons h3.dashboard---section--heading {
   margin: 0 12px;
   /* font-size: 17pt; */
+  /* font-size: 12pt; */
   font-size: 12pt;
   /* color: red; */
-  color: #5c5656;
+  /* color: #5c5656; */
+  color: gray;
 }
 main .main---dashboard--container article .dashboard---section .dashboard---section--buttons .section---button--collapse {
   font-weight: bold;
@@ -551,6 +563,7 @@ main .main---dashboard--container .main---dashboard--notes .dashboard---section-
   color: #890505;
 }
 main .main---dashboard--container .main---dashboard--notes .dashboard---section--content .notes---dashboard--container .note---dashboard--item .note---dashboard--content {
+  /* font-size: 12px; */
   font-size: 12px;
   min-height: 60px;
   height: auto;
@@ -620,7 +633,6 @@ main .main---dashboard--container .main---dashboard--shortcuts .dashboard---sect
 }
 main .section---fetch--weather {
   display: block;
-  /* display: none; */
   background: var(--bg-weather);
   border: solid 1px #bdb5b5;
   border-radius: 6px;
@@ -649,27 +661,27 @@ main .section---fetch--weather.dashboard---minimized h3.section---fetch--weather
   margin: 5px 0;
   padding: 5px 0;
 }
-main .section---fetch--weather .section---fetch--weather-output {
-  transition: opacity 0.3s ease-in-out, max-height 0.4s ease-in-out;
-  opacity: 1;
-  max-height: 2000px;
-}
 main .section---fetch--weather::before {
   top: 0px;
 }
 main .section---fetch--weather::after {
   top: 0px;
-  /* top: 4px; */
-  /* min-height: 20px; */
   height: 20px;
   width: auto;
 }
 main .section---fetch--weather h3.section---fetch--weather--output__heading {
   text-align: center;
-  font-size: 24px;
+  /* font-size: 24px; */
+  font-size: 12pt;
   padding: 5px 0;
+  color: #5c5656;
 }
-main .section---fetch--weather .section---fetch--weather-output .section---fetch--weather-container .section---fetch--weather-button {
+main .section---fetch--weather .section---fetch--weather-output {
+  transition: opacity 0.3s ease-in-out, max-height 0.4s ease-in-out;
+  opacity: 1;
+  max-height: 2000px;
+}
+main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-button {
   font-weight: bold;
   padding: 4px;
   border-radius: 5px;
@@ -679,37 +691,90 @@ main .section---fetch--weather .section---fetch--weather-output .section---fetch
   transition: background 0.3s;
   cursor: pointer;
 }
-main .section---fetch--weather .section---fetch--weather-output .section---fetch--weather-container .section---fetch--weather-button:hover {
+main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-button:hover {
   background: lightblue;
 }
-main .section---fetch--weather .section---fetch--weather-output .section---fetch--weather-output {
-  margin: 10pt auto;
+main .section---fetch--weather .weather---message {
+  display: block;
+  margin: 16px 12px 8px;
+  text-align: center;
+  color: gray;
+  font-size: 14px;
+  line-height: 1.5;
 }
-main .section---fetch--weather .section---fetch--weather-output .section---fetch--weather-output .section---fetch--weather--output-content .day---forecast {
-  display: inline-block;
-  vertical-align: top;
-  padding: 5px;
-  border-radius: 5px;
-  margin: 0px 12px;
+main .section---fetch--weather .weather---message[hidden] {
+  display: none;
+}
+main .section---fetch--weather .section---fetch--weather--output-content {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 10px 0 0;
+  padding: 8px 12px 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+main .section---fetch--weather .section---fetch--weather--output-content:hover, main .section---fetch--weather .section---fetch--weather--output-content:focus-within {
+  scrollbar-color: rgba(50, 50, 50, 0.35) transparent;
+}
+main .section---fetch--weather .section---fetch--weather--output-content::-webkit-scrollbar {
+  height: 6px;
+}
+main .section---fetch--weather .section---fetch--weather--output-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+main .section---fetch--weather .section---fetch--weather--output-content::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+}
+main .section---fetch--weather .section---fetch--weather--output-content:hover::-webkit-scrollbar-thumb, main .section---fetch--weather .section---fetch--weather--output-content:focus-within::-webkit-scrollbar-thumb {
+  background: rgba(50, 50, 50, 0.35);
+}
+main .section---fetch--weather .section---fetch--weather--output-content .day---forecast {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   width: 90px;
-  height: 90px;
+  min-height: 110px;
+  padding: 6px 4px;
+  border-radius: 5px;
   background: lightblue;
   border: solid 1px #9a9a9a;
+  box-sizing: border-box;
 }
-main .section---fetch--weather .section---fetch--weather-output .section---fetch--weather-output .section---fetch--weather--output-content .day---forecast .forecast---icon {
+main .section---fetch--weather .section---fetch--weather--output-content .day---forecast h4 {
+  margin: 0 0 4px;
+  /* font-size: 12px; */
+  font-size: 12px;
+  white-space: nowrap;
+}
+main .section---fetch--weather .section---fetch--weather--output-content .day---forecast .forecast---icon {
   display: block;
-  margin: 0 auto;
+  width: 36px;
+  height: 36px;
+  margin: 0 auto 4px;
+  object-fit: contain;
 }
-main .section---fetch--weather .section---fetch--weather-output .section---fetch--weather-output .section---fetch--weather--output-content .day---forecast .forecast---details {
+main .section---fetch--weather .section---fetch--weather--output-content .day---forecast .forecast---details {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
-main .section---fetch--weather .section---fetch--weather-output .section---fetch--weather-output .section---fetch--weather--output-content .day---forecast .forecast---details .forecast---temperature {
+main .section---fetch--weather .section---fetch--weather--output-content .day---forecast .forecast---details .forecast---temperature {
+  /* font-size: 12px; */
   font-size: 12px;
   text-align: center;
-  margin: 2px;
+  margin: 1px 0;
+  white-space: nowrap;
 }
 
 .sticky---footer--container {
@@ -739,6 +804,7 @@ main .section---fetch--weather .section---fetch--weather-output .section---fetch
 @media (max-width: 768px) {
   .sticky---footer--container ul {
     margin: 0 5px;
+    /* font-size: 12px; */
     font-size: 12px;
     vertical-align: middle;
   }
@@ -748,6 +814,7 @@ main .section---fetch--weather .section---fetch--weather-output .section---fetch
   vertical-align: top;
   color: var(--col-footer);
   margin: 0 5px;
+  /* font-size: 12px; */
   font-size: 12px;
 }
 @media (max-width: 768px) {
@@ -765,19 +832,22 @@ main .section---fetch--weather .section---fetch--weather-output .section---fetch
   }
 }
 .sticky---footer--container ul li a {
-  color: var(--col-footer);
-  /* font-size: 12px; */
+  color: var(--col-footer-url);
+  /* font-size: $font---size--sm; */
   transition: color 0.4s;
 }
 .sticky---footer--container ul li a:hover {
-  color: yellow;
+  /* color: $url---col---footer-hover; */
+  color: var(--col-footer-url-hover);
 }
 .sticky---footer--container ul li a.link {
   /* color: $url---col---footer;  */
   /* transition: color .4s; */
+  color: var(--col-footer-url);
 }
 .sticky---footer--container ul li a.link:hover {
   /* color: $url---col---footer-hover; */
+  color: var(--col-footer-url-hover);
 }
 footer {
   font-size: 10px;
@@ -1255,8 +1325,10 @@ main .main---dashboard--container article .dashboard---section .dashboard---sect
   border: solid 1px white;
   border-radius: 6px;
   padding: 5px;
-  background: yellow;
+  /* background: yellow; */
+  background: var(--bg-section--toggles);
   color: #980303;
+  color: var(--col-section--toggles);
   text-decoration: none;
   position: relative;
   top: 2px;
@@ -1266,12 +1338,15 @@ main .main---dashboard--container article .dashboard---section .dashboard---sect
   /* background: #676363; */
   /* background: darken(yellow, 10%); */
   /* background: none; */
-  background: #676363;
-  color: yellow;
+  /* background: #676363; */
+  background: var(--bg-section--toggles-hvr);
+  /* color: yellow; */
+  color: var(--col-section--toggles-hvr);
 }
 .sticky---footer--container ul li a.toggled---inactive.button---toggle {
   color: yellow;
-  background: none;
+  /* background: none; */
+  background: var(--bg-section--toggles-active);
 }
 
 main .main---dashboard--container .main---dashboard--todo .dashboard---section--content .todo---dashboard--container ul li span.icon---close, main .main---dashboard--container .main---dashboard--shortcuts .dashboard---section--content .links---dashboard--item .icon---close {
@@ -1313,7 +1388,7 @@ main .main---dashboard--container .main---dashboard--todo .dashboard---section--
   border: solid 1px #06a706;
 }
 
-main .section---fetch--weather .section---fetch--weather-output .section---fetch--weather-container .section---fetch--weather-input {
+main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-input {
   display: inline-block;
   border: solid 1px #626262;
   margin: 0 12px;
@@ -1321,7 +1396,7 @@ main .section---fetch--weather .section---fetch--weather-output .section---fetch
   border-radius: 5px;
   transition: background 0.3s;
 }
-main .section---fetch--weather .section---fetch--weather-output .section---fetch--weather-container .section---fetch--weather-input:hover {
+main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-input:hover {
   background: lightblue;
 }
 
@@ -1353,7 +1428,8 @@ main .welcome---message--container .welcome---message--input:hover {
   background: color-mix(in srgb, var(--bg-body), white 12%);
 }
 main .welcome---message--container .welcome---message--input::placeholder {
-  color: #616161;
+  /* color: #616161; */
+  color: gray;
   font-style: italic;
 }
 
