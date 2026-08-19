@@ -9,26 +9,29 @@ html {
 
 body {
 
+    display: flex;
+    flex-direction: column;
     background: var(--bg-body);
     font-family: $font---main;
     font-size: $font---size--medium;
     color: var(--col-text);
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    transition: background .3s, color .3s;
+
+    /* transition: background .3s, color .3s; */
 }
 
 
 header {
 
-    background: var(--bg-header);
     display: flex;
+    background: var(--bg-header);
     width: 100%;
-    color: var(--col-header);
-    /* margin: 5px 0 0 0; */
+    height: 60px;
     box-shadow: var(--bg-header) 0px 0px 2px 1px;
-    height: 50px;
+    color: var(--col-header);
+
+    /* margin: 5px 0 0 0; */
+    
     transition: background .3s, color .3s;
 
     div {
@@ -41,9 +44,9 @@ header {
 
     .live---clock--container {
 
-        padding: 5px;
         text-align: center;
         position: relative;
+        /* padding: 5px; */
 
         .live---clock {
 
@@ -58,9 +61,10 @@ header {
             &::after {
 
                 content: attr(data-tooltip);
+
+                display: block;
                 position: relative;
                 top: 21px;
-                display: block;
                 /* width: 300px; */
                 padding: 4px;
                 width: 165px
@@ -111,6 +115,7 @@ header {
 
             text-align: center;
             font-size: $font---size--h2;
+            padding-bottom: 7px;
 
         }
 
@@ -185,10 +190,10 @@ header {
         #theme-one {
 
             background: $theme---option--one;
-            border: solid $theme---option--border-one 1px;            
+            border: solid $theme---option--border-one 1px;    
+            cursor: pointer;        
 
             transition: transform .2s, background .4s;
-            cursor: pointer;
 
             &:hover {
 
@@ -263,7 +268,8 @@ main {
         text-align: center;
         margin: 15px auto;
         width: 320px;
-        font-size: 12px;
+        /* font-size: 12px; */
+        font-size: $font---size--sm;
         padding: 4px;
 
         .motivational---quote--heading {
@@ -450,9 +456,11 @@ main {
 
                         margin: 0 12px;
                         /* font-size: 17pt; */
-                        font-size: 12pt;
+                        /* font-size: 12pt; */
+                        font-size: $font---size--h3;
                         /* color: red; */
-                        color: #5c5656;
+                        /* color: #5c5656; */
+                        color: gray;
                     }
 
                     .section---button--collapse {
@@ -725,7 +733,8 @@ main {
 
                         .note---dashboard--content {
 
-                            font-size: 12px;
+                            /* font-size: 12px; */
+                            font-size: $font---size--sm;
                             min-height: 60px;
                             height: auto;
                         }
@@ -903,8 +912,10 @@ main {
         h3.section---fetch--weather--output__heading {
 
             text-align: center;
-            font-size: 24px;
+            /* font-size: 24px; */
+            font-size: $font---size--h3;
             padding: 5px 0;
+            color: #5c5656;
         }
 
         .section---fetch--weather-output {
@@ -1017,7 +1028,8 @@ main {
                 h4 {
 
                     margin: 0 0 4px;
-                    font-size: 12px;
+                    /* font-size: 12px; */
+                    font-size: $font---size--sm;
                     white-space: nowrap;
                 }
 
@@ -1039,7 +1051,8 @@ main {
 
                     .forecast---temperature {
 
-                        font-size: 12px;
+                        /* font-size: 12px; */
+                        font-size: $font---size--sm;
                         text-align: center;
                         margin: 1px 0;
                         white-space: nowrap;
@@ -1081,7 +1094,8 @@ main {
         @media (max-width: $breakpoint---md) {
 
             margin: 0 5px;
-            font-size: 12px;
+            /* font-size: 12px; */
+            font-size: $font---size--sm;
             vertical-align: middle;
         }
 
@@ -1091,7 +1105,8 @@ main {
             vertical-align: top;
             color: var(--col-footer);
             margin: 0 5px;
-            font-size: 12px;
+            /* font-size: 12px; */
+            font-size: $font---size--sm;
 
             @media (max-width: $breakpoint---md) {
                 
@@ -1111,25 +1126,27 @@ main {
 
             a {
 
-                color: var(--col-footer);
-                /* font-size: 12px; */
-
+                color: var(--col-footer-url);
+                /* font-size: $font---size--sm; */
                 
                 transition: color .4s;
 
                 &:hover {
 
-                    color: $url---col---footer-hover;
+                    /* color: $url---col---footer-hover; */
+                    color: var(--col-footer-url-hover);
                 }
 
                 &.link {
 
                     /* color: $url---col---footer;  */
                     /* transition: color .4s; */
+                    color: var(--col-footer-url);
 
                     &:hover {
 
                         /* color: $url---col---footer-hover; */
+                        color: var(--col-footer-url-hover);
                     }
 
                 }              
