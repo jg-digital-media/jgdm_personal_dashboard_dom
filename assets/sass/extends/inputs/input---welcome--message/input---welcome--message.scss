@@ -35,7 +35,9 @@
 
     &::placeholder {
 
-        color: #616161;
+        /* color: #616161; */
+        color: gray;
+        // color: var(--input-text-placeholder);
         font-style: italic;
     }
 

@@ -39,7 +39,9 @@
 
     // Footer
     --bg-footer: #{$bg---footer};
-    --col-footer: #{$col---secondary};
+    --col-footer: #{$col---tertiary};
+    --col-footer-url: #{$url---col---footer};
+    --col-footer-url-hover: #{$url---col---footer-hover};
 
     // Shortcut link text
     --col-link: #{$url---col--secondary};
