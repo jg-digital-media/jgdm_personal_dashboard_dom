@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 19-08-2026 - 15:51
+Last Updated: 19-08-2026 - 15:58
 
 ## Sections
 
@@ -9,7 +9,7 @@ Last Updated: 19-08-2026 - 15:51
 
 ## Tasks 
 
-### Total: `60` Completed: `32`
+### Total: `61` Completed: `32`
 
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
@@ -48,7 +48,9 @@ Last Updated: 19-08-2026 - 15:51
   + `TODO:` - Customise modal area text to include confirmation of note and task reset.
   + `COMPLETED: 17-08-2026:` - Resetting button does not reset user name text input to empty string.
 + `COMPLETED: 17-08-2026:` - `Feature` - Implement Main Dashboard TODO List Feature
-  + `COMPLETED: 17-08-2026:` - When TODO list items are clicked they should be disabled with no ability to focus on edit them.
+  + `COMPLETED: 17-08-2026:` - When TODO list items are clicked they should be disabled with no ability to focus on edit them.  
++ `COMPLETED: 17-08-2026:` - Implement Fetch Weather Details Feature
+
 + `TODO:` - "Featuring DOM Elements" - Text to appear as hoverable tooltips.
   + `TODO:` - `dashboard---section--buttons` element - customise linear gradient on these elements.
   + `TODO:` - Move tooltips away from using the CSS content property. Need more control of positioning. May be better if we use a JS Object to store these tooltip texts.
@@ -62,7 +64,6 @@ Last Updated: 19-08-2026 - 15:51
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
 + `TODO:` - Update Font Stack - Currently `Arial, Helvetica, sans-serif;`
 + `TODO:` - Modify placeholder message welcome message input element
-+ `TODO:` - Implement Fetch Weather Details Feature
 + `TODO:` - Implement Footer `Feature`
   + `TODO:` - "How To" link should open an animated modal window with relevant copy and any links.
   + `TODO:` - Plan "How To" link copy.
@@ -72,7 +73,8 @@ Last Updated: 19-08-2026 - 15:51
 + `TODO:` - Remove X and minimise icons from any panels. 
 + `TODO:` - Customise style of vertical scrollbars for dashboard panels.
 + `TODO:` - Modify the note functionality to allow for note titles - with a level 4 heading.
-+ `TODO:` - Shortcuts panel - make the list items for the link drag and drop orderable..
++ `TODO:` - Shortcuts panel - make the list items for the link drag and drop orderable.
++ `TODO:` - Add a "Top" link to the  sticky footer bar. Will provide a quick means to return to the top of the page at any time.
 
 <!-- .innerText or .textContent -->
 
