@@ -21,6 +21,16 @@
     --border-dashboard: #bdb5b5;
     --border-dashboard-hvr: #626262;
 
+    --bg-section--toggles: #{$bg---section--toggle-btn};
+    --bg-section--toggles-hvr: #{$bg---section--toggle-btn-hover};
+    --bg-section--toggles-active: #{$bg---section--toggle-btn-active};
+
+    
+    --col-section--toggles: #{$col---section--toggle-btn};
+    --col-section--toggles-hvr: #{$col---section--toggle-btn-hover};
+    --col-section--toggles-active: #{$col---section--toggle-btn-active};
+
+
     // Notes cards
     --bg-note: #fffb75;
 

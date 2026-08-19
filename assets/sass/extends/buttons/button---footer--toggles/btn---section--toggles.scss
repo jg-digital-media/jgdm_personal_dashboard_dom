@@ -7,8 +7,10 @@
     border: solid 1px white;
     border-radius: 6px;
     padding: 5px;
-    background: yellow;
+    /* background: yellow; */
+    background: var(--bg-section--toggles);
     color: #980303;
+    color: var(--col-section--toggles);
     text-decoration: none;
     position: relative;
     top: 2px;
@@ -20,14 +22,17 @@
         /* background: #676363; */
         /* background: darken(yellow, 10%); */
         /* background: none; */
-        background: #676363;
-        color: yellow;
+        /* background: #676363; */
+        background: var(--bg-section--toggles-hvr);
+        /* color: yellow; */
+        color: var(--col-section--toggles-hvr);
     }
 
     &.toggled---inactive {
 
         color: yellow;
-        background: none;
+        /* background: none; */
+        background: var(--bg-section--toggles-active);
     }
 
 }

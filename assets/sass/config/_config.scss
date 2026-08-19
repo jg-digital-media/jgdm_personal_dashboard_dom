@@ -21,6 +21,7 @@ $url---col---footer: white;
 $url---col---footer-hover: yellow;
 
 $url---secondary: #fff;
+
 // theme option selector colours
 $theme---option--one: #ff3c3c;
 $theme---option--two: #a6ff58;
@@ -47,6 +48,14 @@ $font---size--small: 10px;
 $font---size--h1: 20pt;
 $font---size--h2: 16px;
 
+
+$bg---section--toggle-btn: yellow;
+$bg---section--toggle-btn-hover: #676353;
+$bg---section--toggle-btn-active: none;
+
+$col---section--toggle-btn: #980303;
+$col---section--toggle-btn-hover: yellow;
+$col---section--toggle-btn-active: yellow;
 
 // Breakpoint variables
 $breakpoint---xs: 480px;
