@@ -1,7 +1,7 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 19-08-2026 - 15:58
+Last Updated: 19-08-2026 - 17:29
 
 ## Sections
 
@@ -157,7 +157,9 @@ On next visit: Name is automatically restored
 
   + I'm considering using https://github.com/erikflowers/weather-icons for weather icons, which are still needed.
 
-This API does not cover every named place. Geocoding is based on GeoNames, so you get cities, towns, and many villages worldwide, plus some postal codes. Tiny hamlets, buildings, and informal names can miss. It can be robust but some places and postcodes can be missed.
+  + This API does not cover every named place. Geocoding is based on GeoNames, so you get cities, towns, and many villages worldwide, plus some postal codes. Tiny hamlets, buildings, and informal names can miss. It can be robust but some places and postcodes can be missed.
+
+  + With a functional version of the weather fetch in place, attention turns to how the main theme is styled, the codebase behind the SASS partials and Variables CSS, and finalising the Theme Options.
 
   
 
