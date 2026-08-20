@@ -1,15 +1,15 @@
 # jgdm_personal_dashboard_dom
 A single-page web app that acts as a mini personal hub to JavaScript DOM Scripting
 
-Last Updated: 19-08-2026 - 17:29
+Last Updated: 20-08-2026 - 17:26
 
 ## Sections
 
 + [Tasks](#tasks) | [Development](#development) | [Notes](#notes) | [Learning Goals](#learning-goals-of-this-project) | [License](#license)
 
-## Tasks 
+## Tasks `62`
 
-### Total: `61` Completed: `32`
+### TODO: `26` Completed: `36`
 
 + `COMPLETED: 06-10-2025` - Visual Bug with theme switcher tooltip, creating a horizontal scroll in browser
 + `COMPLETED: 26-09-2025` - `.live---clock` - tooltip text - `"Featuring: live clock - featuring .setInterval`  
@@ -40,17 +40,24 @@ Last Updated: 19-08-2026 - 17:29
 + `COMPLETED: 24-11-2025:` - Use JavaScript to create the elements needed to create the modal with template literals. 
 + `COMPLETED: 17-08-2026:` - add remaining contentditable attributes to `todo---item--text` elements.
 + `COMPLETED: 18-08-2026` - Implement Main Dashboard Note Writing Feature
-
-+ `COMPLETED:` - Implement Main Dashboard Shortcut Links Feature
++ `COMPLETED: 19-08-2026` - Implement Main Dashboard Shortcut Links Feature
++ `COMPLETED: 20-08-2026` - "How To" - link should open an animated modal window with relevant copy and any links.
++ `COMPLETED: 17-08-2026:` - Resetting button does not reset user name text input to empty string.
++ `COMPLETED: 17-08-2026:` - `Feature` - Implement Main Dashboard TODO List Feature
++ `COMPLETED: 17-08-2026:` - When TODO list items are clicked they should be disabled with no ability to focus on edit them.  
++ `COMPLETED: 17-08-2026:` - Implement Fetch Weather Details Feature
++ `COMPLETED: 20-08-2026:` - Implement Theme Options Switcher (standard plus at least 2 other modes)
 
 + `TODO:` - `Feature` - Reset Dashboard Settings
   + `TODO:` - Customise styling of the reset modal area.
   + `TODO:` - Customise modal area text to include confirmation of note and task reset.
-  + `COMPLETED: 17-08-2026:` - Resetting button does not reset user name text input to empty string.
-+ `COMPLETED: 17-08-2026:` - `Feature` - Implement Main Dashboard TODO List Feature
-  + `COMPLETED: 17-08-2026:` - When TODO list items are clicked they should be disabled with no ability to focus on edit them.  
-+ `COMPLETED: 17-08-2026:` - Implement Fetch Weather Details Feature
 
+
++ `TODO:` - Update Font Stack - Currently `Arial, Helvetica, sans-serif;`
++ `TODO:` - Implement Visual improvements via styling `v5`
++ `TODO:` - Plan "How To" modal copy.
++ `TODO:` - Add a "Top" link to the  sticky footer bar. Will provide a quick means to return to the top of the page at any time.
++ `TODO:` - Remove X and minimise icons from any panels. 
 + `TODO:` - "Featuring DOM Elements" - Text to appear as hoverable tooltips.
   + `TODO:` - `dashboard---section--buttons` element - customise linear gradient on these elements.
   + `TODO:` - Move tooltips away from using the CSS content property. Need more control of positioning. May be better if we use a JS Object to store these tooltip texts.
@@ -59,22 +66,17 @@ Last Updated: 19-08-2026 - 17:29
 + `TODO:` - `Feature` - Implement Daily Quote Feature
     `TODO: ` - Random quote retrieved every 24 hours. From midnight GMT
     `TODO: ` - Create the final JSON quote file with content
-+ `TODO:` - Implement Theme Options Switcher (standard plus at least 2 other modes)
-+ `TODO:` Fix Welcome message tooltip text to include DOM elements used.
+
++ `TODO:` - Fix Welcome message tooltip text to include DOM elements used.
 + `TODO:` - Implement dismissable tooltip from the top that explains the purpose of the app.
-+ `TODO:` - Update Font Stack - Currently `Arial, Helvetica, sans-serif;`
 + `TODO:` - Modify placeholder message welcome message input element
 + `TODO:` - Implement Footer `Feature`
-  + `TODO:` - "How To" link should open an animated modal window with relevant copy and any links.
-  + `TODO:` - Plan "How To" link copy.
 + `TODO:` - Add custom vertical scrolling styles for dashboard sections
 + `TODO:` - Add meta tags for SEO and social media sharing
 + `TODO:` - Set Dynamic Live Clock to local Time Zone
-+ `TODO:` - Remove X and minimise icons from any panels. 
 + `TODO:` - Customise style of vertical scrollbars for dashboard panels.
 + `TODO:` - Modify the note functionality to allow for note titles - with a level 4 heading.
 + `TODO:` - Shortcuts panel - make the list items for the link drag and drop orderable.
-+ `TODO:` - Add a "Top" link to the  sticky footer bar. Will provide a quick means to return to the top of the page at any time.
 
 <!-- .innerText or .textContent -->
 
@@ -108,10 +110,12 @@ Last Updated: 19-08-2026 - 17:29
   + There are some aspects that haven't yet been prototyped. In some cases, where I'll be adding new elements dynamically with JavaScript, I'll probably need modals to add information such as link text and link addresses before they can be added to the panel. So that's to come.  
 
 + ### v1
-`19-11-2025` - Implemented the Live Clock feature. As far as I can tell, it's only working as far as GMT is concerned, which is local to the United Kingdom. I am noting for the future to extend this, if possible to all other time zones. 
+
++ `19-11-2025` - Implemented the Live Clock feature. As far as I can tell, it's only working as far as GMT is concerned, which is local to the United Kingdom. I am noting for the future to extend this, if possible to all other time zones. 
 
 + ### v2
-`21-11-2025` - Implemented the random quote feature. At the moment, this loads a new quote on each page load. The second, major feature is the a personalisation feature. Users can input their own name and persist this across multiple visits using localStorage.
+
++ `21-11-2025` - Implemented the random quote feature. At the moment, this loads a new quote on each page load. The second, major feature is the a personalisation feature. Users can input their own name and persist this across multiple visits using localStorage.
 
 The next step is to handle the toggling of the main section into view with the sticky footer bar.
 
@@ -121,7 +125,8 @@ On blur/mouseout: Saves to localStorage (or removes if empty)
 On next visit: Name is automatically restored
 
 + ### v3
-`24-11-2025` - In this update, I've completed implementing the Sticky Footer Bar with some animated toggle transitions of the main dashboard sections. Dashboard section areas toggle between expanded and minimized states while maintaing any vacated space. And the footer stays in place at the bottom of the page/viewport.
+
++ `24-11-2025` - In this update, I've completed implementing the Sticky Footer Bar with some animated toggle transitions of the main dashboard sections. Dashboard section areas toggle between expanded and minimized states while maintaing any vacated space. And the footer stays in place at the bottom of the page/viewport.
 
 + This implementation is a fairly rudimentary fade effect animation, but for now it does the job.  There's still some stying and visual work that need to be done on it. But the basics are there. 
 
@@ -161,7 +166,11 @@ On next visit: Name is automatically restored
 
   + With a functional version of the weather fetch in place, attention turns to how the main theme is styled, the codebase behind the SASS partials and Variables CSS, and finalising the Theme Options.
 
-  
++ #### v4.4  
+
++ `20-08-2026` - Added a "How to" modal - triggered by a little hyperlink in the main application footer. This is built in the same way as the reset modal, with an "OK" button to close/dismiss the modal.  
+
++ I also took the opportunity to add some new CSS variables to add additional dynamic styling for the app's Theme Options.
 
 [Back to Top](#jgdm_personal_dashboard_dom)
 
