@@ -21,14 +21,26 @@
     --border-dashboard: #bdb5b5;
     --border-dashboard-hvr: #626262;
 
+    --dashboard--panel-header-bg: #{$bg---dashboard--panel-header-bg};
+
     --bg-section--toggles: #{$bg---section--toggle-btn};
     --bg-section--toggles-hvr: #{$bg---section--toggle-btn-hover};
     --bg-section--toggles-active: #{$bg---section--toggle-btn-active};
 
+    --fetch-weather-btn-bg: #{$bg---section--toggle-btn-secondary};
+    --fetch-weather-btn-bg-hvr: #{$bg---section--toggle-btn-secondary-hover};
     
     --col-section--toggles: #{$col---section--toggle-btn};
     --col-section--toggles-hvr: #{$col---section--toggle-btn-hover};
     --col-section--toggles-active: #{$col---section--toggle-btn-active};
+
+    // Modal (Reset)
+    --modal-header-bg: #{$bg---modal--header };
+    --modal-content-bg: #{$bg---modal--content };
+    --modal-btn-bg: #{$bg---modal--btn-confirm };
+    --modal-btn-bg-hvr: #{$bg---modal--btn-confirm-hvr };
+    --modal-btn-col: #{$col---modal--btn-confirm };
+    --modal-btn-col-hvr: #{$col---modal--btn-confirm-hvr };
 
 
     // Notes cards
@@ -66,6 +78,20 @@
     --border-dashboard: #bdb5b5;
     --border-dashboard-hvr: #626262;
 
+    --dashboard--panel-header-bg: #b6ffa5;
+
+    --fetch-weather-btn-bg: #e4f3c9;
+    --fetch-weather-btn-bg-hvr: #e4f3c9;
+    
+    // Modal (Reset)
+    --modal-header-bg: #acffac;    
+    --modal-content-bg: #ffffff;
+    --modal-btn-bg: #acffac;
+    --modal-btn-bg-hvr: #91ff8b;
+    --modal-btn-col: #565454;
+    --modal-btn-col-hvr: black;
+
+
     --bg-note: #d4ff9a;
 
     --bg-weather: #e4f3c9;
@@ -93,6 +119,20 @@
     --bg-dashboard: #d6e6f7;
     --border-dashboard: #bdb5b5;
     --border-dashboard-hvr: #626262;
+    
+    --dashboard--panel-header-bg: #d6e6f7;
+
+    --fetch-weather-btn-bg: #d6e6f7;
+    --fetch-weather-btn-bg-hvr: #d6e6f7;
+    
+    // Modal (Reset)
+    --modal-header-bg: #69abff;
+    --modal-content-bg: #ffffff;
+    --modal-btn-bg: #69abff;
+    --modal-btn-bg-hvr: #8fbdf7;
+    --modal-btn-col: white;
+    --modal-btn-col-hvr: white;
+
 
     --bg-note: #c2ddff;
 
@@ -121,6 +161,19 @@
     --bg-dashboard: #f2f2f2;
     --border-dashboard: #bdb5b5;
     --border-dashboard-hvr: #626262;
+
+    --dashboard--panel-header-bg: #f2f2f2;
+
+    --fetch-weather-btn-bg: #f2f2f2;
+    --fetch-weather-btn-bg-hvr: #f2f2f2;
+    
+    // Modal (Reset)
+    --modal-header-bg: #f2f2f2;
+    --modal-content-bg: #ffffff;
+    --modal-btn-bg: #f2f2f2;
+    --modal-btn-bg-hvr: #b6b6b6;
+    --modal-btn-col: black;
+    --modal-btn-col-hvr: black;
 
     --bg-note: #ececec;
 

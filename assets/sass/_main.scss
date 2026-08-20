@@ -451,6 +451,8 @@ main {
                     /* background: $bg---dashboards; */
                     background: none;
                     background: linear-gradient(0deg, #3a3939 -25%, var(--bg-dashboard) 4%);
+                    background: red;
+                    background: var(--dashboard--panel-header-bg);
 
                     h3.dashboard---section--heading {
 
@@ -939,13 +941,16 @@ main {
                 border-radius: 5px;
                 text-align: center;
                 border: solid black 1px;
-                background: #ffec88;
+                /* background: #ffec88; */
+                background: var( --fetch-weather-btn-bg);
                 transition: background .3s;
                 cursor: pointer;
 
                 &:hover {
 
-                    background: lightblue;
+                    /* background: var( --fetch-weather-btn-bg); */
+                    /* background: lightblue;  */                   
+                    background: var( --fetch-weather-btn-bg);
                 }
             }
         }
@@ -1238,11 +1243,13 @@ footer {
     &.modal---reset--active .modal---reset--content {
 
         transform: scale(1);
+        background: var(--modal-content-bg);
     }
 
     &.modal---reset--closing .modal---reset--content {
 
         transform: scale(0.9);
+        background: var(--modal-content-bg);
     }
 
     .modal---reset--header {
@@ -1252,7 +1259,7 @@ footer {
         align-items: center;
         padding: 20px;
         border-bottom: solid 1px #e0e0e0;
-        background: linear-gradient(0deg, #3a3939 -25%, wheat 4%);
+        background: linear-gradient(var(--modal-header-bg) );
 
         .modal---reset--title {
 
@@ -1342,15 +1349,21 @@ footer {
 
         &.modal---reset--button--confirm {
 
-            background: #fdfd8a;
-            color: #980303;
-            border-color: #980303;
+            /* background: #fdfd8a; */
+            background: var(--modal-btn-bg);
+            /* color: #980303; */
+            color: var(--modal-btn-col);
+            /* border-color: #980303; */
+            border-color: var(--modal-btn-col);
 
             &:hover {
 
-                background: #ffcb21;
-                color: #630404;
-                border-color: #630404;
+                /* background: #ffcb21; */
+                background: var(--modal-btn-bg-hvr);
+                /* color: #630404; */
+                color: var(--modal-btn-col-hvr);
+                /* border-color: #630404; */
+                border-color: var(--modal-btn-col-hvr);
             }
         }
     }
