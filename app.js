@@ -1,4 +1,4 @@
-console.log('app.js connected - 19-08-2026 - 14:58');
+console.log('app.js connected - 20-08-2026 - 13:34');
 
 // Enhanced tooltip functionality for live clock
 document.addEventListener('DOMContentLoaded', function() {
@@ -1329,6 +1329,112 @@ function initializeDashboardToggles(options) {
             section.classList.add('dashboard---minimized');
         }
     });
+
+    initializeHowToModal();
+}
+
+
+
+/*
+*
+* Modal Area: 
+*/
+
+// How To Modal - Short guide to using the dashboard
+function initializeHowToModal() {
+
+    const howToButton = document.querySelector('#js---btn_howto');
+
+    if (!howToButton) {
+        return;
+    }
+
+    howToButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        showHowToModal();
+    });
+}
+
+
+function showHowToModal() {
+
+    let existingModal = document.querySelector('.modal---howto');
+    if (existingModal) {
+        existingModal.remove();
+    }
+
+    const modalHTML = `
+        <div class="modal---reset--confirmation modal---howto">
+            <div class="modal---reset--backdrop"></div>
+            <div class="modal---reset--content">
+                <div class="modal---reset--header">
+                    <h3 class="modal---reset--title">How to use this dashboard</h3>
+                    <button class="modal---reset--close" type="button" aria-label="Close modal">&times;</button>
+                </div>
+                <div class="modal---reset--body">
+                    <p class="modal---reset--message">
+                        Keep a to-do list, notes, shortcut links and a 14-day weather forecast in one place. Type your name at the top and it will be remembered next time.
+                    </p>
+                    <p class="modal---reset--submessage">
+                        Use the coloured squares to switch themes, and the footer buttons to show or hide each panel. Add, edit or delete items in the panels; they are saved in this browser until you choose Reset.
+                    </p>
+                </div>
+                <div class="modal---reset--footer">
+                    <button class="modal---reset--button modal---reset--button--confirm" type="button" id="modal---howto--ok">
+                        Ok
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.body.insertAdjacentHTML('beforeend', modalHTML);
+
+    const modal = document.querySelector('.modal---howto');
+    const backdrop = modal ? modal.querySelector('.modal---reset--backdrop') : null;
+    const closeButton = modal ? modal.querySelector('.modal---reset--close') : null;
+    const okButton = document.querySelector('#modal---howto--ok');
+
+    function closeModal() {
+        document.removeEventListener('keydown', handleEscapeKey);
+
+        if (modal) {
+            modal.classList.add('modal---reset--closing');
+            setTimeout(function() {
+                modal.remove();
+            }, 300);
+        }
+    }
+
+    function handleEscapeKey(event) {
+        if (event.key === 'Escape' && modal) {
+            closeModal();
+        }
+    }
+
+    if (backdrop) {
+        backdrop.addEventListener('click', closeModal);
+    }
+
+    if (closeButton) {
+        closeButton.addEventListener('click', closeModal);
+    }
+
+    if (okButton) {
+        okButton.addEventListener('click', closeModal);
+    }
+
+    document.addEventListener('keydown', handleEscapeKey);
+
+    setTimeout(function() {
+        if (modal) {
+            modal.classList.add('modal---reset--active');
+        }
+
+        if (okButton) {
+            okButton.focus();
+        }
+    }, 10);
 }
 
 // Modal Confirmation Functionality - Creates and displays modal for reset confirmation
