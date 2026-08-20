@@ -35,12 +35,13 @@
     --col-section--toggles-active: #{$col---section--toggle-btn-active};
 
     // Modal (Reset)
-    --modal-header-bg: #{$bg---modal--header };
-    --modal-content-bg: #{$bg---modal--content };
-    --modal-btn-bg: #{$bg---modal--btn-confirm };
-    --modal-btn-bg-hvr: #{$bg---modal--btn-confirm-hvr };
-    --modal-btn-col: #{$col---modal--btn-confirm };
-    --modal-btn-col-hvr: #{$col---modal--btn-confirm-hvr };
+    --modal-header-bg: #{$bg---modal--header};
+    --modal-content-bg: #{$bg---modal--content};
+    --modal-footer-bg: #{$bg---modal--footer};
+    --modal-btn-bg: #{$bg---modal--btn-confirm};
+    --modal-btn-bg-hvr: #{$bg---modal--btn-confirm-hvr};
+    --modal-btn-col: #{$col---modal--btn-confirm};
+    --modal-btn-col-hvr: #{$col---modal--btn-confirm-hvr};
 
 
     // Notes cards
@@ -86,6 +87,7 @@
     // Modal (Reset)
     --modal-header-bg: #acffac;    
     --modal-content-bg: #ffffff;
+    --modal-footer-bg: #acffac;
     --modal-btn-bg: #acffac;
     --modal-btn-bg-hvr: #91ff8b;
     --modal-btn-col: #565454;
@@ -128,10 +130,11 @@
     // Modal (Reset)
     --modal-header-bg: #69abff;
     --modal-content-bg: #ffffff;
+    --modal-footer-bg: #69abff;
     --modal-btn-bg: #69abff;
     --modal-btn-bg-hvr: #8fbdf7;
     --modal-btn-col: white;
-    --modal-btn-col-hvr: white;
+    --modal-btn-col-hvr: #0f2c83;
 
 
     --bg-note: #c2ddff;
@@ -170,6 +173,7 @@
     // Modal (Reset)
     --modal-header-bg: #f2f2f2;
     --modal-content-bg: #ffffff;
+    --modal-footer-bg: #f2f2f2;
     --modal-btn-bg: #f2f2f2;
     --modal-btn-bg-hvr: #b6b6b6;
     --modal-btn-col: black;
