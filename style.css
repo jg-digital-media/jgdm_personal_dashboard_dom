@@ -1,6 +1,6 @@
 /*
 
-    Last Update: 19-08-2026 - 17:31
+    Last Update: 20-08-2026 - 17:28
 */
 * {
   padding: 0;
@@ -17,12 +17,22 @@
   --bg-dashboard: wheat;
   --border-dashboard: #bdb5b5;
   --border-dashboard-hvr: #626262;
+  --dashboard--panel-header-bg: linear-gradient(0deg, #3a3939 -25%, var(--bg-dashboard) 4%);
   --bg-section--toggles: yellow;
   --bg-section--toggles-hvr: #676353;
   --bg-section--toggles-active: none;
+  --fetch-weather-btn-bg: #ffec88;
+  --fetch-weather-btn-bg-hvr: lightblue;
   --col-section--toggles: #980303;
   --col-section--toggles-hvr: yellow;
   --col-section--toggles-active: yellow;
+  --modal-header-bg: linear-gradient(0deg, #3a3939 -25%, wheat 4%);
+  --modal-content-bg: #ffffff;
+  --modal-footer-bg: linear-gradient(0deg, #3a3939 -25%, wheat 4%);
+  --modal-btn-bg: #ffcb21;
+  --modal-btn-bg-hvr: #fdfd8a;
+  --modal-btn-col: #980303;
+  --modal-btn-col-hvr: #630404;
   --bg-note: #fffb75;
   --bg-weather: wheat;
   --bg-footer: #212121;
@@ -44,6 +54,16 @@
   --bg-dashboard: #e4f3c9;
   --border-dashboard: #bdb5b5;
   --border-dashboard-hvr: #626262;
+  --dashboard--panel-header-bg: #b6ffa5;
+  --fetch-weather-btn-bg: #e4f3c9;
+  --fetch-weather-btn-bg-hvr: #e4f3c9;
+  --modal-header-bg: #acffac;
+  --modal-content-bg: #ffffff;
+  --modal-footer-bg: #acffac;
+  --modal-btn-bg: #acffac;
+  --modal-btn-bg-hvr: #91ff8b;
+  --modal-btn-col: #565454;
+  --modal-btn-col-hvr: black;
   --bg-note: #d4ff9a;
   --bg-weather: #e4f3c9;
   --bg-footer: #1e3a1a;
@@ -63,6 +83,16 @@
   --bg-dashboard: #d6e6f7;
   --border-dashboard: #bdb5b5;
   --border-dashboard-hvr: #626262;
+  --dashboard--panel-header-bg: #d6e6f7;
+  --fetch-weather-btn-bg: #d6e6f7;
+  --fetch-weather-btn-bg-hvr: #d6e6f7;
+  --modal-header-bg: #69abff;
+  --modal-content-bg: #ffffff;
+  --modal-footer-bg: #69abff;
+  --modal-btn-bg: #69abff;
+  --modal-btn-bg-hvr: #8fbdf7;
+  --modal-btn-col: white;
+  --modal-btn-col-hvr: #0f2c83;
   --bg-note: #c2ddff;
   --bg-weather: #d6e6f7;
   --bg-footer: #0d2137;
@@ -82,6 +112,16 @@
   --bg-dashboard: #f2f2f2;
   --border-dashboard: #bdb5b5;
   --border-dashboard-hvr: #626262;
+  --dashboard--panel-header-bg: #f2f2f2;
+  --fetch-weather-btn-bg: #f2f2f2;
+  --fetch-weather-btn-bg-hvr: #f2f2f2;
+  --modal-header-bg: #f2f2f2;
+  --modal-content-bg: #ffffff;
+  --modal-footer-bg: #f2f2f2;
+  --modal-btn-bg: #f2f2f2;
+  --modal-btn-bg-hvr: #b6b6b6;
+  --modal-btn-col: black;
+  --modal-btn-col-hvr: black;
   --bg-note: #ececec;
   --bg-weather: #f2f2f2;
   --bg-footer: #3a3a3a;
@@ -396,6 +436,8 @@ main .main---dashboard--container article .dashboard---section .dashboard---sect
   /* background: $bg---dashboards; */
   background: none;
   background: linear-gradient(0deg, #3a3939 -25%, var(--bg-dashboard) 4%);
+  background: red;
+  background: var(--dashboard--panel-header-bg);
 }
 main .main---dashboard--container article .dashboard---section .dashboard---section--buttons h3.dashboard---section--heading {
   margin: 0 12px;
@@ -687,12 +729,15 @@ main .section---fetch--weather .section---fetch--weather-container .section---fe
   border-radius: 5px;
   text-align: center;
   border: solid black 1px;
-  background: #ffec88;
+  /* background: #ffec88; */
+  background: var(--fetch-weather-btn-bg);
   transition: background 0.3s;
   cursor: pointer;
 }
 main .section---fetch--weather .section---fetch--weather-container .section---fetch--weather-button:hover {
-  background: lightblue;
+  /* background: var( --fetch-weather-btn-bg); */
+  /* background: lightblue;  */
+  background: var(--fetch-weather-btn-bg);
 }
 main .section---fetch--weather .weather---message {
   display: block;
@@ -869,6 +914,16 @@ footer p {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+  /* &.modal---reset--active .modal---reset--content {
+
+      transform: scale(1);
+      background: var(--modal-content-bg);
+  } */
+  /* &.modal---reset--closing .modal---reset--content {
+
+      transform: scale(0.9);
+      background: var(--modal-content-bg);
+  } */
 }
 .modal---reset--confirmation.modal---reset--active {
   opacity: 1;
@@ -890,7 +945,8 @@ footer p {
 }
 .modal---reset--confirmation .modal---reset--content {
   position: relative;
-  background: white;
+  /* background: white; */
+  background: var(--modal-content-bg);
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   max-width: 500px;
@@ -900,27 +956,21 @@ footer p {
   transform: scale(0.9);
   transition: transform 0.3s ease-in-out;
 }
-.modal---reset--confirmation.modal---reset--active .modal---reset--content {
-  transform: scale(1);
-}
-.modal---reset--confirmation.modal---reset--closing .modal---reset--content {
-  transform: scale(0.9);
-}
-.modal---reset--confirmation .modal---reset--header {
+.modal---reset--confirmation .modal---reset--content .modal---reset--header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   border-bottom: solid 1px #e0e0e0;
-  background: linear-gradient(0deg, #3a3939 -25%, wheat 4%);
+  background: var(--modal-header-bg);
 }
-.modal---reset--confirmation .modal---reset--header .modal---reset--title {
+.modal---reset--confirmation .modal---reset--content .modal---reset--header .modal---reset--title {
   margin: 0;
   font-size: 20px;
   font-weight: bold;
   color: #5c5656;
 }
-.modal---reset--confirmation .modal---reset--header .modal---reset--close {
+.modal---reset--confirmation .modal---reset--content .modal---reset--header .modal---reset--close {
   background: none;
   border: none;
   font-size: 28px;
@@ -935,35 +985,37 @@ footer p {
   border-radius: 4px;
   transition: background 0.2s, color 0.2s;
 }
-.modal---reset--confirmation .modal---reset--header .modal---reset--close:hover {
+.modal---reset--confirmation .modal---reset--content .modal---reset--header .modal---reset--close:hover {
   background: rgba(0, 0, 0, 0.1);
   color: #890505;
 }
-.modal---reset--confirmation .modal---reset--body {
+.modal---reset--confirmation .modal---reset--content .modal---reset--body {
   padding: 25px 20px;
+  background: var(--modal-content-bg);
 }
-.modal---reset--confirmation .modal---reset--body .modal---reset--message {
+.modal---reset--confirmation .modal---reset--content .modal---reset--body .modal---reset--message {
   margin: 0 0 15px 0;
   font-size: 16px;
   line-height: 1.6;
   color: #323232;
   font-weight: 500;
 }
-.modal---reset--confirmation .modal---reset--body .modal---reset--submessage {
+.modal---reset--confirmation .modal---reset--content .modal---reset--body .modal---reset--submessage {
   margin: 0;
   font-size: 14px;
   line-height: 1.5;
   color: #666;
 }
-.modal---reset--confirmation .modal---reset--footer {
+.modal---reset--confirmation .modal---reset--content .modal---reset--footer {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   padding: 20px;
   border-top: solid 1px #e0e0e0;
   background: #f9f9f9;
+  background: var(--modal-footer-bg);
 }
-.modal---reset--confirmation .modal---reset--button {
+.modal---reset--confirmation .modal---reset--content .modal---reset--button {
   padding: 10px 20px;
   border: solid 1px #bdb5b5;
   border-radius: 6px;
@@ -972,23 +1024,29 @@ footer p {
   cursor: pointer;
   transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
-.modal---reset--confirmation .modal---reset--button.modal---reset--button--cancel {
+.modal---reset--confirmation .modal---reset--content .modal---reset--button.modal---reset--button--cancel {
   background: white;
   color: #5c5656;
 }
-.modal---reset--confirmation .modal---reset--button.modal---reset--button--cancel:hover {
+.modal---reset--confirmation .modal---reset--content .modal---reset--button.modal---reset--button--cancel:hover {
   background: #f0f0f0;
   border-color: #626262;
 }
-.modal---reset--confirmation .modal---reset--button.modal---reset--button--confirm {
-  background: #fdfd8a;
-  color: #980303;
-  border-color: #980303;
+.modal---reset--confirmation .modal---reset--content .modal---reset--button.modal---reset--button--confirm {
+  /* background: #fdfd8a; */
+  background: var(--modal-btn-bg);
+  /* color: #980303; */
+  color: var(--modal-btn-col);
+  /* border-color: #980303; */
+  border-color: var(--modal-btn-col);
 }
-.modal---reset--confirmation .modal---reset--button.modal---reset--button--confirm:hover {
-  background: #ffcb21;
-  color: #630404;
-  border-color: #630404;
+.modal---reset--confirmation .modal---reset--content .modal---reset--button.modal---reset--button--confirm:hover {
+  /* background: #ffcb21; */
+  background: var(--modal-btn-bg-hvr);
+  /* color: #630404; */
+  color: var(--modal-btn-col-hvr);
+  /* border-color: #630404; */
+  border-color: var(--modal-btn-col-hvr);
 }
 
 .modal---add--link {
